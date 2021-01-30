@@ -1,0 +1,14 @@
+.container {
+  border-top: 4px solid var(--color-secondary);
+  min-height: 100vh;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  max-width: 640px;
+  margin: 0 auto;
+}

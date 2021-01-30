@@ -1,0 +1,29 @@
+:root {
+  --color-primary: #f2858a;
+  --color-secondary: #ffd986;
+
+  --color-grey--lightest: #fcfcfc;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html *,
+html *::before,
+html *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background:  var(--color-grey--lightest);
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}

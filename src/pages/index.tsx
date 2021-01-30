@@ -1,5 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { Logo } from "../components/Logo";
 
 export default function Home() {
   return (
@@ -10,11 +11,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Logo />
         <h1 className={styles.title}>Eddy Sims</h1>
-
         <p className={styles.description}>#YEG based software/web developer</p>
-        <hr />
-        <div style={{ textAlign: 'center'}}>
+        <div style={{ marginTop: "1rem" }}>
           <p>Web developer with over 15 years of experience.</p>
           <p>
             Currently helping to build{" "}
