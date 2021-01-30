@@ -12,19 +12,20 @@ export default function Home() {
 
       <main className={styles.main}>
         <Logo />
-        <h1 className={styles.title}>Eddy Sims</h1>
-        <p className={styles.description}>#YEG based software/web developer</p>
+        <h1>Eddy Sims</h1>
+        <p className={styles.large}>#YEG based software/web developer</p>
         <div style={{ marginTop: "1rem" }}>
-          <p>Web developer with over 15 years of experience.</p>
           <p>
-            Currently helping to build{" "}
+            Web developer with over 15 years of experience. Currently helping to
+            build{" "}
             <a href="https://getjobber.com" target="_blank">
               Jobber
             </a>{" "}
-            and <a href="https://atlantis.getjobber.com">Atlantis</a>.
-          </p>
-          <p>
-            Looking to experiment here, and show off some of my personal work.
+            and{" "}
+            <a href="https://atlantis.getjobber.com" target="_blank">
+              Atlantis
+            </a>
+            . Looking to experiment here, and show off some of my personal work.
           </p>
         </div>
       </main>

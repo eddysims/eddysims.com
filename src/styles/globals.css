@@ -3,6 +3,13 @@
   --color-secondary: #ffd986;
 
   --color-grey--lightest: #fcfcfc;
+  --color-grey: #595959;
+}
+
+:root {
+  --fontSize-base: 18px;
+  --fontFamily-base: 'Open Sans', sans-serif;;
+  --fontFamily-fancy: 'Noto Serif', serif;
 }
 
 html {
@@ -19,11 +26,22 @@ body {
   background:  var(--color-grey--lightest);
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--fontFamily-base);
+  font-size: var(--fontSize-base);
+  line-height: 1.6;
+  color: var(--color-grey);
 }
 
 a {
   color: var(--color-primary);
   text-decoration: none;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: var(--fontFamily-fancy);
+  line-height: 1.2;
+  margin-top: 0;
+  margin:0;
 }
