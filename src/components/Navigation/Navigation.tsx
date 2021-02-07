@@ -7,7 +7,7 @@ export function Navigation() {
     <nav className={styles.navigation}>
       <ul className={styles.list}>
         <li>
-          <Link href="/blog" passHref>
+          <Link href="/" passHref>
             <a className={styles.link}>Home</a>
           </Link>
         </li>

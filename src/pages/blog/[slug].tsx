@@ -35,7 +35,7 @@ export async function getStaticProps({ params }) {
 }
 
 function BlogPost({ post }) {
-
+  console.log(post)
   if (!post) {
     return <div>404</div>
   }
@@ -49,7 +49,7 @@ function BlogPost({ post }) {
           renderNode: {
             [BLOCKS.EMBEDDED_ASSET]: node => (
               <Image
-                src={`https://${node.data.target.fields.file.url}`}
+                src={`https:${node.data.target.fields.file.url}`}
                 width={node.data.target.fields.file.details.image.width}
                 height={node.data.target.fields.file.details.image.width}
               />
