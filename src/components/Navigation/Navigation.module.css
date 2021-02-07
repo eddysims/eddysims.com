@@ -1,0 +1,29 @@
+.navigation {
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link {
+    color: var(--color-primary);
+    display: block;
+    padding: 1em 1.5em;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 300ms, color 300ms;
+}
+
+.link:hover {
+    background: var(--color-primary);
+    color: white;
+}
