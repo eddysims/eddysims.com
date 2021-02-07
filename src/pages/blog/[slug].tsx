@@ -13,9 +13,10 @@ export async function getStaticPaths() {
 
   return {
     paths: data.items.map(item => (
+      //@ts-expect-error
       { params: { slug: item?.fields?.slug } }
     )),
-    fallback: false
+    fallback: true
   }
 }
 
@@ -28,13 +29,17 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       post: data.items[0]
-    }
+    },
+    revalidate: 1,
   }
 }
 
 function BlogPost({ post }) {
 
-  console.log({ post })
+  if (!post) {
+    return <div>404</div>
+  }
+
   return (
     <Layout>
       <Container>
