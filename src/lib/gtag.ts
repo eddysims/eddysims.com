@@ -6,7 +6,10 @@ export const GA_TRACKING_ID = '<YOUR_GA_TRACKING_ID>'
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url) => {
-  window.gtag('config', process.env.NEXT_GOOGLE_ANALYTICS_ID, {
-    page_path: url,
-  })
+  console.log({'node_env': process.env.NODE_ENV})
+  if ( process.env.NODE_ENV !== 'development' ) {
+    window.gtag('config', process.env.NEXT_GOOGLE_ANALYTICS_ID, {
+      page_path: url,
+    })
+  }
 }
