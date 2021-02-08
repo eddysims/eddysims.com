@@ -17,6 +17,11 @@ class MainDoc extends Document {
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_GOOGLE_ANALYTICS_ID}`}
           />
           <script
+            /**
+             * disabling no danger here as this is a script that is set
+             * by gtag and is needed to be dangerously set.
+             */
+            // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
               __html: `
                 window.dataLayer = window.dataLayer || [];

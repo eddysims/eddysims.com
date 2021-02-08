@@ -2,8 +2,13 @@ import Link from "next/link";
 import { Layout } from "~components/Layout";
 import { Container } from "~components/Container";
 import { client } from "~lib/contentful";
+import { BlogPostType } from "~types/contentful.types";
 
-function Blog({ posts }) {
+interface BlogProps {
+  posts: Array<BlogPostType>;
+}
+
+function Blog({ posts }: BlogProps) {
   return (
     <>
       <Layout>

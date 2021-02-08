@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Container } from "~components/Container";
 import { Layout } from "~components/Layout";
 import { client } from "~lib/contentful";
+import { BlogPostType } from "~types/contentful.types";
 
 export async function getStaticPaths() {
   const data = await client.getEntries({
@@ -30,7 +31,11 @@ export async function getStaticProps({ params }) {
   };
 }
 
-function BlogPost({ post }) {
+interface BlogPostProps {
+  post: BlogPostType;
+}
+
+function BlogPost({ post }: BlogPostProps) {
   if (!post) {
     return <div>404</div>;
   }

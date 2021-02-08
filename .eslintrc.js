@@ -24,6 +24,7 @@ module.exports = {
         map: [
           ["~components", "./src/components"],
           ["~lib", "./src/lib"],
+          ["~types", "./src/types"],
         ],
         extensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
       },
