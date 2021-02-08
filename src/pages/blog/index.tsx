@@ -1,6 +1,6 @@
-import { Layout } from '../../components/Layout';
-import { Container } from '../../components/Container';
-import { client } from '../../lib/contentful';
+import { Layout } from '~components/Layout';
+import { Container } from '~components/Container';
+import { client } from '~lib/contentful';
 import Link from 'next/link';
 
 function Blog({ posts }) {

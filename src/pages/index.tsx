@@ -1,12 +1,10 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { Layout } from '../components/Layout'
-import { Logo } from "../components/Logo";
-import Link from 'next/link';
-import { Section } from '../components/Section';
-import { Container } from '../components/Container';
-import { Content } from '../components/Content';
-import { Navigation } from '../components/Navigation';
+import { Layout } from '~components/Layout'
+import { Logo } from "~components/Logo";
+import { Section } from '~components/Section';
+import { Container } from '~components/Container';
+import { Content } from '~components/Content';
 
 export default function Home({ posts }) {
   return (

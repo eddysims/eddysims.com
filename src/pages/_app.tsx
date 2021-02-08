@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { pageview } from '../lib/gtag'
+import { pageview } from '~lib/gtag'
 
 import '../styles/globals.css'
 
