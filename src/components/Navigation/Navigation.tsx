@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import styles from './Navigation.module.css';
+import styles from "./Navigation.module.css";
 
 export function Navigation() {
   return (
@@ -18,5 +18,5 @@ export function Navigation() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
