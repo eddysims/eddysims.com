@@ -31,7 +31,6 @@ export async function getStaticProps({ params }) {
 }
 
 function BlogPost({ post }) {
-  console.log(post);
   if (!post) {
     return <div>404</div>;
   }
