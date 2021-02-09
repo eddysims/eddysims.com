@@ -15,6 +15,13 @@
       "pre-commit": "lint-staged --concurrent false"
     }
   },
+  "lint-staged": {
+    "*.{ts,tsx}": ["bash -c 'npx tsc'"],
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:js", 
+      "jest --bail --findRelatedTests"
+    ]
+  },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@contentful/rich-text-types": "^14.1.2",
