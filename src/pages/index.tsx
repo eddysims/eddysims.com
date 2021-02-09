@@ -17,7 +17,7 @@ function Home() {
         <Section>
           <Container>
             <Content>
-              <Logo />
+              <Logo test />
             </Content>
             <h1>Eddy Sims</h1>
             <p className={styles.large}>#YEG based software/web developer</p>
