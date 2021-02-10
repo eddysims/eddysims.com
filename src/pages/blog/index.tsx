@@ -1,6 +1,8 @@
+import Head from "next/head";
 import Link from "next/link";
 import { Layout } from "~components/Layout";
 import { Container } from "~components/Container";
+import { Section } from "~components/Section";
 import { client } from "~lib/contentful";
 import { BlogPostType } from "~types/contentful.types";
 
@@ -11,29 +13,36 @@ interface BlogProps {
 function Blog({ posts }: BlogProps) {
   return (
     <>
+      <Head>
+        <title>Blog | Eddy Sims</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Layout>
-        <Container>
-          <h1>Blog</h1>
-          <p>
-            One of my goals in 2021 is to get better at writing. To do so I plan
-            to write blog articles about things front end development related.
-          </p>
+        <Section>
+          <Container>
+            <h1>Blog</h1>
+            <p>
+              One of my goals in 2021 is to get better at writing. To do so I
+              plan to write blog articles about things front end development
+              related.
+            </p>
 
-          <hr />
-          {posts.length > 0 ? (
-            <ul>
-              {posts.map((post) => (
-                <li key={post?.sys?.id}>
-                  <Link href={`/blog/${post?.fields?.slug}`} passHref>
-                    {post?.fields?.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            "No posts"
-          )}
-        </Container>
+            <hr />
+            {posts.length > 0 ? (
+              <ul>
+                {posts.map((post) => (
+                  <li key={post?.sys?.id}>
+                    <Link href={`/blog/${post?.fields?.slug}`} passHref>
+                      {post?.fields?.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              "There are currently no posts to show"
+            )}
+          </Container>
+        </Section>
       </Layout>
     </>
   );

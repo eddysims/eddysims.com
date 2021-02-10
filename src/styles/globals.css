@@ -38,7 +38,6 @@ body {
   font-size: var(--fontSize-base);
   line-height: 1.6;
   color: var(--color-grey);
-  height: 5000px;
 }
 
 a {

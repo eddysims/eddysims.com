@@ -10,14 +10,14 @@ function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Eddy Sims</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
         <Section>
           <Container>
             <Content>
-              <Logo test />
+              <Logo />
             </Content>
             <h1>Eddy Sims</h1>
             <p className={styles.large}>#YEG based software/web developer</p>
