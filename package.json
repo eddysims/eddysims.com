@@ -16,9 +16,11 @@
     }
   },
   "lint-staged": {
-    "*.{ts,tsx}": ["bash -c 'npx tsc'"],
+    "*.{ts,tsx}": [
+      "bash -c 'npx tsc'"
+    ],
     "*.{js,jsx,ts,tsx}": [
-      "npm run lint:js", 
+      "npm run lint:js",
       "jest --bail --findRelatedTests"
     ]
   },
@@ -27,6 +29,7 @@
     "@contentful/rich-text-types": "^14.1.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
+    "classnames": "^2.2.6",
     "contentful": "^8.1.7",
     "next": "10.0.5",
     "react": "17.0.1",

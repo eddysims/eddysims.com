@@ -8,7 +8,7 @@ class MainDoc extends Document {
           <link rel="icon" href="/favicon.ico" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Open+Sans&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&family=Open+Sans:wght@400;700&display=swap"
             rel="stylesheet"
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}

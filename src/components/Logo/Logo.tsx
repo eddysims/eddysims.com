@@ -1,8 +1,17 @@
-export const Logo = () => {
-  const height = 40;
+interface LogoProps {
+  readonly size?: "small" | "medium" | "large";
+}
+
+export const Logo = ({ size = "medium" }: LogoProps) => {
+  const height = {
+    small: 25,
+    medium: 40,
+    large: 65,
+  };
+
   return (
     <svg
-      height={height}
+      height={height[size]}
       viewBox="0 0 54 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

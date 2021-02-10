@@ -7,9 +7,17 @@
 }
 
 :root {
+  --fontSize-small: calc(var(--fontSize-base) * 0.78);
   --fontSize-base: 18px;
   --fontFamily-base: 'Open Sans', sans-serif;;
   --fontFamily-fancy: 'Noto Serif', serif;
+}
+
+:root {
+  --space-small: calc(var(--space-base) / 2);
+  --space-base: 16px;
+  --space-large: calc(var(--space-base) * 1.5);
+  --space-larger: calc(var(--space-base) * 2);
 }
 
 html {
@@ -30,6 +38,7 @@ body {
   font-size: var(--fontSize-base);
   line-height: 1.6;
   color: var(--color-grey);
+  height: 5000px;
 }
 
 a {
