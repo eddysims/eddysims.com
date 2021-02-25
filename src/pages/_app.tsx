@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { pageview } from "~lib/gtag";
 
+import "@pids/styles/styles.css";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
