@@ -32,6 +32,10 @@ Since the last update you have:
       messageSent:
         data.stats.followerCount !== user.stats.followerCount ||
         data.stats.heartCount !== user.stats.heartCount,
+      numbers: {
+        to: process.env.TWILIO_PERSONAL_NUMBER,
+        from: process.env.TWILIO_TWILIO_NUMBER,
+      },
     });
   } catch (error) {
     res.status(500).json({ error });
