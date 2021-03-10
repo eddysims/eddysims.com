@@ -2,25 +2,6 @@ import { updateTiktok, getTiktok } from "~lib/db";
 import { getTiktokUser } from "~lib/tiktok";
 import { client } from "~lib/twilio";
 
-// client.messages.create({
-//   to: "+17804981332",
-//   from: "+19044415262",
-//   body: `
-//     Since the last update you have:
-//     ✅ ${followersMessage(data.profile, user)}
-//     💚 ${likesMessage(data.profile, user)}
-//   `,
-// });
-
-// if (JSON.stringify(data.profile) !== JSON.stringify(user)) {
-//   await updateTiktok(user);
-//   client.messages.create({
-//     to: "+17804981332",
-//     from: "+19044415262",
-//     body: "Something happened 2",
-//   });
-// }
-
 export default async (req, res) => {
   try {
     const user = await getTiktokUser();
@@ -32,20 +13,26 @@ export default async (req, res) => {
     ) {
       await updateTiktok(user);
       client.messages.create({
-        to: "+17804981332",
-        from: "+19044415262",
+        to: process.env.TWILIO_PERSONAL_NUMBER,
+        from: process.env.TWILIO_TWILIO_NUMBER,
         body: `
------
-Since the last update you have:
-✅ ${followersMessage(data, user)}
-💚 ${likesMessage(data, user)}
-        `,
+
+    -----
+    Since the last update you have:
+
+    ✅ ${followersMessage(data, user)}
+
+    💚 ${likesMessage(data, user)}
+            `,
       });
     }
-    //   tiktok: user.stats.followerCount,
-    // });
 
-    res.status(200).json({ data });
+    res.status(200).json({
+      ...data,
+      messageSent:
+        data.stats.followerCount !== user.stats.followerCount ||
+        data.stats.heartCount !== user.stats.heartCount,
+    });
   } catch (error) {
     res.status(500).json({ error });
   }
