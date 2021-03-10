@@ -1,7 +1,11 @@
-name: 15-minute-cron
+name: run cron job
+
 on:
+  push:
+    branches: [master]
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "* * * * *"
+
 jobs:
   cron:
     runs-on: ubuntu-latest
@@ -9,4 +13,4 @@ jobs:
       - name: Call our API route
         run: |
           curl --request POST \
-          --url 'https://eddysims.com/api/tiktok' \
+          --url 'https://eddysims.com/api/tiktok'
