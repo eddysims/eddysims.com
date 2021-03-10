@@ -27,8 +27,8 @@
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@contentful/rich-text-types": "^14.1.2",
-    "@pids/components": "^0.3.0",
-    "@pids/styles": "^0.4.1",
+    "@pids/components": "^0.10.0",
+    "@pids/styles": "^0.5.2",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "classnames": "^2.2.6",

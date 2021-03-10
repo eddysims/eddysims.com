@@ -1,6 +1,8 @@
 import Head from "next/head";
 
 import { Heading } from "@pids/components/Heading";
+import { Text } from "@pids/components/Text";
+import { Container } from "@pids/components/Container";
 
 import styles from "../styles/Home.module.css";
 
@@ -12,17 +14,17 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.main}>
-        <div className={styles.container}>
+        <Container>
           <Heading as="h1">
             Eddy Sims<span className={styles.color}>.</span>
           </Heading>
-          <p className={styles.intro}>#YEG based software/web developer</p>
-          <p>
+          <Text size="large">#YEG based software/web developer</Text>
+          <Text>
             Web developer with over 15 years of experience. Currently helping to
             build Jobber and Atlantis. Looking to experiment here, and show off
             some of my personal work.
-          </p>
-        </div>
+          </Text>
+        </Container>
       </div>
     </>
   );

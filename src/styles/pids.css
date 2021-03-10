@@ -2,3 +2,12 @@
   --pids-colors--background: #1a1a1a;
   --pids-colors--text: #fafafa;
 }
+
+:root {
+  --pids-font-family--base: 'Open Sans', sans-serif;
+  --pids--font-family--display: 'Noto Serif TC', serif;
+}
+
+:root {
+  --pids--heading--font-size--as--h1: calc(var(--pids--font-size--base) * 2.625);
+}
