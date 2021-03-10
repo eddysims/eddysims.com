@@ -17,12 +17,12 @@ export default async (req, res) => {
         from: process.env.TWILIO_TWILIO_NUMBER,
         body: `
 
-    -----
-    Since the last update you have:
+-----
+Since the last update you have:
 
-    ✅ ${followersMessage(data, user)}
+✅ ${followersMessage(data, user)}
 
-    💚 ${likesMessage(data, user)}
+💚 ${likesMessage(data, user)}
             `,
       });
     }
