@@ -20,7 +20,7 @@ export const Logo = ({ size = "medium" }: LogoProps) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M8 40C3.57333 40 0 36.4267 0 32V8C0 3.57333 3.57333 0 8 0H9.33333V19.3067H19.36V20.64H9.33333V40H8ZM14.6667 25.0133L24 32C24 36.4267 20.4267 40 16 40H14.6667V25.0133Z"
-        fill="var(--color-primary)"
+        fill="red"
       />
       <path
         fillRule="evenodd"
@@ -32,7 +32,7 @@ export const Logo = ({ size = "medium" }: LogoProps) => {
         fillRule="evenodd"
         clipRule="evenodd"
         d="M38.4534 22.2933C37.7067 22.2933 37.0667 22.08 36.5334 21.5467L30.1334 15.0933C29.6 14.56 29.3334 13.92 29.3334 13.2267V8C29.3334 3.57333 32.9067 0 37.3334 0H38.6667V22.2933H38.4534ZM44.2134 17.7067C44.96 17.7067 45.6 17.92 46.1334 18.4533L52.5334 24.9067C53.0667 25.44 53.3334 26.08 53.3334 26.7733V32C53.3334 36.4267 49.76 40 45.3334 40H44V17.7067H44.2134Z"
-        fill="var(--color-primary)"
+        fill="red"
       />
       <path
         fillRule="evenodd"
