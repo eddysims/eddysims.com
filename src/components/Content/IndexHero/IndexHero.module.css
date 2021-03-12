@@ -1,0 +1,9 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-bottom: var(--pids--space--medium);
+}

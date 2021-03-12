@@ -1,0 +1,14 @@
+.projects {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 85vw;
+  background: var(--pids--color--primary);
+  padding: var(--pids--space--largest);
+  border-radius: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: var(--pids--space--large);
+}
