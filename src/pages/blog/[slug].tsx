@@ -2,8 +2,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { BLOCKS } from "@contentful/rich-text-types";
 import Image from "next/image";
 import { ContentfulCollection } from "contentful";
-import { Container } from "~components/Container";
-import { Layout } from "~components/Layout";
 import { client } from "~lib/contentful";
 import { BlogPostType } from "~types/contentful.types";
 
@@ -42,29 +40,27 @@ function BlogPost({ post }: BlogPostProps) {
   }
 
   return (
-    <Layout>
-      <Container>
-        <h1>{post?.fields?.title}</h1>
-        <div>
-          <p>
-            <strong>Published on:</strong> {post?.fields?.publishDate}
-          </p>
-        </div>
-        <div>
-          {documentToReactComponents(post?.fields?.content, {
-            renderNode: {
-              [BLOCKS.EMBEDDED_ASSET]: (node) => (
-                <Image
-                  src={`https:${node.data.target.fields.file.url}`}
-                  width={node.data.target.fields.file.details.image.width}
-                  height={node.data.target.fields.file.details.image.width}
-                />
-              ),
-            },
-          })}
-        </div>
-      </Container>
-    </Layout>
+    <>
+      <h1>{post?.fields?.title}</h1>
+      <div>
+        <p>
+          <strong>Published on:</strong> {post?.fields?.publishDate}
+        </p>
+      </div>
+      <div>
+        {documentToReactComponents(post?.fields?.content, {
+          renderNode: {
+            [BLOCKS.EMBEDDED_ASSET]: (node) => (
+              <Image
+                src={`https:${node.data.target.fields.file.url}`}
+                width={node.data.target.fields.file.details.image.width}
+                height={node.data.target.fields.file.details.image.width}
+              />
+            ),
+          },
+        })}
+      </div>
+    </>
   );
 }
 
