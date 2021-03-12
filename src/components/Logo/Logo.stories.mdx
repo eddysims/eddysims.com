@@ -1,13 +1,15 @@
 import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
 import { Logo } from ".";
 
-<Meta title="Components/Logo" component={Logo} />
-
-<ArgsTable component={Logo} />
+<Meta title="components/Logo" component={Logo} />
 
 # Logo
 
-Logo boi
+The logo that represents my brand.
+
+```ts
+import { Logo } from "~components/Logo";
+```
 
 <Canvas>
   <Story name="default">{(args) => <Logo {...args} />}</Story>

@@ -15,6 +15,7 @@ function Home() {
       </Head>
       <div className={styles.main}>
         <Container>
+          Logo
           <Heading as="h1">
             Eddy Sims<span className={styles.color}>.</span>
           </Heading>
