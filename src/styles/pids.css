@@ -1,13 +1,19 @@
 :root {
   --pids-colors--background: #1a1a1a;
   --pids-colors--text: #fafafa;
+
+  --pids--color--primary: #f87;
 }
 
 :root {
-  --pids-font-family--base: 'Open Sans', sans-serif;
-  --pids--font-family--display: 'Noto Serif TC', serif;
+  --pids-font-family--base: "Noto Sans KR", sans-serif;
+  --pids--font-family--display: "Noto Serif KR", serif;
+
+  --pids--font-size--base: 18px;
 }
 
 :root {
-  --pids--heading--font-size--as--h1: calc(var(--pids--font-size--base) * 2.625);
+  --pids--heading--font-size--as--h1: calc(
+    var(--pids--font-size--base) * 2.625
+  );
 }

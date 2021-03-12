@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&family=Open+Sans&display=swap');
-@import './pids.css';
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&family=Noto+Serif+KR:wght@300&display=swap");
+@import "./pids.css";
 
 html {
   box-sizing: border-box;
@@ -9,4 +9,18 @@ html *,
 html *::before,
 html *::after {
   box-sizing: inherit;
+}
+
+body {
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+a {
+  color: var(--pids--color--primary);
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
 }

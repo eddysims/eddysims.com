@@ -2,10 +2,8 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  border-top: 5px solid tomato;
 }
 
-.color {
-  color: tomato;
+.logo {
+  margin-bottom: var(--pids--space--medium);
 }
-

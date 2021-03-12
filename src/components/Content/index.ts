@@ -1,0 +1,1 @@
+export { IndexHero } from "./IndexHero";
