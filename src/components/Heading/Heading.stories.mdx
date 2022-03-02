@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Heading } from ".";
+
+<Meta title="components/Heading" component={Heading} />
+
+# Heading
+
+Headings are used as the titles of each major section of a page. Reserved for short, important text or numbers.
+
+## Usage
+
+```tsx
+import { Heading } from "@/components/Heading";
+```
+
+## Props
+
+<ArgsTable component={Heading} />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => (
+      <Heading {...args}>This is an {args.as ?? "h2"} heading</Heading>
+    )}
+  </Story>
+</Canvas>

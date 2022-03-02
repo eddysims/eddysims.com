@@ -1,4 +1,5 @@
 import { Layout } from "@/components/Layout";
+import { Heading } from "@/components/Heading";
 
 import styles from "./Home.module.css";
 
@@ -11,9 +12,9 @@ export function Home() {
           <Heart />
           {`}`}
         </div>
-        <h1 className={styles.h1}>
+        <Heading as="h1">
           Eddy Sims<span className={styles.heart}>.</span>
-        </h1>
+        </Heading>
         <p className={styles.p}>
           Front end developer with over 15 years of experience. Looking to
           experiment here, and show off some of my personal work.
