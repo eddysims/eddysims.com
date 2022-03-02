@@ -2,6 +2,7 @@ import { Layout } from "@/components/Layout";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Text } from "@/components/Text";
+import { TextAccent } from "@/components/TextAccent";
 import { Hero } from "@/components/Hero";
 
 import styles from "./Home.module.css";
@@ -17,7 +18,7 @@ export function Home() {
             {`}`}
           </div>
           <Heading as="h1">
-            Eddy Sims<span className={styles.heart}>.</span>
+            Eddy Sims<TextAccent>.</TextAccent>
           </Heading>
           <Text>
             Front end developer with over 15 years of experience. Looking to
@@ -30,5 +31,5 @@ export function Home() {
 }
 
 function Heart() {
-  return <span className={styles.heart}>♥️</span>;
+  return <TextAccent>♥️</TextAccent>;
 }
