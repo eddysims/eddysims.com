@@ -5,18 +5,14 @@ import { Text } from "@/components/Text";
 import { TextAccent } from "@/components/TextAccent";
 import { Hero } from "@/components/Hero";
 
-import styles from "./Home.module.css";
+import { HeartSpread } from "./components/HeartSpread";
 
 export function Home() {
   return (
     <Layout title="Eddy Sims | Front End Developer">
       <Hero>
         <Container size="small">
-          <div className={styles.spread}>
-            {`{...`}
-            <Heart />
-            {`}`}
-          </div>
+          <HeartSpread />
           <Heading as="h1">
             Eddy Sims<TextAccent>.</TextAccent>
           </Heading>
