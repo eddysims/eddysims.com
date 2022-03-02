@@ -8,7 +8,8 @@
     "lint": "next lint",
     "test": "jest --coverage",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate": "plop"
   },
   "dependencies": {
     "classnames": "^2.3.1",
@@ -36,6 +37,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-storybook": "^0.5.7",
     "jest": "^27.5.1",
+    "plop": "^3.0.5",
     "prettier": "^2.5.1",
     "storybook-css-modules-preset": "^1.1.1",
     "tsconfig-paths-webpack-plugin": "^3.5.2",

@@ -1,0 +1,28 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { {{properCase name}} } from ".";
+
+<Meta
+  title="components/{{properCase name}}"
+  component={ {{properCase name}} }
+  parameters={{{ storyParams 'viewMode: "docs",' }}}
+/>
+
+# {{properCase name}}
+
+A description
+
+## Usage
+
+```ts
+import { {{properCase name}} } from "@/components/{{properCase name}}";
+```
+
+## Props
+
+<ArgsTable of={ {{properCase name}} } />
+
+## Example
+
+<Canvas>
+  <Story name="Default">{(args) => <{{properCase name}} {...args} />}</Story>
+</Canvas>
