@@ -1,0 +1,15 @@
+:root {
+  --space--base: 16px;
+  --space--small: calc(var(--space--base) / 2);
+  --space--smaller: calc(var(--space--base) / 4);
+  --space--large: calc(var(--space--base) * 2);
+  --space--larger: calc(var(--space--base) * 3);
+  --space--largest: calc(var(--space--base) * 4);
+  --space--huge: calc(var(--space--base) * 5);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --space--base: 20px;
+  }
+}

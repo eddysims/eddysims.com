@@ -1,0 +1,32 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Container } from ".";
+
+<Meta title="layout/Container" component={Container} />
+
+# Container
+
+A `Container` is used to center content in the display on wide screens. It will determin the "content width" of the area of content that it is used for.
+
+## Usage
+
+```tsx
+import { Container } from "@/components/Container";
+```
+
+## Props
+
+<ArgsTable component={Container} />
+
+## Example
+
+<Canvas>
+  <Story name="Default">
+    {(args) => <Container {...args}>This container is nice and wide</Container>}
+  </Story>
+</Canvas>
+
+## Adding a `className`
+
+A `Container` is often used to layout content that needs to be responsive to the screensize. To accomodate this, we allow for a `className` prop to be passed in.
+
+**This technique (also called an escape hatch) should not be used for other components. This is a dangerous technique that can cause serious discrepancies in components.**

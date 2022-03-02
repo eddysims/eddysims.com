@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  max-width: var(--container--width);
+  margin: 0 auto;
+  padding: 0 var(--space--base);
+}
+
+.base {
+  --container--width: calc(var(--space--base) * 52);
+}
+
+.small {
+  --container--width: calc(var(--space--base) * 38);
+}
