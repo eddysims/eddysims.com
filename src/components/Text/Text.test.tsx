@@ -5,5 +5,7 @@ import { Text } from ".";
 afterEach(cleanup);
 
 it("", () => {
-  const { container } = render(<Text />);
+  const { getByText } = render(<Text>Foo</Text>);
+
+  expect(getByText("Foo")).toBeInstanceOf(HTMLParagraphElement);
 });
