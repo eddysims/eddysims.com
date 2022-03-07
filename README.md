@@ -1,6 +1,6 @@
 # EddySims.com
 
-This is my personal website. Its made in NextJs. The code is super ugly right now... Please don't judge me. I will be improving over time.
+This is my personal website. Its made in NextJs. The code is super ugly right now... Please don't judge me. I will be improving over time!
 
 ## Development Server
 
