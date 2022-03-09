@@ -25,7 +25,3 @@ export function Home() {
     </Layout>
   );
 }
-
-function Heart() {
-  return <TextAccent>♥️</TextAccent>;
-}
