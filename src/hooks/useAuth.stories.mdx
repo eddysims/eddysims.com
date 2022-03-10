@@ -1,0 +1,68 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+
+<Meta
+  title="hooks/useAuth"
+  parameters={{
+    viewMode: "docs",
+  }}
+/>
+
+# useAuth
+
+The `useAuth` hook is used to check user authentication throughout the application.
+
+## Usage
+
+```ts
+import { useAuth } from "@/hooks/useAuth";
+```
+
+## isLoggedIn
+
+To simply check if the user is logged in, use the `isLoggedIn` variable returned from the hook.
+
+```tsx
+import { useAuth } from "@/hooks/useAuth";
+
+function Component() {
+  const { isLoggedIn } = useAuth();
+
+  return <div>The user is {!isLoggedIn ? "not" : ""} logged in</div>;
+}
+```
+
+## Getting a user
+
+To get some user information, you can use the `user` object returned from the hook.
+
+```tsx
+import { useAuth } from "@/hooks/useAuth";
+
+function Component() {
+  const { user } = useAuth();
+
+  return <div>The users name is {user?.displayName}</div>;
+}
+```
+
+## Loading
+
+The `useAuth` hook contains a `loading` state that can be used to indicate that the application is currently getting information about the session.
+
+```tsx
+import { useAuth } from "@/hooks/useAuth";
+
+function Component() {
+  const { loading, user } = useAuth();
+
+  return (
+    <div>
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <div>The users name is {user?.displayName}</div>
+      )}
+    </div>
+  );
+}
+```
