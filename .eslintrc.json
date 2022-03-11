@@ -33,5 +33,5 @@
       }
     ]
   },
-  "ignorePatterns": ["**/*.css.d.ts", ".generators/**/*"]
+  "ignorePatterns": ["**/*.css.d.ts", "generators/**/*"]
 }
