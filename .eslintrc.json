@@ -1,4 +1,7 @@
 {
+  "eslint": [
+    "src"
+  ],
   "extends": [
     "plugin:storybook/recommended",
     "eslint:recommended",
