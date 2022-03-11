@@ -22,7 +22,7 @@ type useAuthParams = {
   onError?(): void;
 };
 
-export function useAuth({ onLogin, onLogout, onError }: useAuthParams) {
+export function useAuth({ onLogin, onLogout, onError }: useAuthParams = {}) {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<UserI | undefined>();
 

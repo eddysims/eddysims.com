@@ -1,6 +1,8 @@
 import { PropsWithChildren } from "react";
 import Head from "next/head";
 
+import { Header } from "@/components/Header";
+
 import styles from "./Layout.module.css";
 
 export interface LayoutProps {
@@ -20,6 +22,7 @@ export function Layout({
         {description && <meta name="description" content={description} />}
       </Head>
       <div className={styles.layout}>
+        <Header />
         <main className={styles.main}>{children}</main>
       </div>
     </>

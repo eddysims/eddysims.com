@@ -1,0 +1,29 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { HeaderLink } from ".";
+
+<Meta
+  title="layout/Header/HeaderLink"
+  component={ HeaderLink }
+  parameters={{
+    viewMode: "docs",
+  }}
+/>
+
+# HeaderLink
+
+
+## Usage
+
+```ts
+import { HeaderLink } from "@/components/HeaderLink";
+```
+
+## Props
+
+<ArgsTable of={ HeaderLink } />
+
+## Example
+
+<Canvas>
+  <Story name="Default" args={{ title: "Header Link" }}>{(args) => <HeaderLink {...args} />}</Story>
+</Canvas>
