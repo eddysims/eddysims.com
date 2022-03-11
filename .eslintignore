@@ -4,4 +4,4 @@
 
 # generator
 **/plopfile.js
-**/generators/**/*
+generators/**/*
