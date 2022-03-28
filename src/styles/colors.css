@@ -1,0 +1,29 @@
+:root {
+  /* -- Root colors -- */
+  --color--white--rgb: 251, 250, 248;
+  --color--white: rgb(var(--color--white--rgb));
+
+  --color--background--rgb: 250, 249, 245;
+  --color--background: rgb(var(--color--background--rgb));
+
+  --color--text--rgb: 84, 77, 77;
+  --color--text: rgb(var(--color--text--rgb));
+
+  /* -- Semantic colors --*/
+  --color--focus--rgb: 175, 165, 130;
+  --color--focus: rgb(var(--color--focus--rgb));
+
+  /* -- Status colors -- */
+
+  --color--success--rgb: 113, 192, 67;
+  --color--success: rgb(var(--color--success--rgb));
+
+  --color--success--dark--rgb: 65, 151, 72;
+  --color--success--dark: rgb(var(--color--success--dark--rgb));
+
+  --color--error--rgb: 216, 91, 91;
+  --color--error: rgb(var(--color--error--rgb));
+
+  --color--error--dark--rgb: 155, 65, 65;
+  --color--error--dark: rgb(var(--color--error--dark--rgb));
+}

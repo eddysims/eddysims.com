@@ -1,0 +1,55 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs/blocks";
+import { showToast, Toast } from ".";
+
+<Meta
+  title="components/Toast"
+  component={Toast}
+  parameters={{
+    viewMode: "docs",
+  }}
+/>
+
+# Toast
+
+**Toast is unique to other components in that it is not used in the traditional `<Toast />` way. It is instead called with a function `showToast` that will render a `Toast` to the DOM.**
+
+The `Toast` is used to show short term notifications within the app.
+
+## Usage
+
+```ts
+import { showToast } from "@/components/Toast";
+```
+
+```tsx
+function Component() {
+  return (
+    <button type="button" onClick={handleClick}>
+      Click Me
+    </button>
+  );
+
+  function handleClick() {
+    showToast({
+      message: "I've been clicked",
+    });
+  }
+}
+```
+
+## Props
+
+<ArgsTable of={Toast} />
+
+## Example
+
+<Canvas>
+  <Story name="Default" args={{ message: "I'm a toast" }}>
+    {(args) => {
+      return <button onClick={handleClick}>Click Me</button>;
+      function handleClick() {
+        showToast({ ...args });
+      }
+    }}
+  </Story>
+</Canvas>

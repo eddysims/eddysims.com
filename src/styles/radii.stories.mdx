@@ -1,0 +1,57 @@
+import { Meta } from "@storybook/addon-docs";
+import getCustomProperties from "../../scripts/getCustomProperties";
+
+<Meta
+  title="design/Radii"
+  parameters={{
+    viewMode: "docs",
+  }}
+/>
+
+# Radii
+
+We use a common set of `border-radius` properties called `radii`. This helps to keep consistency around how borders are rounded on all types of elements.
+
+Border radius should **not** be defined without creating a custom property for it.
+
+## Available Radii
+
+<Radii />
+
+export function Radii() {
+  const radii = getCustomProperties("--radius--");
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Value</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        {radii.map((radius) => (
+          <tr key={radius.key}>
+            <td>
+              <code>{radius.key}</code>
+            </td>
+            <td>
+              <code>{radius.value}</code>
+            </td>
+            <td>
+              <div
+                style={{
+                  background: "#eee",
+                  width: 75,
+                  height: 24,
+                  border: "1px solid #ccc",
+                  borderRadius: radius.value,
+                }}
+              />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
