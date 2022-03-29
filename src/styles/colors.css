@@ -6,7 +6,7 @@
   --color--background--rgb: 250, 249, 245;
   --color--background: rgb(var(--color--background--rgb));
 
-  --color--text--rgb: 84, 77, 77;
+  --color--text--rgb: 51, 51, 51;
   --color--text: rgb(var(--color--text--rgb));
 
   /* -- Semantic colors --*/
@@ -26,4 +26,7 @@
 
   --color--error--dark--rgb: 155, 65, 65;
   --color--error--dark: rgb(var(--color--error--dark--rgb));
+
+  --color--grey--lightest--rgb: 204, 204, 204;
+  --color--grey--lightest: rgb(var(--color--grey--lightest--rgb));
 }

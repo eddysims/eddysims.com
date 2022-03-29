@@ -12,7 +12,7 @@ export function Heading({
   as = "h2",
 }: PropsWithChildren<HeadingProps>) {
   const Element = as;
-  const className = classnames(styles.heading);
+  const className = classnames(styles.heading, styles[as]);
 
   return <Element className={className}>{children}</Element>;
 }

@@ -8,10 +8,15 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: 300;
-  background: #1a1a1a;
-  color: #fafafa;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, #e5e5f7 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  color: var(--color--text);
   line-height: 1.8;
+  min-height: 100vh;
 }
 
 a {
