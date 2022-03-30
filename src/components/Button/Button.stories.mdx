@@ -1,0 +1,73 @@
+import { Meta, Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Button } from ".";
+
+<Meta
+  title="components/Button"
+  component={Button}
+  parameters={{
+    viewMode: "docs",
+  }}
+/>
+
+# Button
+
+A description
+
+## Usage
+
+```ts
+import { Button } from "@/components/Button";
+```
+
+## Props
+
+<ArgsTable of={Button} />
+
+## Example
+
+<Canvas>
+  <Story
+    name="Default"
+    args={{
+      title: "I'm a button",
+      onClick: () => alert("You clicked me"),
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Default" />
+
+## With an Icon
+
+<Canvas>
+  <Story
+    name="With Icon"
+    args={{
+      title: "button text",
+      onClick: () => alert("clicked"),
+      icon: "Activity"
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="With Icon" />
+
+## Icon Button
+
+<Canvas>
+  <Story
+    name="Icon Button"
+    args={{
+      onClick: () => alert("clicked"),
+      icon: "Activity"
+    }}
+  >
+    {(args) => <Button {...args} />}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Icon Button" include={['icon', 'onClick']} />

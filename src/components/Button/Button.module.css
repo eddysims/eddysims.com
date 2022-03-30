@@ -1,0 +1,44 @@
+.button {
+  appearance: none;
+  border: none;
+  background: var(--color--white);
+  display: inline-flex;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.015rem;
+  cursor: pointer;
+  padding: 0;
+  height: 48px;
+  transition: background 300ms, color 300ms, border-color 300ms;
+}
+
+.button:hover {
+  background: #f85f5f;
+  color: white;
+  border-color: #f85f5f;
+}
+
+.icon {
+  padding: 0 12px 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon:only-child {
+  padding: 0;
+  width: 48px;
+}
+
+.text {
+  padding: 0 19px;
+}
+
+.icon + .text {
+  padding: 0 19px 0 0;
+}
