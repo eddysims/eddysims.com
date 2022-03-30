@@ -29,4 +29,6 @@
 
   --color--grey--lightest--rgb: 204, 204, 204;
   --color--grey--lightest: rgb(var(--color--grey--lightest--rgb));
+
+  --color--primary: #f85f5f;
 }

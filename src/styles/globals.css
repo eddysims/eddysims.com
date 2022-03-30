@@ -1,15 +1,16 @@
 @import './space.css';
 @import './radii.css';
 @import './colors.css';
+@import './typography.css';
+@import './transitions.css';
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-family--base);
   font-weight: 400;
-  font-size: 20px;
+  font-size: var(--font-size--base);
   background-color: #e5e5f7;
   background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, #e5e5f7 1px);
   background-size: 30px 30px;
@@ -26,4 +27,6 @@ a {
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

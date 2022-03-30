@@ -4,27 +4,29 @@
   background: var(--color--white);
   display: inline-flex;
   align-items: center;
-  border-radius: 100px;
-  border: 1px solid #333;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  font-weight: 900;
+  border-radius: var(--radius--round);
+  border: 1px solid var(--color--text);
+  font-family: var(--font-family--base);
+  font-size: var(--font-size--small);
+  font-weight: var(--font-weight--heavy);
   text-transform: uppercase;
-  letter-spacing: 0.015rem;
+  letter-spacing: var(--letter-spacing--base);
   cursor: pointer;
   padding: 0;
-  height: 48px;
-  transition: background 300ms, color 300ms, border-color 300ms;
+  height: var(--space--larger);
+  transition: background var(--transition--base), color var(--transition--base), border-color var(--transition--base);
 }
 
 .button:hover {
-  background: #f85f5f;
-  color: white;
-  border-color: #f85f5f;
+  background: var(--color--primary);
+  color: var(--color--white);
+  border-color: var(--color--primary);
 }
 
 .icon {
-  padding: 0 12px 0 24px;
+  --button--icon-padding: calc(var(--space--base) * 0.75);
+
+  padding: 0 var(--button--icon-padding) 0 calc(var(--button--icon-padding) * 2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,13 +34,15 @@
 
 .icon:only-child {
   padding: 0;
-  width: 48px;
+  width: var(--space--larger);
 }
 
 .text {
-  padding: 0 19px;
+  --button--text-padding: calc(var(--space--base) * 1.1875);
+
+  padding: 0 var(--button--text-padding);
 }
 
 .icon + .text {
-  padding: 0 19px 0 0;
+  padding: 0 var(--button--text-padding) 0 0;
 }
