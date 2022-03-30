@@ -53,6 +53,7 @@ export function useAuth({ onLogin, onLogout, onError }: useAuthParams = {}) {
         .catch((error) => {
           const { code } = error;
 
+          console.log("error");
           if (
             code === AuthErrorCodes.POPUP_CLOSED_BY_USER ||
             code === AuthErrorCodes.EXPIRED_POPUP_REQUEST
