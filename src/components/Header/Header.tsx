@@ -1,6 +1,7 @@
 import { HeaderLink } from "./components/HeaderLink";
 import { Container } from "@/components/Container";
 import { showToast } from "@/components/Toast";
+import { Button } from "@/components/Button";
 import { useRouter } from "next/router";
 
 import { useAuth } from "@/hooks/useAuth";
@@ -25,12 +26,13 @@ export function Header() {
     onLogout,
   });
 
-  const buttonTitle = `Log${user ? "out" : "in"}`;
-
   return (
     <div className={styles.header}>
       <Container className={styles.container}>
-        <HeaderLink title={buttonTitle} onClick={user ? logout : login} />
+        <Button
+          icon={user ? "LogOut" : "GitHub"}
+          onClick={user ? logout : login}
+        />
       </Container>
     </div>
   );
