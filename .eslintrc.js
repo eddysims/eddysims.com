@@ -2,6 +2,7 @@ module.exports = {
   extends: [
     "plugin:storybook/recommended",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "next/core-web-vitals",
   ],
@@ -29,6 +30,8 @@ module.exports = {
         next: ["const", "let", "var"],
       },
     ],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error",
   },
   ignorePatterns: ["**/*.css.d.ts", "./generators/components/**/*"],
 };
