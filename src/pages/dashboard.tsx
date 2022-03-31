@@ -1,12 +1,8 @@
 import type { NextPage } from "next";
 import { Dashboard } from "../templates/Dashboard";
 
-const HomePage: NextPage = () => {
-  return (
-    <div>
-      <Dashboard />
-    </div>
-  );
+const DashboardPage: NextPage = () => {
+  return <Dashboard />;
 };
 
-export default HomePage;
+export default DashboardPage;
