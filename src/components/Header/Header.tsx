@@ -1,4 +1,3 @@
-import { HeaderLink } from "./components/HeaderLink";
 import { Container } from "@/components/Container";
 import { showToast } from "@/components/Toast";
 import { Button } from "@/components/Button";
