@@ -3,10 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: var(--space--base) 0;
-}
-
-.container {
   display: flex;
   justify-content: flex-end;
+  padding: var(--space--small) var(--space--base);
 }
