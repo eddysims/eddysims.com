@@ -3,7 +3,7 @@ import { Text } from ".";
 
 <Meta
   title="components/Text"
-  component={ Text }
+  component={Text}
   parameters={{
     viewMode: "docs",
   }}
@@ -21,10 +21,26 @@ import { Text } from "@/components/Text";
 
 ## Props
 
-<ArgsTable of={ Text } />
+<ArgsTable of={Text} />
 
 ## Example
 
 <Canvas>
-  <Story name="Default">{(args) => <Text {...args}>Foo</Text>}</Story>
+  <Story name="Default">
+    {(args) => <Text {...args}>This is some text content.</Text>}
+  </Story>
 </Canvas>
+
+<ArgsTable story="Default" />
+
+## Small Text
+
+The `Text` component can be used with small text as well.
+
+<Canvas>
+  <Story name="Small Text" args={{ size: "small" }}>
+    {(args) => <Text {...args}>This is some small text content.</Text>}
+  </Story>
+</Canvas>
+
+<ArgsTable story="Small Text" />

@@ -9,14 +9,10 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--font-family--base);
-  font-weight: 400;
-  font-size: var(--font-size--base);
   background-color: #e5e5f7;
   background-image: radial-gradient(#ccc 1px, transparent 1px), radial-gradient(#ccc 1px, #e5e5f7 1px);
   background-size: 30px 30px;
   background-position: 0 0, 15px 15px;
-  color: var(--color--text);
-  line-height: 1.8;
   min-height: 100vh;
 }
 

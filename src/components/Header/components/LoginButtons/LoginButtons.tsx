@@ -1,9 +1,12 @@
 import { useRouter } from "next/router";
 
 import { Button } from "@/components/Button";
+import { Text } from "@/components/Text";
 import { showToast } from "@/components/Toast";
 
 import { useAuth } from "@/hooks/useAuth";
+
+import styles from "./LoginButtons.module.css";
 
 export function LoginButtons() {
   const { push } = useRouter();
@@ -24,6 +27,14 @@ export function LoginButtons() {
   });
 
   return (
-    <Button icon={user ? "LogOut" : "GitHub"} onClick={user ? logout : login} />
+    <div className={styles.wrapper}>
+      <Text size="small" weight="bold">
+        {user ? "Logout" : "Login with Github"}
+      </Text>
+      <Button
+        icon={user ? "LogOut" : "GitHub"}
+        onClick={user ? logout : login}
+      />
+    </div>
   );
 }
