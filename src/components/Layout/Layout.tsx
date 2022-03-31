@@ -6,12 +6,12 @@ import { Header } from "@/components/Header";
 import styles from "./Layout.module.css";
 
 export interface LayoutProps {
-  readonly title: string;
+  readonly title?: string;
   readonly description?: string;
 }
 
 export function Layout({
-  title,
+  title = "Eddy Sims | Front End Developer",
   description,
   children,
 }: PropsWithChildren<LayoutProps>) {
