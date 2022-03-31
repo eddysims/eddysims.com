@@ -5,5 +5,5 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  padding: var(--space--small) var(--space--base);
+  padding: var(--space--small) var(--space--large);
 }

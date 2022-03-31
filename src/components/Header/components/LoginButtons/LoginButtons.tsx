@@ -34,6 +34,7 @@ export function LoginButtons() {
       <Button
         icon={user ? "LogOut" : "GitHub"}
         onClick={user ? logout : login}
+        size="small"
       />
     </div>
   );

@@ -28,3 +28,16 @@ it("fires the onClick event when clicked", () => {
   expect(clickHandler).toHaveBeenCalled();
   expect(clickHandler).toHaveBeenCalledTimes(1);
 });
+
+it("sets the classname for size", () => {
+  render(<Button onClick={jest.fn} size="small" title="Foo" />);
+  const button = screen.getByRole("button");
+
+  expect(button.classList).toContain("small");
+});
+
+it("sets the icon to small when small is set", () => {
+  render(<Button onClick={jest.fn} icon="Activity" />);
+
+  expect(screen.getByTestId("icon-Activity")).toHaveAttribute("height", "20");
+});
