@@ -1,8 +1,6 @@
 import { PropsWithChildren } from "react";
-import { Layout } from "@/components/Layout";
-import { Text } from "@/components/Text";
-import { Hero } from "@/components/Hero";
-import { Container } from "@/components/Container";
+import { LayoutCentered } from "@/components/LayoutCentered";
+import { Heading } from "@/components/Heading";
 
 type PrivatePageProps = {
   readonly visible: boolean;
@@ -14,13 +12,9 @@ export function PrivatePage({
 }: PropsWithChildren<PrivatePageProps>) {
   if (!visible) {
     return (
-      <Layout title="Access Denied">
-        <Hero>
-          <Container size="small">
-            <Text>🙅 Sorry. You are not allowed to view this page </Text>
-          </Container>
-        </Hero>
-      </Layout>
+      <LayoutCentered title="Access Denied">
+        <Heading>🙅 Sorry. You are not allowed to view this page </Heading>
+      </LayoutCentered>
     );
   }
 
