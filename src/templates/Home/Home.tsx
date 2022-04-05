@@ -1,7 +1,7 @@
 import { LayoutCentered } from "@/components/LayoutCentered";
 import { Container } from "@/components/Container";
 import { Text } from "@/components/Text";
-import { TextAccent } from "@/components/TextAccent";
+import { HeadingName } from "./components/HeadingName";
 
 import styles from "./Home.module.css";
 
@@ -9,16 +9,7 @@ export function Home() {
   return (
     <LayoutCentered>
       <Container className={styles.content}>
-        <h1
-          style={{
-            margin: 0,
-            fontSize: "8vw",
-            fontWeight: 700,
-            textTransform: "full-size-kana",
-          }}
-        >
-          Eddy Sims<TextAccent>.</TextAccent>
-        </h1>
+        <HeadingName />
       </Container>
       <Container size="small" className={styles.content}>
         <Text>

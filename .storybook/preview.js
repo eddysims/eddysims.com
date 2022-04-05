@@ -10,6 +10,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  // options: {
+  //   theme: "#f00"
+  // },
   nextRouter: {
     Provider: RouterContext.Provider,
   },

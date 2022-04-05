@@ -1,5 +1,6 @@
 .heading {
   font-weight: 900;
+  color: inherit;
 }
 
 .h1 {

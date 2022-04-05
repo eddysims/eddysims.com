@@ -14,12 +14,12 @@
   cursor: pointer;
   padding: 0;
   height: var(--button--size);
-  transition: background var(--transition--base), color var(--transition--base), box-shadow var(--transition--base);
+  color: var(--color--text);
+  transition: background var(--transition--base), box-shadow var(--transition--base);
 }
 
 .button:hover {
   background: var(--color--primary);
-  color: var(--color--white);
   box-shadow: 0 0 0 2px var(--color--primary);
 }
 
