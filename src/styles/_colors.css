@@ -1,0 +1,9 @@
+:root {
+  --color--surface: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color--surface: #222;
+  }
+}

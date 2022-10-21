@@ -1,0 +1,5 @@
+:root {
+  --space--base: 16px;
+  --space--large: calc(var(--space--base) * 1.5);
+  --space--largest: calc(var(--space--base) * 4);
+}

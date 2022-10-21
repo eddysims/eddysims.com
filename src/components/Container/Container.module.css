@@ -1,0 +1,14 @@
+.container {
+  width: 100%;
+  padding-right: var(--space--base);
+  padding-left: var(--space--base);
+  max-width: calc(var(--space--base) * 45);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-right: var(--space--large);
+    padding-left: var(--space--large);
+  }
+}
