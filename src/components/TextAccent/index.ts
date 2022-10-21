@@ -1,1 +1,0 @@
-export { TextAccent } from "./TextAccent";

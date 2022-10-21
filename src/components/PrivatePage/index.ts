@@ -1,1 +1,0 @@
-export { PrivatePage } from "./PrivatePage";
