@@ -8,7 +8,7 @@
 
 @media (min-width: 768px) {
   .container {
-    padding-right: var(--space--large);
-    padding-left: var(--space--large);
+    padding-right: var(--space--largest);
+    padding-left: var(--space--largest);
   }
 }

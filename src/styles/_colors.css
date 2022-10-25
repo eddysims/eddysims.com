@@ -1,9 +1,33 @@
 :root {
-  --color--surface: #fafafa;
+  --color--surface: #eaeaea;
+
+  --color--border: #ddd;
+
+
+
+  /**
+   * Random colors
+   */
+  --color--random--1: #519872;
+  --color--random--2: #EF6351;
+  --color--random--3: #A690A4;
+  --color--random--4: #B1B695;
+  --color--random--5: #CC5A71;
+  --color--random--6: #8C7AA9;
+  --color--random--7: #7192BE;
+  --color--random--8: #0C7489;
+  --color--random--9: #FC7A57;
+  --color--random--10: #9893DA;
+
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --color--surface: #222;
+
+    --color--border: #1c1c1c;
+
+    --color--random--2: #F9DB6D;
+    --color--random--8: #F4D35E;
   }
 }
