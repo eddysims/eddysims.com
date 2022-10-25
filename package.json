@@ -2,6 +2,14 @@
   "name": "eddysims.com",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=16.16.0",
+    "npm": ">=8.11.0"
+  },
+  "volta": {
+    "node": "16.17.1",
+    "npm": "8.19.2"
+  },
   "scripts": {
     "dev": "next dev -p 1234",
     "build": "next build",
