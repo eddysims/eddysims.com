@@ -1,9 +1,0 @@
-:root {
-  --space--base: 18px;
-
-  --space--small: calc(var(--space--base) * 0.5);
-
-  --space--large: calc(var(--space--base) * 1.5);
-  --space--larger: calc(var(--space--base) * 2.75);
-  --space--largest: calc(var(--space--base) * 4);
-}
