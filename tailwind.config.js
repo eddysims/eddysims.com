@@ -1,3 +1,7 @@
+const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
+
+const baseSpacing = spacing['5'];
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,13 +10,34 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+    colors: {
+      primary: '#ef412d',
+    },
+    spacing: {
+      md: baseSpacing,
+      lg: spacing['10'],
+    },
+    fontFamily: {
+      base: ['var(--raleway-font)', ...fontFamily.sans],
     },
   },
-  plugins: [],
+  corePlugins: {
+    container: false
+  },
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          paddingLeft: baseSpacing,
+          paddingRight: baseSpacing,
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          '@screen sm': {
+            maxWidth: '1000px',
+          },
+        }
+      })
+    }
+  ]
 }

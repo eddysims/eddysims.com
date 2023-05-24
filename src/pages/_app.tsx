@@ -1,6 +1,26 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { Raleway } from "next/font/google";
+import { AppProps } from "next/app";
+
+const raleway = Raleway({
+  weight: ['200', '400'],
+  subsets: ["latin"],
+});
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <style jsx global>
+        {`
+          :root {
+            --raleway-font: ${raleway.style.fontFamily};
+          }
+        `}
+      </style>
+      <Component {...pageProps} />;
+    </>
+  );
 }
+
+export default MyApp;
