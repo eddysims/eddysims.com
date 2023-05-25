@@ -1,10 +1,10 @@
 import "@/styles/globals.css";
 
-import { Raleway } from "next/font/google";
 import { AppProps } from "next/app";
+import { Raleway } from "next/font/google";
 
 const raleway = Raleway({
-  weight: ['200', '400'],
+  weight: ["200", "400"],
   subsets: ["latin"],
 });
 

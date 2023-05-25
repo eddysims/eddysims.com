@@ -1,6 +1,6 @@
-import { icons } from "./icons";
 import { spacing } from "tailwindcss/defaultTheme";
 
+import { icons } from "./icons";
 
 export type IconNames = keyof typeof icons;
 
@@ -12,10 +12,10 @@ interface IconProps {
 
 export function Icon({ name, fill, size = "base" }: IconProps) {
   const sizes = {
-    small: spacing['4'],
-    base: spacing['5'],
-    large: spacing['6'],
-    larger: spacing['7'],
+    small: spacing["4"],
+    base: spacing["5"],
+    large: spacing["6"],
+    larger: spacing["7"],
     auto: "auto",
   };
 

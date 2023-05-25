@@ -28,7 +28,9 @@ export default function Home() {
             </ul>
           </nav>
           <div className="flex-1 flex flex-col justify-center -mt-lg">
-            <div className="text-6xl md:text-8xl lowercase font-extralight">Eddy Sims</div>
+            <div className="text-6xl md:text-8xl lowercase font-extralight">
+              Eddy Sims
+            </div>
             <div className="mt-md text-lg md:text-xl">
               Edmonton based software developer with over 15 years of
               experience. Currently for hire. Looking to show off some work,
