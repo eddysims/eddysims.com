@@ -5,9 +5,9 @@
   },
   "eslint.enable": true,
   "workbench.colorCustomizations": {
-    "statusBar.background": "#70E34A",
-    "statusBarItem.hoverBackground": "#35d500",
-    "statusBar.foreground": "#000"
+    "statusBar.background": "#A3160A",
+    "statusBarItem.hoverBackground": "#7b1107",
+    "statusBar.foreground": "#F2EDE7"
   },
   "css.validate": false,
   "less.validate": false,
