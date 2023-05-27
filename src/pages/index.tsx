@@ -1,10 +1,10 @@
 // import { Icon } from "@/components/shared/Icon";
 import { Container } from "@/components/shared/Container";
-import { Layout } from "@/components/shared/Layout";
+import { LayoutCentered } from "@/components/shared/LayoutCentered";
 
 export default function Home() {
   return (
-    <Layout>
+    <LayoutCentered>
       <Container>Content</Container>
       <main>
         {/* <nav>
@@ -33,6 +33,6 @@ export default function Home() {
         experience. Currently for hire. Looking to show off some work,
         experiment, and share my learnings. */}
       </main>
-    </Layout>
+    </LayoutCentered>
   );
 }

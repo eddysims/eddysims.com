@@ -26,6 +26,7 @@ module.exports = {
     function ({ addComponents }) {
       addComponents({
         ".container": {
+          width: "100%",
           maxWidth: "100%",
           paddingLeft: baseSpacing,
           paddingRight: baseSpacing,

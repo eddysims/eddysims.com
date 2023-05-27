@@ -20,9 +20,9 @@ export function Layout({
         {description && <meta name="description" content={description} />}
       </NextHead>
 
-      <div className="max-w-7xl mx-auto bg-surface min-h-screen">
+      <div className="max-w-7xl mx-auto bg-surface min-h-screen flex flex-col">
         <MainNavigation />
-        <main>{children}</main>
+        <main className="flex-1 flex flex-col">{children}</main>
       </div>
     </>
   );
