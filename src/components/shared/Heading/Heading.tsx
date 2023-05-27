@@ -14,7 +14,8 @@ export function Heading({
   return (
     <Element
       className={clsx({
-        "text-6xl lg:text-8xl font-extralight lowercase": as === "h1",
+        "text-6xl md:text-7xl lg:text-8xl font-extralight lowercase":
+          as === "h1",
       })}
     >
       {children}

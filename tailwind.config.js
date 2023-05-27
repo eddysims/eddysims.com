@@ -13,6 +13,7 @@ module.exports = {
     extend: {
       colors: {
         surface: "#f2ede7",
+        primary: "#a3160a",
       },
       fontFamily: {
         base: ["var(--raleway-font)", ...fontFamily.sans],
