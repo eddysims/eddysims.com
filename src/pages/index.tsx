@@ -1,9 +1,11 @@
-import { Icon } from "@/components/shared/Icon";
+// import { Icon } from "@/components/shared/Icon";
+import { Container } from "@/components/shared/Container";
 import { Layout } from "@/components/shared/Layout";
 
 export default function Home() {
   return (
     <Layout>
+      <Container>Navigation</Container>
       <main>
         {/* <nav>
           <ul className="flex justify-end gap-lg py-lg">
