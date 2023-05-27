@@ -1,6 +1,8 @@
 import NextHead from "next/head";
 import { PropsWithChildren } from "react";
 
+import { MainNavigation } from "../MainNavigation";
+
 export interface LayoutProps {
   readonly title?: string;
   readonly description?: string;
@@ -19,6 +21,7 @@ export function Layout({
       </NextHead>
 
       <div className="max-w-7xl mx-auto bg-surface min-h-screen">
+        <MainNavigation />
         <main>{children}</main>
       </div>
     </>

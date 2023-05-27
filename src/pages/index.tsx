@@ -5,7 +5,7 @@ import { Layout } from "@/components/shared/Layout";
 export default function Home() {
   return (
     <Layout>
-      <Container>Navigation</Container>
+      <Container>Content</Container>
       <main>
         {/* <nav>
           <ul className="flex justify-end gap-lg py-lg">
