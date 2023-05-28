@@ -7,7 +7,7 @@ export type IconNames = keyof typeof icons;
 interface IconProps {
   readonly name: IconNames;
   readonly fill?: boolean;
-  readonly size?: "base" | "small" | "large" | "larger" | "auto";
+  readonly size?: "base" | "small" | "large" | "larger" | "obnoxious" | "auto";
 }
 
 export function Icon({ name, fill, size = "base" }: IconProps) {
@@ -16,6 +16,8 @@ export function Icon({ name, fill, size = "base" }: IconProps) {
     base: spacing["5"],
     large: spacing["6"],
     larger: spacing["7"],
+    obnoxious: spacing["20"],
+
     auto: "auto",
   };
 
