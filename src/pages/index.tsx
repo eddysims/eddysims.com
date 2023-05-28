@@ -1,3 +1,4 @@
+import { Button } from "@/components/shared/Button";
 import { Container } from "@/components/shared/Container";
 import { Column, Grid } from "@/components/shared/Grid";
 import { Heading } from "@/components/shared/Heading";
@@ -16,6 +17,12 @@ export default function Home() {
                 experience. Currently for hire. Looking to show off some work,
                 experiment, and share my learnings.
               </p>
+              <div>
+                <Button
+                  label="Let's Chat"
+                  href="mailto:eddysimsweb@gmail.com"
+                />
+              </div>
             </div>
           </Column>
         </Grid>
