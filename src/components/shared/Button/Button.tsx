@@ -5,7 +5,7 @@ import { ButtonProps } from "./Button.types";
 
 export function Button({ label, href, external, onClick }: ButtonProps) {
   const buttonStyles = clsx(
-    "relative px-8 h-10 text-primary font-black uppercase rounded border-2 border-primary inline-flex items-center tracking-wider text-sm hover:text-white hover:bg-primary"
+    "relative px-8 h-10 text-primary font-black uppercase rounded border-2 border-primary inline-flex items-center tracking-wider hover:text-white hover:bg-primary"
   );
 
   const buttonProps = {

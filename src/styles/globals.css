@@ -16,4 +16,5 @@
 body {
   background: white;
   color: #272727;
+  font-family: var(--raleway-font)
 }
