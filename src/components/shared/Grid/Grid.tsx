@@ -6,15 +6,30 @@ import { ResponsiveProp } from "@/types";
 
 type GridProps = {
   columns?: ResponsiveProp<1 | 2 | 3 | 4 | 5 | 6>;
+  gap?: ResponsiveProp<"sm" | "md" | "lg" | "xl">;
 };
 
 export function Grid({
   columns = { mobile: 1, desktop: 6 },
+  gap = { mobile: "md", desktop: "lg" },
   children,
 }: PropsWithChildren<GridProps>) {
   const cols = normalizeResponsiveProp(columns);
+  const normalizedGap = normalizeResponsiveProp(gap);
   const gridStyles = clsx(
-    "grid gap-3 lg:gap-8",
+    "grid",
+    {
+      "gap-3": normalizedGap?.mobile === "sm",
+      "gap-5": normalizedGap?.mobile === "md",
+      "gap-8": normalizedGap?.mobile === "lg",
+      "gap-10": normalizedGap?.mobile === "xl",
+    },
+    {
+      "lg:gap-3": normalizedGap?.desktop === "sm",
+      "lg:gap-5": normalizedGap?.desktop === "md",
+      "lg:gap-8": normalizedGap?.desktop === "lg",
+      "lg:gap-10": normalizedGap?.desktop === "xl",
+    },
     {
       "grid-cols-1": cols.mobile === 1,
       "grid-cols-2": cols.mobile === 2,
