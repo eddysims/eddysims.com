@@ -31,20 +31,20 @@ export function Grid({
       "lg:gap-10": normalizedGap?.desktop === "xl",
     },
     {
-      "grid-cols-1": cols.mobile === 1,
-      "grid-cols-2": cols.mobile === 2,
-      "grid-cols-3": cols.mobile === 3,
-      "grid-cols-4": cols.mobile === 4,
-      "grid-cols-5": cols.mobile === 5,
-      "grid-cols-6": cols.mobile === 6,
+      "grid-cols-1": cols?.mobile === 1,
+      "grid-cols-2": cols?.mobile === 2,
+      "grid-cols-3": cols?.mobile === 3,
+      "grid-cols-4": cols?.mobile === 4,
+      "grid-cols-5": cols?.mobile === 5,
+      "grid-cols-6": cols?.mobile === 6,
     },
     {
-      "lg:grid-cols-1": cols.desktop === 1,
-      "lg:grid-cols-2": cols.desktop === 2,
-      "lg:grid-cols-3": cols.desktop === 3,
-      "lg:grid-cols-4": cols.desktop === 4,
-      "lg:grid-cols-5": cols.desktop === 5,
-      "lg:grid-cols-6": cols.desktop === 6,
+      "lg:grid-cols-1": cols?.desktop === 1,
+      "lg:grid-cols-2": cols?.desktop === 2,
+      "lg:grid-cols-3": cols?.desktop === 3,
+      "lg:grid-cols-4": cols?.desktop === 4,
+      "lg:grid-cols-5": cols?.desktop === 5,
+      "lg:grid-cols-6": cols?.desktop === 6,
     }
   );
 

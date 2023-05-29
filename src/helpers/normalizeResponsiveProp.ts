@@ -2,7 +2,7 @@ import { NormalizedResponsiveProp, ResponsiveProp } from "@/types";
 
 export function normalizeResponsiveProp<T extends boolean | string | number>(
   prop?: ResponsiveProp<T>
-): NormalizedResponsiveProp<T> {
+): NormalizedResponsiveProp<T> | undefined {
   if (!prop) return undefined;
 
   if (typeof prop === "object") {
