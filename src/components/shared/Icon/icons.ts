@@ -17,4 +17,9 @@ export const icons = {
       (mod) => mod.RiCodeSSlashLine
     )
   ),
+  arrowBack: dynamic<IconContext>(() =>
+    import("@react-icons/all-files/ri/RiArrowGoBackLine").then(
+      (mod) => mod.RiArrowGoBackLine
+    )
+  ),
 };

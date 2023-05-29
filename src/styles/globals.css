@@ -2,7 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+::selection {
+  background: #a3160a;
+  color: #f2ede7;
+}
+
+::-moz-selection {
+  background: #a3160a;
+  color: #f2ede7;
+}
+
 
 body {
-  color: #212529;
+  background: white;
+  color: #272727;
+  font-family: var(--raleway-font)
 }
