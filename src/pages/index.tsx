@@ -7,7 +7,7 @@ import { LayoutCentered } from "@/components/shared/LayoutCentered";
 export default function Home() {
   return (
     <LayoutCentered>
-      <Container>
+      <Container className="pt-10 pb-14">
         <Grid columns={{ mobile: 1, desktop: 2 }} gap="xl">
           <Column order={{ mobile: 2, desktop: 1 }} verticalAlign="center">
             <HeroContent />
