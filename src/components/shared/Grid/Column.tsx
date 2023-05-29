@@ -6,9 +6,14 @@ import { ResponsiveProp } from "@/types";
 
 type ColumnProps = {
   order?: ResponsiveProp<1 | 2>;
+  verticalAlign?: "start" | "center" | "end";
 };
 
-export function Column({ order, children }: PropsWithChildren<ColumnProps>) {
+export function Column({
+  order,
+  verticalAlign,
+  children,
+}: PropsWithChildren<ColumnProps>) {
   const normalizedOrder = normalizeResponsiveProp(order);
   const columnStyle = clsx(
     {
@@ -18,6 +23,12 @@ export function Column({ order, children }: PropsWithChildren<ColumnProps>) {
     {
       "lg:order-1": normalizedOrder?.desktop === 1,
       "lg:order-2": normalizedOrder?.desktop === 2,
+    },
+    {
+      grid: Boolean(verticalAlign),
+      "items-start": verticalAlign === "start",
+      "items-center": verticalAlign === "center",
+      "items-end": verticalAlign === "end",
     }
   );
 

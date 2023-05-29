@@ -9,7 +9,7 @@ export default function Home() {
     <LayoutCentered>
       <Container>
         <Grid columns={{ mobile: 1, desktop: 2 }} gap="xl">
-          <Column order={{ mobile: 2, desktop: 1 }}>
+          <Column order={{ mobile: 2, desktop: 1 }} verticalAlign="center">
             <HeroContent />
           </Column>
           <Column order={{ mobile: 1, desktop: 2 }}>

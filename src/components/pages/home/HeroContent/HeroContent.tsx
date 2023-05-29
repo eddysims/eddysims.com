@@ -5,7 +5,7 @@ import { Svg } from "@/components/svg";
 
 export function HeroContent() {
   return (
-    <div className="grid gap-5 lg:gap-10 text-center lg:text-left items-center order-2">
+    <div className="grid gap-5 lg:gap-10 text-center lg:text-left max-w-lg mx-auto lg:max-w-full items-center order-2">
       <Heading as="h1">Eddy Sims</Heading>
       <div className="flex gap-8">
         <div className="-mt-3 hidden lg:block">
