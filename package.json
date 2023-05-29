@@ -9,7 +9,7 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit --incremental false",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build -o /storybook-static"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
