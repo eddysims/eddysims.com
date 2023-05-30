@@ -1,6 +1,12 @@
 import { Placement } from "@popperjs/core";
 import clsx from "clsx";
-import { useRef, useState, PropsWithChildren } from "react";
+import {
+  useRef,
+  useState,
+  PropsWithChildren,
+  useId,
+  KeyboardEvent,
+} from "react";
 import { usePopper } from "react-popper";
 
 type TooltipProps = {
@@ -13,6 +19,7 @@ export function Tooltip({
   message,
   placement = "top",
 }: PropsWithChildren<TooltipProps>) {
+  const id = useId();
   const [open, setOpen] = useState<boolean>();
   const [reference, setReference] = useState<HTMLDivElement | null>();
   const [popperEl, setPopperEl] = useState<HTMLDivElement | null>();
@@ -37,13 +44,24 @@ export function Tooltip({
     leaveTimeout.current = setTimeout(() => setOpen(false), leaveDelay);
   };
 
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (event.code === "Escape") {
+      handleMouseLeave();
+    }
+  };
+
   return (
     <>
       <div
         ref={setReference}
         onMouseEnter={handleMouseEnter}
+        onFocus={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onBlur={handleMouseLeave}
+        onKeyDown={handleKeyDown}
         className="relative cursor-help"
+        id={id}
+        tabIndex={0}
       >
         {children}
       </div>
@@ -53,6 +71,9 @@ export function Tooltip({
         ref={setPopperEl}
         style={styles.popper}
         className={toolTipClass(open, state?.placement)}
+        role="tooltip"
+        aria-describedby={id}
+        tabIndex={-1}
       >
         {message}
       </div>
