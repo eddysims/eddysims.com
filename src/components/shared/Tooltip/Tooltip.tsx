@@ -26,7 +26,7 @@ export function Tooltip({
 
   const { styles, attributes, state } = usePopper(reference, popperEl, {
     placement,
-    modifiers: [{ name: "offset", options: { offset: [0, 8] } }],
+    modifiers: [{ name: "offset", options: { offset: [0, 12] } }],
   });
 
   const enterTimeout = useRef<NodeJS.Timeout>();
@@ -83,7 +83,7 @@ export function Tooltip({
 
 const toolTipClass = (open?: boolean, placement?: Placement) =>
   clsx(
-    " text-center bg-white max-w-xs text-xs font-bold rounded border-border border transition-opacity p-3 shadow-lg leading-relaxed",
+    " text-center bg-white max-w-xs text-xs rounded border-border border transition-opacity p-3 shadow-lg leading-relaxed",
     open ? "visible opacity-100" : "invisible opacity-0",
     {
       "arrow-left": placement === "right",

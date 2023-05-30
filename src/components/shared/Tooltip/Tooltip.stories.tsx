@@ -32,3 +32,14 @@ export default meta;
 type Story = StoryObj<typeof Tooltip>;
 
 export const Default: Story = {};
+
+/**
+ * The placement of the tooltip can be forced by adding the `placement` prop.
+ * By default, the tooltip will use Popper.js to place itsself in the most
+ * ideal location
+ */
+export const Placement: Story = {
+  args: {
+    placement: "left",
+  },
+};
