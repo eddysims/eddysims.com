@@ -18,6 +18,7 @@ module.exports = {
       colors: {
         surface: "#f2ede7",
         primary: "#a3160a",
+        secondary: "#e7dfd6",
         border: borderColor,
       },
       fontFamily: {
