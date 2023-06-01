@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#f2ede7" />
         <meta name="theme-color" content="#f2ede7" />
 
-        {IS_DEV && (
+        {!IS_DEV && (
           <>
             <script
               async
