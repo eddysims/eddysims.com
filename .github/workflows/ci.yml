@@ -43,7 +43,25 @@ jobs:
 
       - name: lint
         run: npm run lint
-  
+
+  test:
+    runs-on: ubuntu-latest
+    needs: [install]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: node-modules-${{ hashFiles('package-lock.json') }}
+
+      - name: install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install
+
+      - name: test
+        run: npm run test
+
   typecheck:
     runs-on: ubuntu-latest
     needs: [install]
