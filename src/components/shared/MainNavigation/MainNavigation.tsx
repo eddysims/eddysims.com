@@ -8,13 +8,26 @@ import { Button } from "../Button";
 type MenuItem = {
   url: string;
   icon: IconNames;
+  label: string;
 };
 
 export function MainNavigation() {
   const menuItems: MenuItem[] = [
-    { url: "https://www.linkedin.com/in/edeesims/", icon: "linkedin" },
-    { url: "https://github.com/eddysims", icon: "github" },
-    { url: "https://github.com/eddysims/eddysims.com", icon: "code" },
+    {
+      url: "https://www.linkedin.com/in/edeesims/",
+      icon: "linkedin",
+      label: "Connect with me on LinkedIn",
+    },
+    {
+      url: "https://github.com/eddysims",
+      icon: "github",
+      label: "View my Github",
+    },
+    {
+      url: "https://github.com/eddysims/eddysims.com",
+      icon: "code",
+      label: "View for code for this site",
+    },
   ];
 
   return (
@@ -23,7 +36,7 @@ export function MainNavigation() {
         <ul className="flex justify-center items-center lg:justify-start gap-5">
           {menuItems.map((item) => (
             <li key={item.icon}>
-              <a href={item.url} target="_blank">
+              <a href={item.url} target="_blank" aria-label={item.label}>
                 <Icon name={item.icon} size="large" />
               </a>
             </li>

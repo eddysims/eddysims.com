@@ -6,6 +6,7 @@ import NextHead from "next/head";
 
 import { useSystemTheme } from "@/hooks/useSystemTheme";
 
+const IS_DEV = process.env.NODE_ENV && process.env.NODE_ENV === "development";
 const raleway = Raleway({
   weight: ["100", "200", "300", "400", "900"],
   subsets: ["latin"],
@@ -13,24 +14,23 @@ const raleway = Raleway({
 
 function MyApp({ Component, pageProps }: AppProps) {
   const colorMode = useSystemTheme("light");
-
-  console.log({ colorMode });
+  const GA_TAG_ID = "G-1K6V3DKDSK"; // Add your own Tag ID here
 
   return (
     <>
-      <style jsx global>
-        {`
-          :root {
-            --raleway-font: ${raleway.style.fontFamily};
-          }
-        `}
-      </style>
       <NextHead>
         <title>Eddy Sims</title>
         <meta
           name="description"
           content="Eddy Sims, Software and Web3 Engineer in Edmonton, Alberta."
         />
+        <style jsx global>
+          {`
+            :root {
+              --raleway-font: ${raleway.style.fontFamily};
+            }
+          `}
+        </style>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -56,7 +56,29 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="msapplication-TileColor" content="#f2ede7" />
         <meta name="theme-color" content="#f2ede7" />
+
+        {!IS_DEV && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TAG_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_TAG_ID}', {
+                      page_path: window.location.pathname,
+                  });
+                  `,
+              }}
+            />
+          </>
+        )}
       </NextHead>
+
       <Component {...pageProps} />
     </>
   );
