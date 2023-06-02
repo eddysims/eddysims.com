@@ -1,58 +1,42 @@
-import { clsx } from "clsx";
+import NextLink from "next/link";
 
 import { Container } from "@/components/shared/Container";
-import { Icon, IconNames } from "@/components/shared/Icon";
-
-import { Button } from "../Button";
-
-type MenuItem = {
-  url: string;
-  icon: IconNames;
-  label: string;
-};
+import { SocialNavigation } from "@/components/shared/SocialNavigation";
 
 export function MainNavigation() {
-  const menuItems: MenuItem[] = [
-    {
-      url: "https://www.linkedin.com/in/edeesims/",
-      icon: "linkedin",
-      label: "Connect with me on LinkedIn",
-    },
-    {
-      url: "https://github.com/eddysims",
-      icon: "github",
-      label: "View my Github",
-    },
-    {
-      url: "https://github.com/eddysims/eddysims.com",
-      icon: "code",
-      label: "View for code for this site",
-    },
-  ];
+  const linkClass = "text-sm uppercase inline-block mt-1.5 font-bold";
 
   return (
-    <Container className={clsx("py-5 lg:py-8")}>
-      <nav>
-        <ul className="flex justify-center items-center lg:justify-start gap-5">
-          {menuItems.map((item) => (
-            <li key={item.icon}>
-              <a href={item.url} target="_blank" aria-label={item.label}>
-                <Icon name={item.icon} size="large" />
-              </a>
-            </li>
-          ))}
-
-          <li className="hidden lg:block">
-            <Button
-              label="Download Résumé"
-              size="small"
+    <Container
+      className={
+        "py-5 lg:py-8 flex justify-center lg:justify-end gap-8 items-center"
+      }
+    >
+      <nav id="main-navigation" className="hidden lg:block">
+        <ul className="flex gap-8">
+          <li>
+            <NextLink
               href="/pdfs/Eddy_Sims_Resume.pdf"
+              target="_blank"
+              className={linkClass}
               download
-              variation="ghost"
-            />
+            >
+              Download Résumé
+            </NextLink>
+          </li>
+
+          <li>
+            <NextLink
+              href="https://calendly.com/eddysims/chat-with-eddy"
+              target="_blank"
+              className={linkClass}
+            >
+              Book a chat
+            </NextLink>
           </li>
         </ul>
       </nav>
+      <SocialNavigation />
     </Container>
   );
 }
