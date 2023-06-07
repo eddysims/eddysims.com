@@ -3,7 +3,6 @@ import { ProfileImage } from "@/components/pages/home/ProfileImage";
 import { Container } from "@/components/shared/Container";
 import { Column, Grid } from "@/components/shared/Grid";
 import { Layout } from "@/components/shared/Layout";
-import { LayoutCentered } from "@/components/shared/LayoutCentered";
 import { Section } from "@/components/shared/Section";
 
 export default function Home() {
