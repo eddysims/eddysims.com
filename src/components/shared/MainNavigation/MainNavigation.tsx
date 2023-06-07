@@ -9,7 +9,7 @@ export function MainNavigation() {
   return (
     <Container
       className={
-        "py-5 lg:py-8 flex justify-center lg:justify-end gap-8 items-center"
+        "py-5 lg:py-8 flex justify-center lg:justify-end gap-8 items-center fixed top-0 left-1/2 -translate-x-1/2 backdrop-blur"
       }
     >
       <nav id="main-navigation" className="hidden lg:block">
