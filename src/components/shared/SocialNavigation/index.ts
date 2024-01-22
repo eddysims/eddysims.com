@@ -1,1 +1,0 @@
-export { SocialNavigation } from "./SocialNavigation";
