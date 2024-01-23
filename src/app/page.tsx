@@ -1,22 +1,26 @@
 import { Container } from "@/components/Container";
-import { Eddy } from "@/components/Eddy";
+import { Heading } from "@/components/Heading";
 import { Text } from "@/components/Text";
-import { display } from "@/styles/fonts";
 import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
       <Container>
-        <div className="flex min-h-screen">
-          <div className="flex-1 self-center">
-            <h1 className={`${display.className} text-3xl`}>Eddy Sims</h1>
-            <h2>Software Engineer</h2>
-            <Text>
-              Helping people turn their ideas into sites &amp; apps that work.
-            </Text>
-            <button className="bg-primary text-text">Let&apos;s Chat</button>
+        <div className="grid grid-cols-6 min-h-screen">
+          <div className="col-span-2 self-center grid gap-3">
+            <Heading as="h1" style="h3">
+              Eddy Sims
+            </Heading>
+            <Heading as="h2" style="h1">
+              Software Engineer
+            </Heading>
+            <div className="mt-5">
+              <Text>
+                Helping people turn their ideas into sites &amp; apps that work.
+              </Text>
+            </div>
           </div>
-          <div className="relative flex-1">
+          <div className="relative col-span-3 col-start-4">
             <Image src="./images/eddy.svg" alt="Foo" fill />
           </div>
         </div>
