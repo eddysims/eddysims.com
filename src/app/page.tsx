@@ -1,7 +1,8 @@
+import Image from "next/image";
+
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Text } from "@/components/Text";
-import Image from "next/image";
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
