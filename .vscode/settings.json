@@ -1,0 +1,15 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "eslint.enable": true,
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#E81604",
+    "statusBarItem.hoverBackground": "#E81604",
+    "statusBar.foreground": "#fff"
+  },
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
+}

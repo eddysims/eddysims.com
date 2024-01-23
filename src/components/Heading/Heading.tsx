@@ -1,11 +1,15 @@
-import { PropsWithChildren } from "react";
-import { display } from "@/styles/fonts";
 import { clsx } from "clsx";
+import { PropsWithChildren } from "react";
+
+import { display } from "@/styles/fonts";
+
 type HeadingType = "h1" | "h2" | "h3";
+
 type HeadingProps = {
   as?: HeadingType;
   style?: HeadingType;
 };
+
 export function Heading({
   as = "h2",
   style,
