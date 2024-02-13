@@ -1,5 +1,11 @@
-import type { Metadata } from "next";
 import "./globals.css";
+
+import { getServerSession } from "next-auth";
+import { PropsWithChildren } from "react";
+
+import { SessionProvider } from "@/components/SessionProvider";
+
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Eddy Sims",
@@ -7,14 +13,16 @@ export const metadata: Metadata = {
     "Senior Software Engineer. Helping people turn their ideas into sites & apps that work.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<PropsWithChildren<unknown>>) {
+  const session = await getServerSession();
+
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SessionProvider session={session}>{children}</SessionProvider>
+      </body>
     </html>
   );
 }
