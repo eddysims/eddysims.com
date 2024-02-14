@@ -10,17 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         surface: {
-          DEFAULT: "#171820"
+          DEFAULT: "#171820",
         },
         text: {
           DEFAULT: "#F2EDE7",
         },
         primary: {
-          DEFAULT: "#E81604"
-        }
-      }
+          DEFAULT: "#E81604",
+        },
+      },
     },
   },
   plugins: [],
 };
+
 export default config;
