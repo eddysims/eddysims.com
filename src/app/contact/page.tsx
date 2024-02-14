@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
 import { Button } from "@/components/Button";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -25,7 +26,7 @@ export default function Page() {
 
   return (
     <div>
-      <Button onClick={sendEmail} label="Send the email" />
+      <ContactForm />
     </div>
   );
 }
