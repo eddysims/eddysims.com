@@ -17,6 +17,10 @@ export async function POST() {
   }
 }
 
+export async function GET() {
+  return new Response("GET not allowed", { status: 405 });
+}
+
 export async function OPTIONS() {
   const corsHeaders = {
     "Access-Control-Allow-Origin": "*",
