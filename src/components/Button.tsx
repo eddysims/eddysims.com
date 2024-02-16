@@ -4,7 +4,6 @@ import { useState } from "react";
 
 type ButtonProps = {
   readonly label: string;
-  // readonly onClick: (data: { firstName: string }) => void;
 };
 
 export function Button({ label }: ButtonProps) {
