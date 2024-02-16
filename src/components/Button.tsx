@@ -2,13 +2,21 @@
 
 type ButtonProps = {
   readonly label: string;
-  readonly onClick: () => void;
+  readonly onClick: (data: { firstName: string }) => void;
 };
 
 export function Button({ label, onClick }: ButtonProps) {
   const handleClick = () => {
-    onClick();
+    const data = {
+      firstName: "Eddy",
+    };
+
+    onClick(data);
   };
 
-  return <button onClick={handleClick}>{label}</button>;
+  return (
+    <button className="bg-primary p-5 text-white" onClick={handleClick}>
+      {label}
+    </button>
+  );
 }
