@@ -5,7 +5,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST() {
   try {
     const data = await resend.emails.send({
-      from: "Acme <onboarding@resend.dev>",
+      from: "Contact Form <noreply@eddysims.com>",
       to: ["eddysimsweb@gmail.com"],
       subject: "Hello world",
       html: `<p>Congrats on sending your <strong>first email</strong>!</p>`,
