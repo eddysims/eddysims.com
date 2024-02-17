@@ -1,10 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    serverActions: {
-      allowedOrigins: ["eddysims.com", "localhost"],
-    },
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;
