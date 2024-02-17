@@ -12,13 +12,13 @@ export function Button({ label }: ButtonProps) {
   const handleClick = async () => {
     console.log("Clicked");
     setLoading(true);
-    await fetch("https://eddysims.com/api/send", {
-      method: "POST",
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-    setLoading(false);
+    // await fetch("https://eddysims.com/api/send", {
+    //   method: "POST",
+    // })
+    //   .then((res) => res.json())
+    //   .then((data) => console.log(data))
+    //   .catch((err) => console.log(err));
+    // setLoading(false);
 
     // onClick(data);
   };
