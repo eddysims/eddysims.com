@@ -3,7 +3,6 @@ import "./globals.css";
 import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
-import { Button } from "@/components/Button";
 import { SessionProvider } from "@/components/SessionProvider";
 
 import type { Metadata } from "next";
