@@ -3,8 +3,8 @@ import clsx from "clsx";
 import { display } from "@/styles/fonts";
 
 type ButtonProps = {
-  label: string;
-  onClick: () => void;
+  readonly label: string;
+  readonly onClick?: () => void;
 };
 
 export function Button({ label, onClick }: ButtonProps) {

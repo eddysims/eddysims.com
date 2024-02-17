@@ -1,8 +1,10 @@
 import Image from "next/image";
 
+import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Text } from "@/components/Text";
+
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
@@ -15,10 +17,13 @@ export default function Home() {
             <Heading as="h2" style="h1">
               Software Engineer
             </Heading>
-            <div className="mt-5">
+            <div className="my-5">
               <Text>
                 Helping people turn their ideas into sites &amp; apps that work.
               </Text>
+            </div>
+            <div>
+              <Button label="Let's Chat" />
             </div>
           </div>
           <div className="relative col-span-3 col-start-4">
