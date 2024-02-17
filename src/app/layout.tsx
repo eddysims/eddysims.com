@@ -1,10 +1,8 @@
 import "./globals.css";
 
-import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
 import { Button } from "@/components/Button";
-import { SessionProvider } from "@/components/SessionProvider";
 
 import type { Metadata } from "next";
 
@@ -17,12 +15,10 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<PropsWithChildren<unknown>>) {
-  const session = await getServerSession();
-
   return (
     <html lang="en">
       <body>
-        <SessionProvider session={session}>{children}</SessionProvider>
+        {children}
         <Button label="Foo" />
       </body>
     </html>
