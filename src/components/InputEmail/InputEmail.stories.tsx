@@ -5,7 +5,7 @@ import { InputEmail } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof InputEmail> = {
-  title: "forms/InputEmail",
+  title: "form elements/InputEmail",
   component: InputEmail,
   render: (args) => <InputEmail {...args} />,
 };

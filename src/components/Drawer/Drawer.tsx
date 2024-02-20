@@ -41,7 +41,7 @@ export function Drawer({
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <Dialog.Panel className="p-8 w-2/6 transform overflow-hidden  bg-text shadow-xl transition-all">
+              <Dialog.Panel className="px-16 py-16 w-11/12 max-w-2xl transform overflow-hidden bg-text shadow-xl transition-all">
                 {children}
               </Dialog.Panel>
             </Transition.Child>

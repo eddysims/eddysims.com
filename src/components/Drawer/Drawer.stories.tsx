@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Button } from "../Button";
+
 import { Drawer } from ".";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -9,11 +11,19 @@ function StoryDrawer() {
 
   return (
     <>
-      <button onClick={() => setOpen(true)}>Open</button>
+      <Button onClick={() => setOpen(true)} label="Open Drawer" />
       <Drawer open={open} onRequestClose={() => setOpen(false)} />
     </>
   );
 }
+
+/**
+ * ## Usage
+ *
+ * ```
+ * import { Drawer } from "@/components/Drawer";
+ * ```
+ */
 
 const meta: Meta<typeof Drawer> = {
   title: "components/Drawer",

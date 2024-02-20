@@ -5,7 +5,7 @@ import { InputText } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof InputText> = {
-  title: "forms/InputText",
+  title: "form elements/InputText",
   component: InputText,
   render: (args) => <InputText {...args} />,
 };

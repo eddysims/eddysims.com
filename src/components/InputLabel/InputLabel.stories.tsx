@@ -3,7 +3,7 @@ import { InputLabel } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof InputLabel> = {
-  title: "forms/InputLabel",
+  title: "form elements/InputLabel",
   component: InputLabel,
   args: {
     label: "Label",

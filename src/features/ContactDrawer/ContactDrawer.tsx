@@ -1,5 +1,7 @@
 "use client";
 
+import { ContactForm } from "@/features/forms/ContactForm/ContactForm";
+
 import { Drawer } from "@/components/Drawer";
 
 type ContactDrawerProps = {
@@ -10,7 +12,7 @@ type ContactDrawerProps = {
 export function ContactDrawer({ open, onRequestClose }: ContactDrawerProps) {
   return (
     <Drawer open={open} onRequestClose={onRequestClose}>
-      Contact Drawer
+      <ContactForm />
     </Drawer>
   );
 }
