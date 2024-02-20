@@ -2,6 +2,21 @@ import { Button } from ".";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
+/**
+ * ## Usage
+ *
+ * ```
+ * import { Button } from "@/components/Button";
+ * ```
+ *
+ * ## Exported types
+ *
+ * The `Button` component has the following type exported:
+ *
+ * ```
+ * import type { ButtonProps } from "@/components/Button";
+ * ```
+ */
 const meta: Meta<typeof Button> = {
   title: "components/Button",
   component: Button,

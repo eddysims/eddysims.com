@@ -2,19 +2,14 @@
 
 import clsx from "clsx";
 
-type ButtonProps = {
+export type ButtonProps = {
   readonly label: string;
-  readonly onClick?: () => void;
+  readonly onClick: () => void;
 };
 
 export function Button({ label, onClick }: ButtonProps) {
-  const handleClick = () => {
-    alert("clicked");
-    onClick && onClick();
-  };
-
   return (
-    <button className={buttonStyles} onClick={handleClick}>
+    <button className={buttonStyles} onClick={onClick}>
       {label}
     </button>
   );

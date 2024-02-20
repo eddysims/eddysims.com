@@ -4,6 +4,8 @@ import clsx from "clsx";
 import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
+import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
+
 import { SessionProvider } from "@/components/SessionProvider";
 
 import { body, display } from "@/styles/fonts";
@@ -24,7 +26,9 @@ export default async function RootLayout({
   return (
     <html lang="en" className={clsx(body.variable, display.variable)}>
       <body>
-        <SessionProvider session={session}>{children}</SessionProvider>
+        <SessionProvider session={session}>
+          <ContactDrawerProvider>{children}</ContactDrawerProvider>
+        </SessionProvider>
       </body>
     </html>
   );

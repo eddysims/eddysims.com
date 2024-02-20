@@ -1,6 +1,7 @@
 import Image from "next/image";
 
-import { Button } from "@/components/Button";
+import { ToggleButton } from "@/features/ContactDrawer/components/ToggleButton";
+
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Text } from "@/components/Text";
@@ -23,7 +24,7 @@ export default function Home() {
               </Text>
             </div>
             <div>
-              <Button label="Let's Chat" />
+              <ToggleButton label="Let's Chat" />
             </div>
           </div>
           <div className="relative col-span-3 col-start-4">
