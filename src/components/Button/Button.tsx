@@ -1,6 +1,6 @@
-import clsx from "clsx";
+"use client";
 
-import { display } from "@/styles/fonts";
+import clsx from "clsx";
 
 type ButtonProps = {
   readonly label: string;
@@ -8,14 +8,19 @@ type ButtonProps = {
 };
 
 export function Button({ label, onClick }: ButtonProps) {
+  const handleClick = () => {
+    alert("clicked");
+    onClick && onClick();
+  };
+
   return (
-    <button className={buttonStyles} onClick={onClick}>
+    <button className={buttonStyles} onClick={handleClick}>
       {label}
     </button>
   );
 }
 
 const buttonStyles = clsx(
-  display.className,
+  "font-display",
   "bg-primary rounded text-text uppercase text-lg py-5 px-8 tracking-wider",
 );

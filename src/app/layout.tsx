@@ -1,9 +1,12 @@
 import "./globals.css";
 
+import clsx from "clsx";
 import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
 import { SessionProvider } from "@/components/SessionProvider";
+
+import { body, display } from "@/styles/fonts";
 
 import type { Metadata } from "next";
 
@@ -19,7 +22,7 @@ export default async function RootLayout({
   const session = await getServerSession();
 
   return (
-    <html lang="en">
+    <html lang="en" className={clsx(body.variable, display.variable)}>
       <body>
         <SessionProvider session={session}>{children}</SessionProvider>
       </body>
