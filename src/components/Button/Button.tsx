@@ -4,18 +4,20 @@ import clsx from "clsx";
 
 export type ButtonProps = {
   readonly label: string;
+  readonly variation?: "primary" | "outline";
   readonly onClick: () => void;
 };
 
-export function Button({ label, onClick }: ButtonProps) {
+export function Button({ label, variation = "primary", onClick }: ButtonProps) {
   return (
-    <button className={buttonStyles} onClick={onClick}>
+    <button className={styles(variation)} onClick={onClick}>
       {label}
     </button>
   );
 }
 
-const buttonStyles = clsx(
-  "font-display",
-  "bg-primary rounded text-text uppercase text-lg py-5 px-8 tracking-wider",
-);
+const styles = (variation: string) =>
+  clsx("font-display uppercase text-lg tracking-wider", "rounded py-5 px-8 ", {
+    "bg-primary text-text": variation === "primary",
+    "bg-transparent text-primary border-shadow": variation === "outline",
+  });

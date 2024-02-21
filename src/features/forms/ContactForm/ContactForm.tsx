@@ -22,7 +22,11 @@ export function ContactForm() {
             <Text size="sm">
               Never share sensitive information through this form.
             </Text>
-            <Button label="Send Message" onClick={() => undefined} />
+            <Button
+              label="Send Message"
+              variation="outline"
+              onClick={() => alert("Submit")}
+            />
           </div>
         </div>
       </Form>
