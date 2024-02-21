@@ -1,16 +1,44 @@
 "use client";
 
 import clsx from "clsx";
+import { MergeExclusive } from "type-fest";
 
-export type ButtonProps = {
+type BaseButtonProps = {
   readonly label: string;
   readonly variation?: "primary" | "outline";
+};
+
+type ButtonButtonProps = BaseButtonProps & {
   readonly onClick: () => void;
 };
 
-export function Button({ label, variation = "primary", onClick }: ButtonProps) {
+type SubmitButtonProps = BaseButtonProps & {
+  /**
+   * Allows the button to be a `type="submit"`. Use when submitting
+   * a form.
+   */
+  readonly isSubmit: boolean;
+  readonly onClick?: () => void;
+};
+
+export type ButtonProps = MergeExclusive<ButtonButtonProps, SubmitButtonProps>;
+
+export function Button({
+  label,
+  variation = "primary",
+  onClick,
+  isSubmit,
+}: ButtonProps) {
+  const handleClick = () => {
+    onClick && onClick();
+  };
+
   return (
-    <button className={styles(variation)} onClick={onClick}>
+    <button
+      className={styles(variation)}
+      onClick={handleClick}
+      type={isSubmit ? "submit" : "button"}
+    >
       {label}
     </button>
   );
