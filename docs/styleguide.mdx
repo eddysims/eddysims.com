@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Styleguide" />
+
+# Styleguide
+
+The goal of the styleguide is to help explain the decisions that I have within this project.
+
+## Naming conventions
+
+I consider common naming conventions across all component APIs. 
+
+### Label vs children
+
+You will see in some components that I use a `label` prop instead of maybe the more predictable `children` prop. This is because I want to be explicit about what is rendered within this component.
+
+An example of this can be seen in [ErrorMessage](/docs/typography-errormessage--docs). The `label` prop is to prevent any unwanted children to be rendered within the component.
+
+✅ Allows control
+```tsx
+<ErrorMessage label="This is an error message" />
+```
+
+❌ Can cause unwanted children
+```tsx
+<ErrorMessage>
+  <Heading as="h1">This is a major error</Heading>
+  <InputText />
+</ErrorMessage>
+```
