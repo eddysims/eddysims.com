@@ -1,3 +1,5 @@
+import plugin from "tailwindcss/plugin";
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -21,7 +23,15 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".shadow-border": {
+          "box-shadow": "0 0 0 4px #E81604 inset",
+        },
+      });
+    }),
+  ],
 };
 
 export default config;

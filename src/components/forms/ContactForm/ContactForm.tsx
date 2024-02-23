@@ -29,7 +29,7 @@ export function ContactForm() {
           <InputTextArea name="message" label="Message" {...methods} />
         </div>
         <div className="space-y-5 mt-8">
-          <Button isSubmit label="Send Message" />
+          <Button isSubmit label="Send Message" variantion="outline" />
           <Text>Never share sensitive information through this form.</Text>
         </div>
       </Form>
