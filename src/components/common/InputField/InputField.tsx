@@ -9,8 +9,8 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 
-import { InputLabel } from "@/components/InputLabel";
 import { ErrorMessage } from "@/components/common/ErrorMessage";
+import { InputLabel } from "@/components/common/InputLabel";
 
 export type InputFieldProps = {
   /**
