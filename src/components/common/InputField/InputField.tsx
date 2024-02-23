@@ -16,7 +16,7 @@ export type InputFieldProps = {
   /**
    * The type of input to render
    */
-  readonly type: "text";
+  readonly type: "text" | "email";
   /**
    * Name of the input. If not provided, a random id
    * will be used as the name
