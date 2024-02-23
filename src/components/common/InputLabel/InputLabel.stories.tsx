@@ -2,11 +2,18 @@ import { InputLabel } from ".";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
+/**
+ * ## Usage
+ *
+ * ```tsx
+ * import { InputLabel } from "@/components/common/InputLabel";
+ * ```
+ */
 const meta: Meta<typeof InputLabel> = {
-  title: "forms/InputLabel",
+  title: "form elements/InputLabel",
   component: InputLabel,
   args: {
-    label: "Label",
+    label: "First and last name",
     htmlFor: "input",
   },
   render: (args) => <InputLabel {...args} />,

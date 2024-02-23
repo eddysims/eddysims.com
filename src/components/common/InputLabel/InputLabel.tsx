@@ -1,6 +1,12 @@
 type InputLabelProps = {
-  label: string;
-  htmlFor?: string;
+  /**
+   * The label to display
+   */
+  readonly label: string;
+  /**
+   * The id of the associated input
+   */
+  readonly htmlFor?: string;
 };
 
 export function InputLabel({ label, htmlFor }: InputLabelProps) {
