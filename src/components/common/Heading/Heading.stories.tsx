@@ -2,6 +2,13 @@ import { Heading } from "./Heading";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
+/**
+ * ## Usage
+ *
+ * ```tsx
+ * import { Heading } from "@/components/common/Heading";
+ * ```
+ */
 const meta: Meta<typeof Heading> = {
   title: "typography/Heading",
   component: Heading,
