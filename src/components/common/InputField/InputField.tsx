@@ -16,7 +16,7 @@ export type InputFieldProps = {
   /**
    * The type of input to render
    */
-  readonly type: "text" | "email";
+  readonly type: "text" | "email" | "textarea";
   /**
    * Name of the input. If not provided, a random id
    * will be used as the name
@@ -36,10 +36,6 @@ export type InputFieldProps = {
    * [validation rules](https://react-hook-form.com/get-started#Applyvalidation).
    */
   readonly rules?: Pick<RegisterOptions, "pattern">;
-
-  /**
-   *
-   */
 
   readonly register: UseFormRegister<FieldValues>;
   readonly formState: FormState<FieldValues>;
@@ -62,6 +58,13 @@ export function InputField({
   } = methods;
 
   const error = errors?.[inputName];
+  const registerInput = register(inputName, {
+    required: {
+      value: required,
+      message: "This field is required",
+    },
+    ...rules,
+  });
 
   return (
     <div className={styles.container}>
@@ -71,17 +74,19 @@ export function InputField({
           htmlFor={inputName}
         />
       )}
-      <input
-        type={type}
-        className={styles.input(Boolean(error))}
-        {...register(inputName, {
-          required: {
-            value: required,
-            message: "This field is required",
-          },
-          ...rules,
-        })}
-      />
+      {type === "textarea" ? (
+        <textarea
+          rows={5}
+          className={clsx(styles.input(Boolean(error)), styles.textarea)}
+          {...registerInput}
+        />
+      ) : (
+        <input
+          type={type}
+          className={styles.input(Boolean(error))}
+          {...registerInput}
+        />
+      )}
       {typeof error?.message === "string" && (
         <ErrorMessage message={error.message} />
       )}
@@ -101,4 +106,5 @@ const styles = {
         "border-red-500 focus:ring-primary/25": hasError,
       },
     ),
+  textarea: clsx("resize-none"),
 };
