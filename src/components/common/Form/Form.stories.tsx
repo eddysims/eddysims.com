@@ -1,7 +1,9 @@
 import { Meta } from "@storybook/react";
-import { useForm } from "react-hook-form";
 
-import { InputText } from "../InputText";
+import { Button } from "@/components/common/Button";
+import { InputText } from "@/components/common/InputText";
+
+import { useForm } from "@/hooks/useForm";
 
 import { Form } from ".";
 
@@ -20,7 +22,7 @@ const meta: Meta<typeof Form> = {
 export default meta;
 
 export function Primary({ ...args }) {
-  const methods = useForm({ mode: "onTouched" });
+  const methods = useForm();
 
   const handleSubmit = methods.handleSubmit((data) => {
     console.log({ data });
@@ -31,7 +33,7 @@ export function Primary({ ...args }) {
       <div className="space-y-5">
         <InputText label="First name" {...methods} required />
         <InputText label="Last name" {...methods} />
-        <button type="submit"> Submit</button>
+        <Button isSubmit label="Submit Form" />
       </div>
     </Form>
   );

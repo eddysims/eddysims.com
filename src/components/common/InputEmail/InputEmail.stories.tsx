@@ -1,5 +1,6 @@
 import { Meta } from "@storybook/react";
-import { useForm } from "react-hook-form";
+
+import { useForm } from "@/hooks/useForm";
 
 import { InputEmail } from ".";
 
@@ -28,7 +29,7 @@ const meta: Meta<typeof InputEmail> = {
 export default meta;
 
 export function Primary({ ...args }) {
-  const methods = useForm({ mode: "onTouched" });
+  const methods = useForm();
 
   return <InputEmail {...args} {...methods} />;
 }

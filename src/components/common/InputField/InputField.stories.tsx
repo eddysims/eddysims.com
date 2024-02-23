@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm } from "@/hooks/useForm";
 
 import { InputField } from ".";
 
@@ -32,7 +32,7 @@ const meta: Meta<typeof InputField> = {
 };
 
 export function Primary({ ...args }) {
-  const methods = useForm({ mode: "onTouched" });
+  const methods = useForm();
 
   return <InputField {...args} type={args.type} {...methods} />;
 }

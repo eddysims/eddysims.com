@@ -1,8 +1,9 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useForm as useRHFForm, useFormContext } from "react-hook-form";
+import { useForm as useRHFForm } from "react-hook-form";
 
 export function useForm() {
-  return useFormContext() === null
-    ? useRHFForm({ mode: "onTouched" })
-    : useFormContext();
+  const { register, formState, handleSubmit } = useRHFForm({
+    mode: "onTouched",
+  });
+
+  return { register, formState, handleSubmit };
 }
