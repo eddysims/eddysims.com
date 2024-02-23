@@ -13,11 +13,33 @@ import { ErrorMessage } from "@/components/ErrorMessage";
 import { InputLabel } from "@/components/InputLabel";
 
 type InputFieldProps = {
+  /**
+   * The type of input to render
+   */
   readonly type: "text";
+  /**
+   * Name of the input. If not provided, a random id
+   * will be used as the name
+   */
   readonly name?: string;
+  /**
+   * The label for the input
+   */
   readonly label?: string;
+  /**
+   * Is the input required?. Adds default validation for
+   * required fields
+   */
   readonly required?: boolean;
+  /**
+   * Rules for the input. Based on react-hook-form
+   * [validation rules](https://react-hook-form.com/get-started#Applyvalidation).
+   */
   readonly rules?: Pick<RegisterOptions, "pattern">;
+
+  /**
+   *
+   */
 
   readonly register: UseFormRegister<FieldValues>;
   readonly formState: FormState<FieldValues>;

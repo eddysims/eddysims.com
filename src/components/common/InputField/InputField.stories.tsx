@@ -4,6 +4,12 @@ import { InputField } from ".";
 
 import type { Meta } from "@storybook/react";
 
+const disabletTable = {
+  table: {
+    disable: true,
+  },
+};
+
 /**
  * > PRIVATE
  *
@@ -17,6 +23,10 @@ const meta: Meta<typeof InputField> = {
   args: {
     type: "text",
     required: true,
+  },
+  argTypes: {
+    register: disabletTable,
+    formState: disabletTable,
   },
   render: (args) => <Primary {...args} />,
 };
