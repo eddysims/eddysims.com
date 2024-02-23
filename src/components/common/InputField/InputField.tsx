@@ -9,8 +9,8 @@ import {
   UseFormRegister,
 } from "react-hook-form";
 
-import { ErrorMessage } from "@/components/ErrorMessage";
 import { InputLabel } from "@/components/InputLabel";
+import { ErrorMessage } from "@/components/common/ErrorMessage";
 
 export type InputFieldProps = {
   /**
@@ -88,7 +88,7 @@ export function InputField({
         />
       )}
       {typeof error?.message === "string" && (
-        <ErrorMessage message={error.message} />
+        <ErrorMessage label={error.message} />
       )}
     </div>
   );
