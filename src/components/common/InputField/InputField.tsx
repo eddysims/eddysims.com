@@ -12,7 +12,7 @@ import {
 import { ErrorMessage } from "@/components/ErrorMessage";
 import { InputLabel } from "@/components/InputLabel";
 
-type InputFieldProps = {
+export type InputFieldProps = {
   /**
    * The type of input to render
    */
