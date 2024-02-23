@@ -1,21 +1,14 @@
 "use client";
 
-import { useState } from "react";
-
 type ButtonProps = {
   readonly label: string;
+  readonly onClick?: () => void;
 };
 
-export function Button({ label }: ButtonProps) {
-  const [loading, setLoading] = useState<boolean>();
-  const handleClick = async () => {
-    console.log("Clicked");
-    setLoading(true);
-
-    await fetch("/api/send", {
-      method: "POST",
-    });
+export function Button({ label, onClick }: ButtonProps) {
+  const handleClick = () => {
+    onClick?.();
   };
 
-  return <button onClick={handleClick}>{loading ? "loading" : label}</button>;
+  return <button onClick={handleClick}>{label}</button>;
 }
