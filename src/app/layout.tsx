@@ -1,7 +1,6 @@
 import "./globals.css";
 
 import clsx from "clsx";
-import { Comfortaa, Lilita_One } from "next/font/google";
 import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
@@ -9,15 +8,9 @@ import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
 
 import { SessionProvider } from "@/components/SessionProvider";
 
+import { display, body } from "@/styles/fonts";
+
 import type { Metadata } from "next";
-
-const display = Lilita_One({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-display",
-});
-
-const body = Comfortaa({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
   title: "Eddy Sims",
