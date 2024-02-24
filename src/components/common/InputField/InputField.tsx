@@ -99,10 +99,10 @@ const styles = {
   input: (hasError: boolean) =>
     clsx(
       "w-full bg-white border rounded-md py-2 px-3 tracking-wide",
-      "focus:outline-none focus:ring-2 ",
-      "font-base color-surface",
+      "focus:outline-none focus:ring-2 focus:bg-text",
+      "font-base text-surface",
       {
-        "border-surface focus:ring-blue-500/25": !hasError,
+        "border-surface focus:ring-blue-500/50": !hasError,
         "border-red-500 focus:ring-primary/25": hasError,
       },
     ),
