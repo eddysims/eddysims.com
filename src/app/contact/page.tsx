@@ -1,3 +1,10 @@
+import { Container } from "@/components/common/Container";
+import { ContactForm } from "@/components/forms/ContactForm";
+
 export default function Page() {
-  return <div>Contact</div>;
+  return (
+    <Container size="xs">
+      <ContactForm />
+    </Container>
+  );
 }
