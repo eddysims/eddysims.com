@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 
-import { Heading } from "@/components/Heading";
+import { Heading } from "@/components/common/Heading";
 
 export default async function ProtectedRoute() {
   const session = await getServerSession();

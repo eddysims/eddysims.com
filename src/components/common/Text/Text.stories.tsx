@@ -1,7 +1,14 @@
-import { Text } from "./Text";
+import { Text } from ".";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
+/**
+ * ## Usage
+ *
+ * ```tsx
+ * import { Text } from "@/components/common/Text";
+ * ```
+ */
 const meta: Meta<typeof Text> = {
   title: "typography/Text",
   component: Text,

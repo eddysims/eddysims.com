@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { Text } from "@/components/Text";
+import { Text } from "@/components/common/Text/Text";
 
 export function WhoAmIButton({
   whoAmIAction,

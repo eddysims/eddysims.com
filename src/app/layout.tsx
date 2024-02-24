@@ -21,7 +21,11 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body>
-        <SessionProvider session={session}>{children}</SessionProvider>
+        <SessionProvider session={session}>
+          <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
+            {children}
+          </main>
+        </SessionProvider>
       </body>
     </html>
   );
