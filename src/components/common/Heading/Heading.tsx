@@ -21,7 +21,7 @@ export function Heading({
 
 const className = {
   heading: (as: HeadingType) =>
-    clsx("font-normal uppercase", {
+    clsx("font-display font-normal uppercase", {
       "text-8xl": as === "h1",
       "text-6xl": as === "h2",
       "text-4xl": as === "h3",

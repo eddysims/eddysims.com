@@ -64,7 +64,7 @@ const styles = {
   button: (variation: ButtonVariations, isLoading?: boolean) =>
     clsx(
       "rounded px-8 py-5 flex items-center gap-2",
-      "font-display tracking-wider uppercase font-bold",
+      "font-display tracking-widest uppercase font-bold text-lg",
       {
         "bg-primary text-text": variation === "primary",
         "shadow-border text-primary": variation === "outline",
