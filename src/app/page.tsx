@@ -23,7 +23,7 @@ export default function Home() {
             </Text>
           </div>
           <div>
-            <ContactDrawerButton label="Contact me" />
+            <ContactDrawerButton label="Chat with me" />
           </div>
         </div>
         <div className="relative col-span-3 col-start-4">
