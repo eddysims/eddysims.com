@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+import { ContactDrawerButton } from "@/providers/ContactDrawerProvider/components/ContactDrawerButton";
+
 import { Container } from "@/components/common/Container";
 import { Heading } from "@/components/common/Heading";
 import { Text } from "@/components/common/Text/Text";
@@ -15,10 +17,13 @@ export default function Home() {
           <Heading as="h2" style="h1">
             Software Engineer
           </Heading>
-          <div className="mt-5">
+          <div className="my-5">
             <Text>
               Helping people turn their ideas into sites &amp; apps that work.
             </Text>
+          </div>
+          <div>
+            <ContactDrawerButton label="Contact me" />
           </div>
         </div>
         <div className="relative col-span-3 col-start-4">

@@ -3,6 +3,8 @@ import "./globals.css";
 import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
+import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
+
 import { SessionProvider } from "@/components/SessionProvider";
 
 import type { Metadata } from "next";
@@ -22,9 +24,11 @@ export default async function RootLayout({
     <html lang="en">
       <body>
         <SessionProvider session={session}>
-          <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
-            {children}
-          </main>
+          <ContactDrawerProvider>
+            <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
+              {children}
+            </main>
+          </ContactDrawerProvider>
         </SessionProvider>
       </body>
     </html>

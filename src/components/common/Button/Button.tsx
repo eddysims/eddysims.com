@@ -35,7 +35,7 @@ type SubmitButtonProps = ButtonBaseProps & {
   readonly onClick?: () => void;
 };
 
-type ButtonProps = MergeExclusive<ButtonButtonProps, SubmitButtonProps>;
+export type ButtonProps = MergeExclusive<ButtonButtonProps, SubmitButtonProps>;
 
 export function Button({
   label,
