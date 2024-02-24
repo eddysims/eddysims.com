@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { sendContactFormEmail } from "@/actions/sendContactFormEmail";
 
+import { Banner } from "@/components/common/Banner";
 import { Button } from "@/components/common/Button";
 import { Form } from "@/components/common/Form";
 import { Heading } from "@/components/common/Heading";
@@ -42,13 +43,17 @@ export function ContactForm() {
   });
 
   return (
-    <div>
+    <div className="space-y-5">
       <Heading as="h2" style="h1">
         Contact
       </Heading>
-      {status && <Text>{status}</Text>}
+      {status && (
+        <Banner>
+          <Text size="xs">FOOO{status}</Text>
+        </Banner>
+      )}
       <Form onSubmit={handleSubmit}>
-        <div className="space-y-5 mt-5">
+        <div className="space-y-5">
           <InputText name="name" label="Name" required {...methods} />
           <InputEmail name="email" label="Email" required {...methods} />
           <InputText name="findme" label="How did you find me?" {...methods} />

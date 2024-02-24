@@ -7,7 +7,7 @@ type TextProps = {
   /**
    * The size of the text to display.
    */
-  readonly size?: "base" | "sm";
+  readonly size?: "base" | "sm" | "xs";
 };
 
 export function Text({
@@ -22,5 +22,6 @@ const styles = {
     clsx(body.className, {
       "text-xl": size === "base",
       "text-md": size === "sm",
+      "text-sm": size === "xs",
     }),
 };
