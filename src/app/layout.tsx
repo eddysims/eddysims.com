@@ -1,9 +1,14 @@
 import "./globals.css";
 
+import clsx from "clsx";
 import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
+import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
+
 import { SessionProvider } from "@/components/SessionProvider";
+
+import { display, body } from "@/styles/fonts";
 
 import type { Metadata } from "next";
 
@@ -20,11 +25,13 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body className={clsx(display.variable, body.variable)}>
         <SessionProvider session={session}>
-          <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
-            {children}
-          </main>
+          <ContactDrawerProvider>
+            <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
+              {children}
+            </main>
+          </ContactDrawerProvider>
         </SessionProvider>
       </body>
     </html>

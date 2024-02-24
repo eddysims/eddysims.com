@@ -49,7 +49,7 @@ export function ContactForm() {
       </Heading>
       {status && (
         <Banner>
-          <Text size="xs">FOOO{status}</Text>
+          <Text size="xs">{status}</Text>
         </Banner>
       )}
       <Form onSubmit={handleSubmit}>

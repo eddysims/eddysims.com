@@ -1,8 +1,6 @@
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
-import { body } from "@/styles/fonts";
-
 type TextProps = {
   /**
    * The size of the text to display.
@@ -19,7 +17,7 @@ export function Text({
 
 const styles = {
   text: (size: TextProps["size"]) =>
-    clsx(body.className, {
+    clsx("font-body", {
       "text-xl": size === "base",
       "text-md": size === "sm",
       "text-sm": size === "xs",

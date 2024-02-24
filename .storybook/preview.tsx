@@ -1,6 +1,10 @@
+import React from "react";
 import type { Preview } from "@storybook/react";
 
+import { display, body } from "../src/styles/fonts";
+
 import "../src/app/globals.css";
+import clsx from "clsx";
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +16,13 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div className={clsx(display.variable, body.variable)}>
+        <Story />
+      </div>
+    ),
+  ]
 };
 
 export default preview;

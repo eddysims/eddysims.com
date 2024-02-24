@@ -1,8 +1,6 @@
 import { clsx } from "clsx";
 import { PropsWithChildren } from "react";
 
-import { display } from "@/styles/fonts";
-
 type HeadingType = "h1" | "h2" | "h3";
 
 type HeadingProps = {
@@ -23,7 +21,7 @@ export function Heading({
 
 const className = {
   heading: (as: HeadingType) =>
-    clsx(display.className, "font-normal uppercase", {
+    clsx("font-display font-normal uppercase", {
       "text-8xl": as === "h1",
       "text-6xl": as === "h2",
       "text-4xl": as === "h3",

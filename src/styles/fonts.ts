@@ -1,6 +1,9 @@
-import { Lilita_One, Comfortaa } from "next/font/google";
+import { Comfortaa, Lilita_One } from "next/font/google";
 
-const display = Lilita_One({ weight: "400", subsets: ["latin"] });
-const body = Comfortaa({ subsets: ["latin"] });
+export const display = Lilita_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-display",
+});
 
-export { display, body };
+export const body = Comfortaa({ subsets: ["latin"], variable: "--font-body" });
