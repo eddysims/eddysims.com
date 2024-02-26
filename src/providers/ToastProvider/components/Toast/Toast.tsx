@@ -1,9 +1,11 @@
 import { useToastPrivate } from "@/providers/ToastProvider/hooks/useToastPrivate";
 
-import type { Toast } from "@/providers/ToastProvider/ToastProvider";
+import { styles } from "./styles";
+
+import type { Toast as TToast } from "@/providers/ToastProvider/ToastProvider";
 
 type ToastProps = {
-  readonly toast: Toast;
+  readonly toast: TToast;
 };
 
 export function Toast({ toast }: ToastProps) {
@@ -11,11 +13,8 @@ export function Toast({ toast }: ToastProps) {
   const handleClose = () => removeToast(toast.id);
 
   return (
-    <div>
-      FOOOOO id: {toast.id} <br />
+    <div className={styles.toast(toast.variation)}>
       {toast.message}
-      <br />
-      {toast?.variation && <div>variation: {toast.variation}</div>}
       <button onClick={handleClose}>[X]</button>
     </div>
   );

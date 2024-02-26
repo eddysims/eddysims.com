@@ -1,5 +1,8 @@
 import plugin from "tailwindcss/plugin";
 
+import { styles as toast } from "./src/providers/ToastProvider/components/Toast/styles";
+import { styles as toastContainer } from "./src/providers/ToastProvider/components/ToastContainer/styles";
+
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,6 +11,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [toast.toast("success"), toast.toast("error"), toastContainer],
   theme: {
     fontFamily: {
       display: ["var(--font-display)"],
