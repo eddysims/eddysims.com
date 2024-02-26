@@ -1,5 +1,7 @@
 import { useToastPrivate } from "@/providers/ToastProvider/hooks/useToastPrivate";
 
+import { Icon } from "@/components/common/Icon";
+
 import { styles } from "./styles";
 
 import type { Toast as TToast } from "@/providers/ToastProvider/ToastProvider";
@@ -15,7 +17,9 @@ export function Toast({ toast }: ToastProps) {
   return (
     <div className={styles.toast(toast.variation)}>
       {toast.message}
-      <button onClick={handleClose}>[X]</button>
+      <button onClick={handleClose} className={styles.close}>
+        <Icon icon="x" />
+      </button>
     </div>
   );
 }

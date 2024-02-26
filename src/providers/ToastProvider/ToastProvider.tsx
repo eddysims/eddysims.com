@@ -34,7 +34,6 @@ export function ToastProvider({ children }: Readonly<PropsWithChildren>) {
   return (
     <ToastProviderContext.Provider value={value}>
       {toasts && toasts?.length > 0 && <ToastContainer />}
-
       {children}
     </ToastProviderContext.Provider>
   );

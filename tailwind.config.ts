@@ -11,7 +11,12 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  safelist: [toast.toast("success"), toast.toast("error"), toastContainer],
+  safelist: [
+    toast.toast("success"),
+    toast.toast("error"),
+    toast.close,
+    toastContainer,
+  ],
   theme: {
     fontFamily: {
       display: ["var(--font-display)"],
