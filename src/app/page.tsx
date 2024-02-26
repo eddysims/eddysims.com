@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { ContactDrawerButton } from "@/providers/ContactDrawerProvider/components/ContactDrawerButton";
 
+import { Test } from "@/components/Test";
 import { Container } from "@/components/common/Container";
 import { Heading } from "@/components/common/Heading";
 import { Text } from "@/components/common/Text/Text";
@@ -24,6 +25,7 @@ export default function Home() {
           </div>
           <div>
             <ContactDrawerButton label="Chat with me" />
+            <Test />
           </div>
         </div>
         <div className="relative col-span-3 col-start-4">
