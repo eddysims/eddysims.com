@@ -6,6 +6,7 @@ import { getServerSession } from "next-auth";
 import { PropsWithChildren } from "react";
 
 import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
+import { ToastProvider } from "@/providers/ToastProvider";
 
 import { SessionProvider } from "@/components/SessionProvider";
 
@@ -50,13 +51,15 @@ export default async function RootLayout({
         <meta name="theme-color" content="#171820" />
       </Head>
       <body className={clsx(display.variable, body.variable)}>
-        <SessionProvider session={session}>
-          <ContactDrawerProvider>
-            <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
-              {children}
-            </main>
-          </ContactDrawerProvider>
-        </SessionProvider>
+        <ToastProvider>
+          <SessionProvider session={session}>
+            <ContactDrawerProvider>
+              <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
+                {children}
+              </main>
+            </ContactDrawerProvider>
+          </SessionProvider>
+        </ToastProvider>
       </body>
     </html>
   );
