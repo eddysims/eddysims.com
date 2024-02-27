@@ -3,6 +3,8 @@ import type { Preview } from "@storybook/react";
 
 import { display, body } from "../src/styles/fonts";
 
+import { ToastProvider } from "../src/providers/ToastProvider/ToastProvider";
+
 import "../src/app/globals.css";
 import clsx from "clsx";
 
@@ -18,11 +20,13 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className={clsx(display.variable, body.variable)}>
-        <Story />
-      </div>
+      <ToastProvider>
+        <div className={clsx(display.variable, body.variable)}>
+          <Story />
+        </div>
+      </ToastProvider>
     ),
-  ]
+  ],
 };
 
 export default preview;

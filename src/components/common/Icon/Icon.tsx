@@ -2,7 +2,7 @@ import React from "react";
 
 import { icons } from "./utils/icons";
 
-type Icons = keyof typeof icons;
+export type Icons = keyof typeof icons;
 
 type IconProps = {
   readonly icon: Icons;

@@ -6,6 +6,14 @@ import type { Icons } from ".";
 import type { Meta, StoryObj } from "@storybook/react";
 
 /**
+ * The `Icon` component is a wrapper around
+ * [Feather Icons](https://react-icons.github.io/react-icons/icons/fi/).
+ *
+ * They are rendered dynamically using the `next/dynamic` package. This
+ * allows for only rendering the icon when it is needed.
+ *
+ * ## Usage
+ *
  * ```ts
  * import { Icon } from "@/components/common/Icon";
  * ```
@@ -37,21 +45,23 @@ export const AvailableIcons: Story = {
     const allIcons = Object.keys(icons).sort();
 
     return (
-      <table>
-        <thead>
+      <table className="table-auto w-full">
+        <thead className="bg-slate-100 ">
           <tr>
-            <th>Icon</th>
-            <th>Icon Name</th>
+            <th className="text-left p-3 border-r-2 border-white">Icon</th>
+            <th className="text-left p-3">Icon Name</th>
           </tr>
         </thead>
         <tbody>
           {allIcons.map((icon) => (
             <tr key={icon}>
-              <td>
+              <td className="border-2 border-slate-100 p-3">
                 <Icon icon={icon as Icons} />
               </td>
-              <td>
-                <code>{icon}</code>
+              <td className="border-2 border-slate-100 p-3">
+                <code className="font-mono text-sm bg-slate-100 border-1 border-slate-200 p-2">
+                  {icon}
+                </code>
               </td>
             </tr>
           ))}
