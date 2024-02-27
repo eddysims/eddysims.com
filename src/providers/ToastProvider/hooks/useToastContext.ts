@@ -7,16 +7,7 @@ import type {
 } from "@/providers/ToastProvider/ToastProvider";
 
 export const useToastContext = () => {
-  const [toasts, setToasts] = useState<Toast[]>([
-    { id: "1", message: "test", variation: "success" },
-    { id: "2", message: "test", variation: "error" },
-    {
-      id: "3",
-      message:
-        "test with a really really long message that i will want to break into multiple lines",
-      variation: "success",
-    },
-  ]);
+  const [toasts, setToasts] = useState<Toast[]>([]);
 
   const toast = (message: ToastParam) => {
     const id = uuidv4();

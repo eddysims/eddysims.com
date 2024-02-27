@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from "react";
-
 import { sendContactFormEmail } from "@/actions/sendContactFormEmail";
+import { useToast } from "@/providers/ToastProvider/hooks/useToast";
 
-import { Banner } from "@/components/common/Banner";
 import { Button } from "@/components/common/Button";
 import { Form } from "@/components/common/Form";
 import { Heading } from "@/components/common/Heading";
@@ -18,7 +16,7 @@ import { useForm } from "@/hooks/useForm";
 import type { ContactFormData } from "@/actions/sendContactFormEmail";
 
 export function ContactForm() {
-  const [status, setStatus] = useState<string>();
+  const toast = useToast();
   const methods = useForm();
   const {
     formState: { isSubmitting },
@@ -26,19 +24,21 @@ export function ContactForm() {
 
   // @ts-expect-error TODO: fix the form types
   const handleSubmit = methods.handleSubmit(async (data: ContactFormData) => {
-    setStatus(undefined);
     try {
       const { success, error } = await sendContactFormEmail(data);
 
       if (typeof error === "string") {
-        setStatus(error);
+        toast({ message: error, variation: "error" });
       }
 
       if (success === true) {
-        setStatus("Message sent!");
+        toast("Your message has been sent!");
       }
     } catch (err) {
-      setStatus("Error sending message. Please try again.");
+      toast({
+        message: "Error sending message. Please try again.",
+        variation: "error",
+      });
     }
   });
 
@@ -47,11 +47,6 @@ export function ContactForm() {
       <Heading as="h2" style="h1">
         Contact
       </Heading>
-      {status && (
-        <Banner>
-          <Text size="xs">{status}</Text>
-        </Banner>
-      )}
       <Form onSubmit={handleSubmit}>
         <div className="space-y-5">
           <InputText name="name" label="Name" required {...methods} />
