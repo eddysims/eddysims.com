@@ -13,6 +13,6 @@ export function Container({
 }
 
 const styles = (size: ContainerProps["size"]) =>
-  clsx("container", {
+  clsx("container px-5", {
     "max-w-xl": size === "xs",
   });
