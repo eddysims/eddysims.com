@@ -16,7 +16,6 @@ export type ToastParam = Pick<Toast, "message" | "variation"> | string;
 type ToastProviderContextProps = {
   toasts: Toast[];
   toast: (toast: ToastParam) => void;
-  removeToast: (id: string) => void;
 };
 
 export const ToastProviderContext = createContext<
@@ -24,12 +23,9 @@ export const ToastProviderContext = createContext<
 >(undefined);
 
 export function ToastProvider({ children }: Readonly<PropsWithChildren>) {
-  const { toasts, toast, removeToast } = useToastContext();
+  const { toasts, toast } = useToastContext();
 
-  const value = useMemo(
-    () => ({ toast, toasts, removeToast }),
-    [toasts, toast, removeToast],
-  );
+  const value = useMemo(() => ({ toasts, toast }), [toasts, toast]);
 
   return (
     <ToastProviderContext.Provider value={value}>

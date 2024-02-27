@@ -1,4 +1,5 @@
-import { useToastPrivate } from "@/providers/ToastProvider/hooks/useToastPrivate";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
 
 import { Icon } from "@/components/common/Icon";
 
@@ -11,15 +12,33 @@ type ToastProps = {
 };
 
 export function Toast({ toast }: ToastProps) {
-  const { removeToast } = useToastPrivate();
-  const handleClose = () => removeToast(toast.id);
+  const [showToast, setShowToast] = useState(true);
+
+  const handleClose = () => {
+    setShowToast(false);
+  };
 
   return (
-    <div className={styles.toast(toast.variation)}>
-      {toast.message}
-      <button onClick={handleClose} className={styles.close}>
-        <Icon icon="x" />
-      </button>
-    </div>
+    <AnimatePresence>
+      {showToast && (
+        <motion.div
+          key={toast.id}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 100,
+          }}
+          initial={{ opacity: 0, x: 25 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: 50 }}
+          className={styles.toast(toast.variation)}
+        >
+          {toast.message}
+          <button onClick={handleClose} className={styles.close}>
+            <Icon icon="x" />
+          </button>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

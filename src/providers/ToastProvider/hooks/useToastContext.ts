@@ -28,13 +28,8 @@ export const useToastContext = () => {
     setToasts([...toasts, { id, ...message }]);
   };
 
-  const removeToast = (id: string) => {
-    setToasts(toasts?.filter((toast) => toast.id !== id));
-  };
-
   return {
     toasts,
     toast,
-    removeToast,
   };
 };
