@@ -18,7 +18,7 @@ export function Text({
 const styles = {
   text: (size: TextProps["size"]) =>
     clsx("font-body", {
-      "text-xl": size === "base",
+      "text-lg md:text-xl": size === "base",
       "text-md": size === "sm",
       "text-sm": size === "xs",
     }),

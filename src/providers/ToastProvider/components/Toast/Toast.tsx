@@ -35,7 +35,7 @@ export function Toast({ toast }: ToastProps) {
         >
           <div className={styles.content}>{toast.message}</div>
           <button onClick={handleClose} className={styles.close}>
-            <Icon icon="x" />
+            <Icon icon="x" size="sm" />
           </button>
 
           <motion.div

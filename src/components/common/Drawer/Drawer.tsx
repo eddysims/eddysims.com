@@ -1,5 +1,8 @@
 import { Dialog, Transition } from "@headlessui/react";
+import clsx from "clsx";
 import { Fragment, PropsWithChildren } from "react";
+
+import { Icon } from "@/components/common/Icon";
 
 type DrawerProps = {
   open: boolean;
@@ -41,7 +44,20 @@ export function Drawer({
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <Dialog.Panel className="px-16 py-16 w-11/12 max-w-2xl transform overflow-hidden bg-text shadow-xl transition-all">
+              <Dialog.Panel
+                className={clsx(
+                  "relative bg-text w-11/12 max-w-2xl transform shadow-xl transition-all",
+                  "px-5 py-16",
+                  "md:px-12",
+                  "lg:px-16",
+                )}
+              >
+                <button
+                  onClick={handleClose}
+                  className="absolute top-7 md:text-text md:-left-12"
+                >
+                  <Icon icon="x" size="lg" />
+                </button>
                 {children}
               </Dialog.Panel>
             </Transition.Child>
