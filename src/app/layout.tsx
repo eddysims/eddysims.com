@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
 import clsx from "clsx";
 import Head from "next/head";
 import { getServerSession } from "next-auth";
@@ -61,6 +62,9 @@ export default async function RootLayout({
           </SessionProvider>
         </ToastProvider>
       </body>
+      {process.env.GOOGLE_ANALYTICS_ID && (
+        <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID} />
+      )}
     </html>
   );
 }

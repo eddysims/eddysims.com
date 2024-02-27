@@ -1,5 +1,7 @@
 "use client";
 
+import { sendGAEvent } from "@next/third-parties/google";
+
 import { sendContactFormEmail } from "@/actions/sendContactFormEmail";
 import { useToast } from "@/providers/ToastProvider/hooks/useToast";
 
@@ -33,6 +35,7 @@ export function ContactForm() {
 
       if (success === true) {
         toast("Your message has been sent!");
+        sendGAEvent({ event: "Contact form submitted" });
       }
     } catch (err) {
       toast({
