@@ -33,10 +33,18 @@ export function Toast({ toast }: ToastProps) {
           exit={{ opacity: 0, x: 50 }}
           className={styles.toast(toast.variation)}
         >
-          {toast.message}
+          <div className={styles.content}>{toast.message}</div>
           <button onClick={handleClose} className={styles.close}>
             <Icon icon="x" />
           </button>
+
+          <motion.div
+            className={styles.timer(toast.variation)}
+            initial={{ width: "100%" }}
+            animate={{ width: "0%" }}
+            transition={{ duration: 5 }}
+            onAnimationComplete={handleClose}
+          />
         </motion.div>
       )}
     </AnimatePresence>

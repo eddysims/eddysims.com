@@ -14,6 +14,9 @@ const config: Config = {
   safelist: [
     toast.toast("success"),
     toast.toast("error"),
+    toast.timer("success"),
+    toast.timer("error"),
+    toast.content,
     toast.close,
     toastContainer,
   ],
