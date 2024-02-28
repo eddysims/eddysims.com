@@ -7,6 +7,7 @@ import { ToastProvider } from "../src/providers/ToastProvider/ToastProvider";
 
 import "../src/app/globals.css";
 import clsx from "clsx";
+import theme from "./theme";
 
 const preview: Preview = {
   parameters: {
@@ -17,11 +18,14 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    docs: {
+      theme,
+    },
   },
   decorators: [
     (Story) => (
       <ToastProvider>
-        <div className={clsx(display.variable, body.variable)}>
+        <div className={clsx(display.variable, body.variable, "text-text")}>
           <Story />
         </div>
       </ToastProvider>

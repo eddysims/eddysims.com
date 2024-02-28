@@ -34,7 +34,7 @@ const config: Config = {
           DEFAULT: "#F2EDE7",
         },
         primary: {
-          DEFAULT: "#E81604",
+          DEFAULT: "#D41100",
         },
       },
     },
@@ -43,7 +43,7 @@ const config: Config = {
     plugin(function ({ addUtilities }) {
       addUtilities({
         ".shadow-border": {
-          "box-shadow": "0 0 0 4px #E81604 inset",
+          "box-shadow": "0 0 0 4px #DC1100 inset",
         },
       });
     }),
