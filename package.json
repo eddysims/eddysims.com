@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "husky",
     "preinstall": "npx only-allow bun",
     "dev": "next dev --turbo -p 1234",
     "build": "next build",
@@ -11,8 +12,7 @@
     "lint:md": "prettier --check './**/*.{md,mdx}' --write",
     "typecheck": "tsc --noEmit --incremental false",
     "storybook": "storybook dev -p 6006 -s public",
-    "build-storybook": "storybook build -s public",
-    "prepare": "husky"
+    "build-storybook": "storybook build -s public"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
