@@ -1,0 +1,1 @@
+export { ParralaxImage } from "./ParralaxImage";
