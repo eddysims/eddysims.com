@@ -46,20 +46,20 @@ export const AvailableIcons: Story = {
 
     return (
       <table className="table-auto w-full">
-        <thead className="bg-slate-100 ">
+        <thead className="bg-zinc-800 ">
           <tr>
-            <th className="text-left p-3 border-r-2 border-white">Icon</th>
+            <th className="text-left p-3 border-r-2 border-zinc-900">Icon</th>
             <th className="text-left p-3">Icon Name</th>
           </tr>
         </thead>
         <tbody>
           {allIcons.map((icon) => (
             <tr key={icon}>
-              <td className="border-2 border-slate-100 p-3">
+              <td className="border-2 border-zinc-800 p-3">
                 <Icon icon={icon as Icons} />
               </td>
-              <td className="border-2 border-slate-100 p-3">
-                <code className="font-mono text-sm bg-slate-100 border-1 border-slate-200 p-2">
+              <td className="border-2 border-zinc-800 p-3">
+                <code className=" rounded font-mono text-sm bg-zinc-800 border-1 border-zinc-900 p-2">
                   {icon}
                 </code>
               </td>
