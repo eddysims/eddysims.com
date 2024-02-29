@@ -6,6 +6,7 @@ import { ContactDrawerButton } from "@/providers/ContactDrawerProvider/component
 import { Container } from "@/components/common/Container";
 import { Heading } from "@/components/common/Heading";
 import { Text } from "@/components/common/Text/Text";
+import { SocialLinks } from "@/components/social/SocialLinks";
 
 export default function Home() {
   return (
@@ -18,9 +19,21 @@ export default function Home() {
             "xl:col-span-2",
           )}
         >
-          <Heading as="h1" style="h3">
-            Eddy Sims
-          </Heading>
+          <div
+            className={clsx(
+              "flex flex-col items-center gap-5 mb-5",
+              "lg:flex-row lg:gap-12 lg:mb-3",
+            )}
+          >
+            <div className="order-2 lg:order-1">
+              <Heading as="h1" style="h3">
+                Eddy Sims
+              </Heading>
+            </div>
+            <div className="text-primary order-1">
+              <SocialLinks />
+            </div>
+          </div>
           <Heading style="h1">Software Engineer</Heading>
           <div className="my-5">
             <Text>
