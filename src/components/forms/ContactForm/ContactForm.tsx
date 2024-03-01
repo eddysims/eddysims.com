@@ -2,7 +2,7 @@
 
 import { sendGAEvent } from "@next/third-parties/google";
 
-import { sendContactFormEmail } from "@/actions/sendContactFormEmail";
+import { sendContactForm } from "@/actions/forms/sendContactForm";
 import { useToast } from "@/providers/ToastProvider/hooks/useToast";
 
 import { Button } from "@/components/common/Button";
@@ -15,7 +15,7 @@ import { Text } from "@/components/common/Text";
 
 import { useForm } from "@/hooks/useForm";
 
-import type { ContactFormData } from "@/actions/sendContactFormEmail";
+import type { ContactFormData } from "@/actions/forms/sendContactForm";
 
 export function ContactForm() {
   const toast = useToast();
@@ -27,7 +27,7 @@ export function ContactForm() {
   // @ts-expect-error TODO: fix the form types
   const handleSubmit = methods.handleSubmit(async (data: ContactFormData) => {
     try {
-      const { success, error } = await sendContactFormEmail(data);
+      const { success, error } = await sendContactForm(data);
 
       if (typeof error === "string") {
         toast({ message: error, variation: "error" });

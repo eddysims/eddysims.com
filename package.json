@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "preinstall": "npx only-allow bun",
     "dev": "next dev --turbo -p 1234",
     "build": "next build",
     "start": "next start",
@@ -12,11 +11,14 @@
     "lint:md": "prettier --check './**/*.{md,mdx}' --write",
     "typecheck": "tsc --noEmit --incremental false",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "email:dev": "cp .env ./node_modules/react-email/ && email dev --dir ./src/emails"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@next/third-parties": "^14.1.0",
+    "@react-email/components": "^0.0.15",
+    "@react-email/render": "^0.0.12",
     "clsx": "^2.1.0",
     "framer-motion": "^11.0.6",
     "lodash": "^4.17.21",
@@ -24,6 +26,7 @@
     "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
+    "react-email": "2.1.0",
     "react-hook-form": "^7.50.1",
     "react-icons": "^5.0.1",
     "resend": "^3.2.0",
