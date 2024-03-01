@@ -8,4 +8,8 @@ export const icons = {
     import("react-icons/fi").then((mod) => mod.FiLinkedin),
   ),
   code: dynamic(() => import("react-icons/fi").then((mod) => mod.FiCode)),
+  calendar: dynamic(() =>
+    import("react-icons/fi").then((mod) => mod.FiCalendar),
+  ),
+  watch: dynamic(() => import("react-icons/fi").then((mod) => mod.FiWatch)),
 };

@@ -1,9 +1,9 @@
-import NextLink from "next/link";
+import clsx from "clsx";
 
-import { formatDate } from "@/helpers/formatDate";
 import { fetchPublishedDevPosts } from "@/lib/devto";
 import { Post } from "@/lib/devto/types";
 
+import { BlogCard } from "@/components/blog/BlogCard";
 import { Container } from "@/components/common/Container";
 import { Heading } from "@/components/common/Heading";
 import { Text } from "@/components/common/Text";
@@ -28,21 +28,11 @@ export default async function Page() {
         </div>
       </Container>
 
-      <div className="my-16 space-y-8">
+      <div
+        className={clsx("my-16 grid gap-8", "md:grid-cols-2", "xl:grid-cols-3")}
+      >
         {posts.map((post: Post) => (
-          <div key={post.slug}>
-            <Heading as="h2" style="h3">
-              {post.title}
-            </Heading>
-            <Text size="sm">{formatDate(post.published_at)}</Text>
-            <Text>{post.description}</Text>
-            <NextLink
-              href={`/blog/${post.slug}`}
-              aria-label={`Read ${post.title}`}
-            >
-              Read Post
-            </NextLink>
-          </div>
+          <BlogCard key={post.id} post={post} />
         ))}
       </div>
     </Container>

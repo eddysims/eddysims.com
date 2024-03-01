@@ -29,9 +29,11 @@ const config: Config = {
       colors: {
         surface: {
           DEFAULT: "#171820",
+          dark: "#121319",
         },
         text: {
           DEFAULT: "#F2EDE7",
+          dark: "#B7B2A9",
         },
         primary: {
           DEFAULT: "#D41100",
