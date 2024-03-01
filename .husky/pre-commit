@@ -1,1 +1,1 @@
-bun lint && bun lint:md
+npm run lint && npm run lint:md
