@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
 type ContainerProps = {
-  size?: "base" | "xs";
+  size?: "base" | "sm" | "xs";
 };
 
 export function Container({
@@ -14,5 +14,6 @@ export function Container({
 
 const styles = (size: ContainerProps["size"]) =>
   clsx("container px-5", "group group-[.container]:-mx-5", {
+    "max-w-2xl": size === "sm",
     "max-w-xl": size === "xs",
   });

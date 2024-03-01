@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 
 import { fetchPublishedDevPosts } from "@/lib/devto";
 
+import { Container } from "@/components/common/Container";
+import { Heading } from "@/components/common/Heading";
+import { RichText } from "@/components/common/RichText";
+
 import type { Post } from "@/lib/devto/types";
 
 export async function generateStaticParams() {
@@ -28,5 +32,10 @@ export default async function Page({ params }: PageParams) {
     return notFound();
   }
 
-  return <div>{post.title}</div>;
+  return (
+    <Container size="sm">
+      <Heading>{post.title}</Heading>
+      <RichText text={post.body_markdown} />
+    </Container>
+  );
 }
