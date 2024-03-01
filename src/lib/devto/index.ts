@@ -1,4 +1,4 @@
-import { Post } from "./devto/types";
+import { Post } from "./types";
 
 async function fetchDev<T>(slug: string): Promise<T> {
   return await fetch(`https://dev.to/api${slug}`, {
