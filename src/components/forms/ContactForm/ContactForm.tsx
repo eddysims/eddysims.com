@@ -61,7 +61,7 @@ export function ContactForm() {
           <Button
             isSubmit
             label="Send Message"
-            variantion="outline"
+            variation="outline"
             isLoading={isSubmitting}
           />
           <Text size="sm">

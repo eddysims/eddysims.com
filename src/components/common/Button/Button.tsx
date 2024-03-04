@@ -1,6 +1,7 @@
 "use client";
 
 import clsx from "clsx";
+import NextLink from "next/link";
 import { MergeExclusive } from "type-fest";
 
 type ButtonVariations = "primary" | "outline";
@@ -11,13 +12,22 @@ type ButtonBaseProps = {
    */
   readonly label: string;
   /**
+   * An aria-label to add to the button if the label is
+   * non-descriptive.
+   */
+  readonly ariaLabel?: string;
+  /**
    * The variantion of the button.
    */
-  readonly variantion?: ButtonVariations;
+  readonly variation?: ButtonVariations;
   /**
    * Render the button in a loading state
    */
   readonly isLoading?: boolean;
+  /**
+   * The size of the button.
+   */
+  readonly size?: "base" | "sm";
 };
 
 type ButtonButtonProps = ButtonBaseProps & {
@@ -27,6 +37,16 @@ type ButtonButtonProps = ButtonBaseProps & {
   readonly onClick: () => void;
 };
 
+type ButtonHrefProps = ButtonBaseProps & {
+  /**
+   * The href to link to.
+   */
+  readonly href: string;
+  readonly onClick?: () => void;
+};
+
+type ButtonOrHrefProps = MergeExclusive<ButtonButtonProps, ButtonHrefProps>;
+
 type SubmitButtonProps = ButtonBaseProps & {
   /**
    * If true, the button will be a submit button.
@@ -35,42 +55,63 @@ type SubmitButtonProps = ButtonBaseProps & {
   readonly onClick?: () => void;
 };
 
-export type ButtonProps = MergeExclusive<ButtonButtonProps, SubmitButtonProps>;
+export type ButtonProps = MergeExclusive<ButtonOrHrefProps, SubmitButtonProps>;
 
 export function Button({
   label,
-  variantion = "primary",
+  ariaLabel,
+  variation = "primary",
   isSubmit,
   isLoading,
+  size = "base",
+  href,
   onClick,
 }: ButtonProps) {
   const handleClick = () => {
     onClick?.();
   };
 
+  const buttonProps = {
+    ...(onClick && { onClick: handleClick }),
+    className: styles.button({ variation, isLoading, size }),
+    "aria-label": ariaLabel,
+  };
+
+  if (href) {
+    return (
+      <NextLink {...buttonProps} href={href}>
+        {label}
+      </NextLink>
+    );
+  }
+
   return (
-    <button
-      type={isSubmit ? "submit" : "button"}
-      onClick={handleClick}
-      className={styles.button(variantion, isLoading)}
-    >
-      {isLoading && <LoadingSpinner variantion={variantion} />}
+    <button {...buttonProps} type={isSubmit ? "submit" : "button"}>
+      {isLoading && <LoadingSpinner variantion={variation} />}
       {label}
     </button>
   );
 }
 
 const styles = {
-  button: (variation: ButtonVariations, isLoading?: boolean) =>
+  button: ({
+    variation,
+    isLoading,
+    size,
+  }: Pick<ButtonProps, "variation" | "isLoading" | "size">) =>
     clsx(
-      "rounded px-8 py-5 flex items-center gap-2",
-      "font-display tracking-widest uppercase font-bold text-lg",
+      "rounded flex items-center gap-2",
+      "font-display tracking-widest uppercase font-bold",
       {
         "bg-primary text-text": variation === "primary",
         "shadow-border text-primary": variation === "outline",
       },
       {
         "cursor-default pointer-events-none": isLoading,
+      },
+      {
+        "text-md px-5 py-3": size === "sm",
+        "text-lg px-8 py-5": size === "base",
       },
     ),
 };

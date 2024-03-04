@@ -44,7 +44,7 @@ export const Variations = () => {
         }
       />
       <Button
-        variantion="outline"
+        variation="outline"
         label="Error Toast"
         onClick={() =>
           toast({ message: "That was not a success...", variation: "error" })
