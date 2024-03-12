@@ -12,4 +12,7 @@ export const icons = {
     import("react-icons/fi").then((mod) => mod.FiCalendar),
   ),
   watch: dynamic(() => import("react-icons/fi").then((mod) => mod.FiWatch)),
+  paperclip: dynamic(() =>
+    import("react-icons/fi").then((mod) => mod.FiPaperclip),
+  ),
 };

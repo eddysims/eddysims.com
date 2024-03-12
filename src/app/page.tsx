@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Container
       className={clsx(
-        "flex flex-col justify-center",
+        "flex-1 flex flex-col justify-center",
         "lg:grid lg:grid-cols-6 lg:min-h-full",
       )}
     >
