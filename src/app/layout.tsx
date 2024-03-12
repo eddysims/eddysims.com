@@ -10,6 +10,7 @@ import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
 
 import { SessionProvider } from "@/components/SessionProvider";
+import { Navigation } from "@/components/layout/Navigation";
 
 import { display, body } from "@/styles/fonts";
 
@@ -55,9 +56,12 @@ export default async function RootLayout({
         <ToastProvider>
           <SessionProvider session={session}>
             <ContactDrawerProvider>
-              <main className="flex flex-col min-h-screen items-center justify-center bg-surface text-text">
-                {children}
-              </main>
+              <div className="flex flex-col min-h-screen">
+                <Navigation />
+                <main className="flex flex-col min-h-full items-center justify-center bg-surface text-text flex-1">
+                  {children}
+                </main>
+              </div>
             </ContactDrawerProvider>
           </SessionProvider>
         </ToastProvider>
