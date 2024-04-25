@@ -6,7 +6,7 @@ export default function AuthLayout({
   children,
 }: Readonly<PropsWithChildren<unknown>>) {
   return (
-    <div className="bg-surface min-h-screen flex flex-col text-text">
+    <div className="min-h-screen flex flex-col text-text">
       <Navigation />
       <main className="flex-1 flex flex-col justify-center items-center">
         {children}

@@ -18,13 +18,7 @@ type BlogCardProps = {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <div
-      className={clsx(
-        "bg-surface-dark p-5 rounded shadow",
-        "lg:p-8",
-        "xl:py-12",
-      )}
-    >
+    <div className={clsx(" p-5 rounded shadow", "lg:p-8", "xl:py-12")}>
       <Heading as="h3">{post.title}</Heading>
 
       <div className="my-5">
