@@ -30,8 +30,8 @@ jobs:
     needs: [install]
 
     steps:
-      - uses: ./.github/actions/setup-pnpm
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
       - name: test
         run: pnpm test
   
@@ -40,7 +40,7 @@ jobs:
     needs: [install]
 
     steps:
-      - uses: ./.github/actions/setup-pnpm
       - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup-pnpm
       - name: typecheck
         run: pnpm typecheck
