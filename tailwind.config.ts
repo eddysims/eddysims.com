@@ -25,27 +25,12 @@ const config: Config = {
       display: ["var(--font-display)"],
       body: ["var(--font-body)"],
     },
-    extend: {
-      colors: {
-        surface: {
-          DEFAULT: "#171820",
-          dark: "#121319",
-        },
-        text: {
-          DEFAULT: "#F2EDE7",
-          dark: "#B7B2A9",
-        },
-        primary: {
-          DEFAULT: "#D41100",
-        },
-      },
-    },
   },
   plugins: [
-    plugin(({ addUtilities }) => {
+    plugin(({ addUtilities, theme }) => {
       addUtilities({
         ".shadow-border": {
-          "box-shadow": "0 0 0 4px #DC1100 inset",
+          "box-shadow": `0 0 0 4px ${theme("colors.red.600")} inset`,
         },
       });
     }),

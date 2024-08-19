@@ -34,7 +34,7 @@ export default function Home() {
               Eddy Sims
             </Heading>
           </div>
-          <div className="text-primary order-1">
+          <div className="text-red-600 order-1">
             <SocialLinks />
           </div>
         </div>

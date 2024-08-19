@@ -46,15 +46,16 @@ export function Drawer({
             >
               <Dialog.Panel
                 className={clsx(
-                  "relative bg-text w-11/12 max-w-2xl transform shadow-xl transition-all",
+                  "relative bg-stone-50 w-11/12 max-w-2xl transform shadow-xl transition-all",
                   "px-5 py-16",
                   "md:px-12",
                   "lg:px-16",
                 )}
               >
                 <button
+                  type="button"
                   onClick={handleClose}
-                  className="absolute top-7 md:text-text md:-left-12"
+                  className="absolute top-7 md:text-stone-50 md:-left-12"
                 >
                   <Icon icon="x" size="lg" />
                 </button>

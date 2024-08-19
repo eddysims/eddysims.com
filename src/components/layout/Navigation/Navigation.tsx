@@ -15,7 +15,7 @@ export function Navigation() {
   );
 
   return (
-    <header className=" text-text">
+    <header className=" text-red-600">
       <nav id="main-navigation">
         <ul className="flex gap-8 p-8">
           {path !== "/" && (

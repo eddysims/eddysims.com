@@ -52,13 +52,13 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#171820" />
         <meta name="theme-color" content="#171820" />
       </Head>
-      <body className={clsx(display.variable, body.variable, "bg-slate-950")}>
+      <body className={clsx(display.variable, body.variable, "bg-slate-900")}>
         <ToastProvider>
           <SessionProvider session={session}>
             <ContactDrawerProvider>
               <div className="flex flex-col min-h-screen">
                 <Navigation />
-                <main className="flex flex-col min-h-full items-center justify-center  text-text flex-1">
+                <main className="flex flex-col min-h-full items-center justify-center text-stone-50 flex-1">
                   {children}
                 </main>
               </div>
