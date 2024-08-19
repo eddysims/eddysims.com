@@ -12,7 +12,6 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
     - uses: ./.github/actions/setup-pnpm
 
   lint:
@@ -20,7 +19,7 @@ jobs:
     needs: [install]
 
     steps:
-      - uses: actions/checkout@v4
+      
       - uses: ./.github/actions/setup-pnpm
 
       - name: lint
@@ -31,7 +30,6 @@ jobs:
     needs: [install]
 
     steps:
-      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
 
       - name: test
@@ -42,7 +40,6 @@ jobs:
     needs: [install]
 
     steps:
-      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup-pnpm
 
       - name: typecheck
