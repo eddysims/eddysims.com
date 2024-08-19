@@ -103,8 +103,8 @@ const styles = {
       "rounded flex items-center gap-2",
       "font-display tracking-widest uppercase font-bold",
       {
-        "bg-primary text-text": variation === "primary",
-        "shadow-border text-primary": variation === "outline",
+        "bg-red-600 text-stone-50": variation === "primary",
+        "shadow-border text-red-600": variation === "outline",
       },
       {
         "cursor-default pointer-events-none": isLoading,
