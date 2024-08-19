@@ -3,8 +3,6 @@ name: setup-pnpm
 runs:
   using: "composite"
   steps:
-    - uses: actions/checkout@v4
-
     - name: cache node modules
       id: cache-node-modules
       uses: actions/cache@v4
