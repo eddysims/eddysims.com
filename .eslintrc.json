@@ -3,7 +3,6 @@
     "eslint:recommended",
     "plugin:storybook/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
     "plugin:prettier/recommended",
     "next/core-web-vitals"
   ],

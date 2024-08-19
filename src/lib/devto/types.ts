@@ -1,4 +1,4 @@
-export type User = {
+type User = {
   name: string;
   username: string;
   twitter_username: string;

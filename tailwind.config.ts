@@ -42,7 +42,7 @@ const config: Config = {
     },
   },
   plugins: [
-    plugin(function ({ addUtilities }) {
+    plugin(({ addUtilities }) => {
       addUtilities({
         ".shadow-border": {
           "box-shadow": "0 0 0 4px #DC1100 inset",
