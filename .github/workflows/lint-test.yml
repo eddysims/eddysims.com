@@ -1,4 +1,4 @@
-name: lint/test/typecheck
+name: ci
 
 on:
   - push
