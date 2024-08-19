@@ -37,7 +37,7 @@ export function ContactForm() {
         toast("Your message has been sent!");
         sendGAEvent({ event: "Contact form submitted" });
       }
-    } catch (err) {
+    } catch {
       toast({
         message: "Error sending message. Please try again.",
         variation: "error",

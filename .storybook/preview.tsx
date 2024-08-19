@@ -11,7 +11,6 @@ import theme from "./theme";
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -31,6 +30,7 @@ const preview: Preview = {
       </ToastProvider>
     ),
   ],
+  tags: ["autodocs"]
 };
 
 export default preview;

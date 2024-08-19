@@ -9,7 +9,7 @@ type RichTextProps = {
   readonly text: string;
 };
 
-export const markdownComponentMap: () => Components = () => ({
+const markdownComponentMap: () => Components = () => ({
   h1: (props) => <Heading as="h1">{props.children}</Heading>,
   h2: (props) => <Heading as="h2">{props.children}</Heading>,
   h3: (props) => <Heading as="h3">{props.children}</Heading>,
