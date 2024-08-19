@@ -21,7 +21,6 @@ const preview: Preview = {
       theme,
     },
   },
-
   decorators: [
     (Story) => (
       <ToastProvider>
@@ -31,7 +30,6 @@ const preview: Preview = {
       </ToastProvider>
     ),
   ],
-
   tags: ["autodocs"]
 };
 
