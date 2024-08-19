@@ -22,6 +22,7 @@ export function SocialLink({ href, icon }: SocialLinkProps) {
 
   return (
     <NextLink
+      aria-label={`Visit my ${icon}`}
       onClick={handleClick}
       href={href}
       target="_blank"
