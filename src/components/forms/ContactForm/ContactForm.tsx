@@ -10,8 +10,8 @@ import { Form } from "@/components/common/Form";
 import { InputEmail } from "@/components/common/InputEmail";
 import { InputText } from "@/components/common/InputText";
 import { InputTextArea } from "@/components/common/InputTextArea";
-import { Text } from "@/components/common/Text";
 import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 import { useForm } from "@/hooks/useForm";
 

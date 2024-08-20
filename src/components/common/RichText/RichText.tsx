@@ -1,9 +1,9 @@
-import Markdown, { Components } from "react-markdown";
+import Markdown, { type Components } from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
-import { Text } from "@/components/common/Text";
 import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 type RichTextProps = {
   readonly text: string;

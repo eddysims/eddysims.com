@@ -2,9 +2,9 @@ import { fetchPublishedDevPosts } from "@/lib/devto";
 import { cn } from "@/utils/cva";
 
 import { BlogCard } from "@/components/blog/BlogCard";
-import { Text } from "@/components/common/Text";
 import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 import type { Post } from "@/lib/devto/types";
 

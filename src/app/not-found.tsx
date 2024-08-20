@@ -1,7 +1,7 @@
-import { Text } from "@/components/common/Text";
 import { Menu } from "@/components/not-found/Menu";
 import { ParralaxImage } from "@/components/not-found/ParralaxImage";
 import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 export default function NotFoundPage() {
   return (

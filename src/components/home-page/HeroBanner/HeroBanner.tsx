@@ -3,9 +3,9 @@ import NextImage from "next/image";
 import { ContactDrawerButton } from "@/providers/ContactDrawerProvider/components/ContactDrawerButton";
 import { cn } from "@/utils/cva";
 
-import { Text } from "@/components/common/Text";
 import { SocialLinks } from "@/components/social/SocialLinks";
 import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 export function HeroBanner() {
   return (
