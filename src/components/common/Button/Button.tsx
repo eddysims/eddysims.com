@@ -100,7 +100,7 @@ const styles = {
     size,
   }: Pick<ButtonProps, "variation" | "isLoading" | "size">) =>
     clsx(
-      "flex items-center gap-2 rounded",
+      "inline-flex items-center gap-2 rounded",
       "font-display font-bold uppercase tracking-widest",
       {
         "bg-red-600 text-stone-50": variation === "primary",

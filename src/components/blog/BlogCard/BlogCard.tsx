@@ -1,11 +1,12 @@
-import clsx from "clsx";
+import NextLink from "next/link";
 
 import { formatDate } from "@/helpers/formatDate";
+import { cn } from "@/utils/cva";
 
 import { Button } from "@/components/common/Button";
-import { Heading } from "@/components/common/Heading";
 import { Text } from "@/components/common/Text";
-import { Icon } from "@/components/ui/Icon";
+
+import { Details } from "./components/Details";
 
 import type { Post } from "@/lib/devto/types";
 
@@ -18,36 +19,43 @@ type BlogCardProps = {
 
 export function BlogCard({ post }: BlogCardProps) {
   return (
-    <div className={clsx("rounded p-5 shadow", "lg:p-8", "xl:py-12")}>
-      <Heading as="h3">{post.title}</Heading>
-
-      <div className="my-5">
-        <Text>{post?.description}</Text>
-      </div>
-      <div className="text-text-dark flex items-center gap-2">
-        <div className="flex items-center gap-2">
-          <div className="-mt-0.5">
-            <Icon icon="calendar-line" size="sm" />
-          </div>
-          <Text size="sm">{formatDate(post.published_at)}</Text>
-        </div>
-        &bull;
-        <div className="flex items-center gap-2">
-          <div className="-mt-0.5">
-            <Icon icon="timer-line" size="sm" />
-          </div>
-          <Text size="sm">{post.reading_time_minutes} minute read</Text>
-        </div>
+    <div className={styles.wrapper}>
+      <NextLink href={`/blog/${post.slug}`} className={styles.title}>
+        {post.title}
+      </NextLink>
+      <div className={styles.description}>
+        <Text size="sm">{post?.description}</Text>
       </div>
 
-      <div className="text-text-dark mt-5 flex items-center gap-2">
+      <footer className={styles.footer}>
+        <div className={styles.details}>
+          <Details label={formatDate(post.published_at)} icon="calendar-line" />
+          <span className={styles.bullet}>&bull;</span>
+          <Details
+            label={`${post.reading_time_minutes} minute read`}
+            icon="timer-line"
+          />
+        </div>
+
         <Button
           href={`/blog/${post.slug}`}
           label="Read Post"
           ariaLabel={`Read post: ${post.title}`}
           size="sm"
         />
-      </div>
+      </footer>
     </div>
   );
 }
+
+const styles = {
+  wrapper: cn("flex flex-col @container"),
+  title: cn("text-sla font-display text-3xl uppercase tracking-wide"),
+  description: cn("my-5 text-balance"),
+  footer: cn("mt-auto space-y-5"),
+  details: cn(
+    "grid gap-2 text-slate-400",
+    "@sm:flex @sm:items-center @sm:gap-3",
+  ),
+  bullet: cn("hidden @sm:inline"),
+};
