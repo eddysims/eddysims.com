@@ -1,12 +1,13 @@
 import clsx from "clsx";
 
 import { fetchPublishedDevPosts } from "@/lib/devto";
-import { Post } from "@/lib/devto/types";
 
 import { BlogCard } from "@/components/blog/BlogCard";
-import { Container } from "@/components/common/Container";
 import { Heading } from "@/components/common/Heading";
 import { Text } from "@/components/common/Text";
+import { Container } from "@/components/ui/Container";
+
+import type { Post } from "@/lib/devto/types";
 
 export default async function Page() {
   const posts = await fetchPublishedDevPosts();

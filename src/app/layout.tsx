@@ -9,8 +9,8 @@ import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
 import { SessionProvider } from "@/components/SessionProvider";
-import { Container } from "@/components/common/Container";
 import { Navigation } from "@/components/layout/Navigation";
+import { Container } from "@/components/ui/Container";
 
 import { display, body } from "@/styles/fonts";
 

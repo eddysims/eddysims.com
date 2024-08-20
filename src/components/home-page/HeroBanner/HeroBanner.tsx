@@ -41,7 +41,6 @@ export function HeroBanner() {
 
 const styles = {
   wrapper: cn(
-    // "@sm:bg-blue-500 @md:bg-red-500 @lg:bg-green-500 @xl:bg-yellow-500 @2xl:bg-purple-500 @3xl:bg-pink-500 @4xl:bg-indigo-500 @5xl:bg-blue-500 @6xl:bg-red-500 @7xl:bg-gray-500",
     "flex min-h-dvh flex-col items-center justify-center",
     "@5xl:grid @5xl:grid-cols-6",
   ),

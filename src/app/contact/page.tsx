@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-
-import { Container } from "@/components/common/Container";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { Container } from "@/components/ui/Container";
+
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact Me | Eddy Sims",
