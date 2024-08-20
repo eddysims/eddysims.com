@@ -10,7 +10,6 @@ import { Button } from ".";
  * ```
  */
 const meta: Meta<typeof Button> = {
-  title: "components/Button",
   component: Button,
   args: {
     label: "Click me",

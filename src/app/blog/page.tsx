@@ -1,11 +1,10 @@
-import clsx from "clsx";
-
 import { fetchPublishedDevPosts } from "@/lib/devto";
+import { cn } from "@/utils/cva";
 
 import { BlogCard } from "@/components/blog/BlogCard";
-import { Heading } from "@/components/common/Heading";
-import { Text } from "@/components/common/Text";
 import { Container } from "@/components/ui/Container";
+import { Heading } from "@/components/ui/Heading";
+import { Text } from "@/components/ui/Text";
 
 import type { Post } from "@/lib/devto/types";
 
@@ -13,29 +12,37 @@ export default async function Page() {
   const posts = await fetchPublishedDevPosts();
 
   return (
-    <Container>
-      <Container size="xs">
-        <div className="space-y-5">
-          <Heading as="h1">Blog</Heading>
-          <Heading as="h2" style="h3">
-            Explore my writings
-          </Heading>
+    <>
+      <Container size="sm" className={styles.hero}>
+        <Heading as="h1">Blog</Heading>
+        <Heading as="h2" style="h3">
+          Explore my writings
+        </Heading>
 
-          <Text>
-            Welcome to my mind dumb. Here you will find my writings. They will
-            be mostly related to technology, however you may find a few random
-            thoughts here and there. I hope you enjoy 🙂
-          </Text>
-        </div>
+        <Text>
+          Welcome to my mind dump. Here you will find my writings. They will be
+          mostly related to technology, however you may find a few random
+          thoughts here and there. I hope you enjoy 🙂.
+        </Text>
       </Container>
 
-      <div
-        className={clsx("my-16 grid gap-8", "md:grid-cols-2", "xl:grid-cols-3")}
-      >
+      <div className={styles.grid}>
         {posts.map((post: Post) => (
           <BlogCard key={post.id} post={post} />
         ))}
       </div>
-    </Container>
+    </>
   );
 }
+
+const styles = {
+  hero: cn(
+    "mb-16 mt-32 space-y-5 text-balance border-b border-slate-800 pb-16",
+  ),
+  grid: cn(
+    "grid gap-16",
+    "@2xl:grid-cols-2 @2xl:gap-12",
+    "@4xl:gap-16",
+    "@6xl:grid-cols-3",
+  ),
+};

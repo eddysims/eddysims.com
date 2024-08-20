@@ -2,8 +2,7 @@
 
 import { useContactDrawer } from "@/providers/ContactDrawerProvider/hooks/useContactDrawer";
 
-import { Button } from "@/components/common/Button";
-import type { ButtonProps } from "@/components/common/Button";
+import { Button, type ButtonProps } from "@/components/ui/Button";
 
 type ContactDrawerButtonProps = Pick<ButtonProps, "label">;
 

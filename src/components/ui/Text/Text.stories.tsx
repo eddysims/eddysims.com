@@ -10,7 +10,6 @@ import type { Meta, StoryObj } from "@storybook/react";
  * ```
  */
 const meta: Meta<typeof Text> = {
-  title: "typography/Text",
   component: Text,
   render: (args) => <Text {...args}>Hello World</Text>,
 };

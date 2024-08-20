@@ -1,5 +1,6 @@
-import clsx from "clsx";
-import { PropsWithChildren } from "react";
+import { cn } from "@/utils/cva";
+
+import type { PropsWithChildren } from "react";
 
 type TextProps = {
   /**
@@ -17,7 +18,7 @@ export function Text({
 
 const styles = {
   text: (size: TextProps["size"]) =>
-    clsx("font-body", {
+    cn("font-body", {
       "text-lg md:text-xl": size === "base",
       "text-md": size === "sm",
       "text-sm": size === "xs",

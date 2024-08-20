@@ -2,9 +2,9 @@ import { notFound } from "next/navigation";
 
 import { fetchPublishedDevPosts } from "@/lib/devto";
 
-import { Heading } from "@/components/common/Heading";
 import { RichText } from "@/components/common/RichText";
 import { Container } from "@/components/ui/Container";
+import { Heading } from "@/components/ui/Heading";
 
 import type { Post } from "@/lib/devto/types";
 

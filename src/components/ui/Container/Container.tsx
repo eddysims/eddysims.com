@@ -33,9 +33,9 @@ export function Container({
 
 const styles = {
   container: (size: ContainerProps["size"]) =>
-    cn("container px-5 @container", {
+    cn("container px-5 @container", "group group-[.container]:-mx-5", {
       "max-w-2xl": size === "sm",
       "max-w-xl": size === "xs",
-      relative: process.env.NODE_ENV === "development",
+      relative: process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "development",
     }),
 };

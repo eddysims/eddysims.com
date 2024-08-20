@@ -1,4 +1,4 @@
-import { Button } from "@/components/common/Button";
+import { Button } from "@/components/ui/Button";
 
 import { useToast } from "./hooks/useToast";
 

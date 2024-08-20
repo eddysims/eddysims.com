@@ -1,11 +1,11 @@
-import { Meta } from "@storybook/react";
-
-import { Button } from "@/components/common/Button";
 import { InputText } from "@/components/common/InputText";
+import { Button } from "@/components/ui/Button";
 
 import { useForm } from "@/hooks/useForm";
 
 import { Form } from ".";
+
+import type { Meta } from "@storybook/react";
 
 /**
  * ## Usage
