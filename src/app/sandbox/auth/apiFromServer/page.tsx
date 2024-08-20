@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 
-import { Heading } from "@/components/common/Heading";
-import { Text } from "@/components/common/Text/Text";
+import { Text } from "@/components/common/Text";
+import { Heading } from "@/components/ui/Heading";
 
 export default async function ApiFromServer() {
   const response = await fetch(

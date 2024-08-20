@@ -7,11 +7,11 @@ import { useToast } from "@/providers/ToastProvider/hooks/useToast";
 
 import { Button } from "@/components/common/Button";
 import { Form } from "@/components/common/Form";
-import { Heading } from "@/components/common/Heading";
 import { InputEmail } from "@/components/common/InputEmail";
 import { InputText } from "@/components/common/InputText";
 import { InputTextArea } from "@/components/common/InputTextArea";
 import { Text } from "@/components/common/Text";
+import { Heading } from "@/components/ui/Heading";
 
 import { useForm } from "@/hooks/useForm";
 
