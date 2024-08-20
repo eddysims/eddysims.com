@@ -1,3 +1,4 @@
+import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
 import { styles as toast } from "./src/providers/ToastProvider/components/Toast/styles";
@@ -21,9 +22,20 @@ const config: Config = {
     toastContainer,
   ],
   theme: {
+    container: {
+      center: true,
+      screens: {
+        "3xl": defaultTheme.screens["2xl"],
+      },
+    },
     fontFamily: {
       display: ["var(--font-display)"],
       body: ["var(--font-body)"],
+    },
+    extend: {
+      screens: {
+        "3xl": "2110px",
+      },
     },
   },
   plugins: [
