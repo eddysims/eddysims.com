@@ -74,7 +74,11 @@ export default async function RootLayout({ children }: PropsWithChildren) {
 }
 
 const styles = {
-  body: cn(display.variable, body.variable, "bg-slate-900 text-stone-50"),
+  body: cn(
+    display.variable,
+    body.variable,
+    "bg-slate-900 font-body text-stone-50",
+  ),
   wrapper: cn("flex"),
   nav: cn(
     "fixed min-h-dvh w-full bg-red-500 opacity-50",

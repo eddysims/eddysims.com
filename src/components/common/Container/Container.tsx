@@ -27,7 +27,7 @@ export function Container({
 }
 
 const styles = (size: ContainerProps["size"]) =>
-  cn("container px-5", {
+  cn("@container container px-5", {
     "max-w-2xl": size === "sm",
     "max-w-xl": size === "xs",
   });

@@ -39,6 +39,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require("@tailwindcss/container-queries"),
     plugin(({ addUtilities, theme }) => {
       addUtilities({
         ".shadow-border": {
