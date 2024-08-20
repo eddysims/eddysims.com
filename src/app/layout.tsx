@@ -3,14 +3,14 @@ import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Head from "next/head";
 import { getServerSession } from "next-auth";
+import { preload } from "react-dom";
 
 import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
 import { SessionProvider } from "@/components/SessionProvider";
-import { Navigation } from "@/components/layout/Navigation";
-import { Container } from "@/components/ui/Container";
+import { Layout } from "@/components/layout/Layout";
 
 import { display, body } from "@/styles/fonts";
 
@@ -25,6 +25,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   const session = await getServerSession();
+
+  preload("/icons/sprite.svg", { as: "image" });
 
   return (
     <html lang="en">
@@ -55,13 +57,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         <ToastProvider>
           <SessionProvider session={session}>
             <ContactDrawerProvider>
-              <div className={styles.wrapper}>
-                <nav className={styles.nav}>Navigation</nav>
-                <main className={styles.main}>
-                  <Container className={styles.container}>{children}</Container>
-                </main>
-                {/* <Navigation /> */}
-              </div>
+              <Layout>{children}</Layout>
             </ContactDrawerProvider>
           </SessionProvider>
         </ToastProvider>
@@ -79,13 +75,4 @@ const styles = {
     body.variable,
     "bg-slate-900 font-body text-stone-50",
   ),
-  wrapper: cn("flex"),
-  nav: cn(
-    // "bg-red-500 md:bg-blue-500 lg:bg-green-500 xl:bg-yellow-500 2xl:bg-purple-500 3xl:bg-pink-500",
-    "fixed min-h-dvh w-full opacity-50",
-    "lg:relative lg:w-72",
-    "3xl:fixed",
-  ),
-  main: cn("flex min-h-dvh flex-1 flex-col items-center justify-center"),
-  container: cn("min-h-full"),
 };

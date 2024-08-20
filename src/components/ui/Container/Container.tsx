@@ -33,7 +33,7 @@ export function Container({
 
 const styles = {
   container: (size: ContainerProps["size"]) =>
-    cn("@container container px-5", {
+    cn("container px-5 @container", {
       "max-w-2xl": size === "sm",
       "max-w-xl": size === "xs",
       relative: process.env.NODE_ENV === "development",

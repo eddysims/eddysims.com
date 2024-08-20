@@ -6,4 +6,8 @@ export const display = Lilita_One({
   variable: "--font-display",
 });
 
-export const body = Comfortaa({ subsets: ["latin"], variable: "--font-body" });
+export const body = Comfortaa({
+  subsets: ["latin"],
+  variable: "--font-body",
+  weight: ["400", "600"],
+});

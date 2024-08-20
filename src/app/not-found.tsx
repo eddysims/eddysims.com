@@ -9,7 +9,7 @@ export default function NotFoundPage() {
       <div className="absolute inset-0 z-10">
         <ParralaxImage />
       </div>
-      <div className="mt-72 text-center space-y-3">
+      <div className="mt-72 space-y-3 text-center">
         <Heading as="h1">404</Heading>
         <Text>Sorry... The page you are looking for can&apos;t be found.</Text>
       </div>

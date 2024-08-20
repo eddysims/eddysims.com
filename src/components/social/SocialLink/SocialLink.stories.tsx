@@ -1,6 +1,6 @@
-import { Meta, StoryObj } from "@storybook/react";
-
 import { SocialLink } from ".";
+
+import type { Meta, StoryObj } from "@storybook/react";
 
 /**
  * ## Usage
@@ -14,7 +14,7 @@ const meta: Meta<typeof SocialLink> = {
   component: SocialLink,
   args: {
     href: "https://www.linkedin.com/in/eddysims/",
-    icon: "linkedin",
+    icon: "linkedin-line",
   },
   render: (args) => <SocialLink {...args} />,
 };

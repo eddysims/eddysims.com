@@ -24,7 +24,7 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <ToastProvider>
-        <div className={clsx(display.variable, body.variable, "text-text")}>
+        <div className={clsx(display.variable, body.variable, "text-stone-50")}>
           <Story />
         </div>
       </ToastProvider>

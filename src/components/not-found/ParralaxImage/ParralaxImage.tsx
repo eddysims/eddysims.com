@@ -36,7 +36,7 @@ export function ParralaxImage() {
 
   return (
     <div
-      className="w-full min-h-screen flex flex-col items-center justify-center"
+      className="flex min-h-screen w-full flex-col items-center justify-center"
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <div className="-mt-72">
@@ -48,7 +48,7 @@ export function ParralaxImage() {
             height={324}
           />
         </motion.div>
-        <div className="w-52 h-52 -mt-56 rounded-full bg-primary" />
+        <div className="bg-primary -mt-56 h-52 w-52 rounded-full" />
       </div>
     </div>
   );

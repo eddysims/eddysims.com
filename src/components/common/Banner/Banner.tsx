@@ -1,8 +1,8 @@
-import { PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 
 export function Banner({ children }: Readonly<PropsWithChildren>) {
   return (
-    <div className="py-3 px-5 bg-green-300 flex items-center text-surface rounded">
+    <div className="text-surface flex items-center rounded bg-green-300 px-5 py-3">
       {children}
     </div>
   );

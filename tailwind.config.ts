@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
@@ -45,6 +46,12 @@ const config: Config = {
       addUtilities({
         ".shadow-border": {
           "box-shadow": `0 0 0 4px ${theme("colors.red.600")} inset`,
+        },
+        ".shadow-border-l-red-600": {
+          "box-shadow": `4px 0 0 0 ${theme("colors.red.600")} inset`,
+        },
+        ".shadow-border-l": {
+          "box-shadow": `0 0 0 0 ${theme("colors.transparent")} inset`,
         },
       });
     }),

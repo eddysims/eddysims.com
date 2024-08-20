@@ -14,7 +14,8 @@ export function WhoAmIButton({
   return (
     <div className="text-center">
       <button
-        className="bg-primary p-5 rounded"
+        type="button"
+        className="bg-primary rounded p-5"
         onClick={async () => setName(await whoAmIAction())}
       >
         Who am i?
