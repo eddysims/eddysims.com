@@ -1,6 +1,6 @@
 "use client";
 
-import { PropsWithChildren, createContext, useMemo } from "react";
+import { type PropsWithChildren, createContext, useMemo } from "react";
 
 import { ToastContainer } from "./components/ToastContainer";
 import { useToastContext } from "./hooks/useToastContext";

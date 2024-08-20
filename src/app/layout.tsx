@@ -1,20 +1,21 @@
 import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
-import clsx from "clsx";
 import Head from "next/head";
 import { getServerSession } from "next-auth";
-import { PropsWithChildren } from "react";
+import { preload } from "react-dom";
 
 import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
+import { cn } from "@/utils/cva";
 
 import { SessionProvider } from "@/components/SessionProvider";
-import { Navigation } from "@/components/layout/Navigation";
+import { Layout } from "@/components/layout/Layout";
 
 import { display, body } from "@/styles/fonts";
 
 import type { Metadata } from "next";
+import type { PropsWithChildren } from "react";
 
 export const metadata: Metadata = {
   title: "Eddy Sims",
@@ -22,10 +23,10 @@ export const metadata: Metadata = {
     "Senior Software Engineer. Helping people turn their ideas into sites & apps that work.",
 };
 
-export default async function RootLayout({
-  children,
-}: Readonly<PropsWithChildren<unknown>>) {
+export default async function RootLayout({ children }: PropsWithChildren) {
   const session = await getServerSession();
+
+  preload("/icons/sprite.svg", { as: "image" });
 
   return (
     <html lang="en">
@@ -52,16 +53,11 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#171820" />
         <meta name="theme-color" content="#171820" />
       </Head>
-      <body className={clsx(display.variable, body.variable, "bg-slate-900")}>
+      <body className={styles.body}>
         <ToastProvider>
           <SessionProvider session={session}>
             <ContactDrawerProvider>
-              <div className="flex flex-col min-h-screen">
-                <Navigation />
-                <main className="flex flex-col min-h-full items-center justify-center text-stone-50 flex-1">
-                  {children}
-                </main>
-              </div>
+              <Layout>{children}</Layout>
             </ContactDrawerProvider>
           </SessionProvider>
         </ToastProvider>
@@ -72,3 +68,11 @@ export default async function RootLayout({
     </html>
   );
 }
+
+const styles = {
+  body: cn(
+    display.variable,
+    body.variable,
+    "bg-slate-900 font-body text-stone-50",
+  ),
+};

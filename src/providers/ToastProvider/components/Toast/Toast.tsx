@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 
-import { Icon } from "@/components/common/Icon";
+import { Icon } from "@/components/ui/Icon";
 
 import { styles } from "./styles";
 
@@ -34,8 +34,8 @@ export function Toast({ toast }: ToastProps) {
           className={styles.toast(toast.variation)}
         >
           <div className={styles.content}>{toast.message}</div>
-          <button onClick={handleClose} className={styles.close}>
-            <Icon icon="x" size="sm" />
+          <button onClick={handleClose} className={styles.close} type="button">
+            <Icon icon="close-line" size="sm" />
           </button>
 
           <motion.div

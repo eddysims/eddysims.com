@@ -8,11 +8,10 @@ import type { Meta, StoryObj } from "@storybook/react";
  * The `Container` component is used to wrap content in a centered container.
  *
  * ```tsx
- * import { Container } from "@/components/common/Container";
+ * import { Container } from "@/components/ui/Container";
  * ```
  */
 const meta: Meta<typeof Container> = {
-  title: "layout/Container",
   component: Container,
   render: (args) => <Container {...args}>Hello World</Container>,
 };

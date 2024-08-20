@@ -36,7 +36,7 @@ export default function ContactFormTemplate({
           <Container className="my-8">
             <Img src={`${imagePrefix}/images/emails/logo.png`} alt="logo" />
           </Container>
-          <Container className="bg-[#F2EDE7] text-[#171820] px-5 py-8 rounded">
+          <Container className="rounded bg-[#F2EDE7] px-5 py-8 text-[#171820]">
             <Text className="text-2xl font-bold">
               Hello. {name} just send you an email
             </Text>

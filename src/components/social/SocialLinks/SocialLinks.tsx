@@ -18,20 +18,20 @@ export function SocialLinks({
           <li>
             <SocialLink
               href="https://www.linkedin.com/in/eddysims/"
-              icon="linkedin"
+              icon="linkedin-line"
             />
           </li>
         )}
         {showGithub && (
           <li>
-            <SocialLink href="https://github.com/eddysims" icon="github" />
+            <SocialLink href="https://github.com/eddysims" icon="github-line" />
           </li>
         )}
         {showCode && (
           <li>
             <SocialLink
               href="https://github.com/eddysims/eddysims.com"
-              icon="code"
+              icon="code-s-slash-line"
             />
           </li>
         )}

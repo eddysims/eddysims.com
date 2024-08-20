@@ -57,7 +57,7 @@ export function ContactForm() {
           <InputText name="findme" label="How did you find me?" {...methods} />
           <InputTextArea name="message" label="Message" {...methods} />
         </div>
-        <div className="space-y-5 mt-8">
+        <div className="mt-8 space-y-5">
           <Button
             isSubmit
             label="Send Message"

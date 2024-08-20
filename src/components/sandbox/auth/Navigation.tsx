@@ -11,7 +11,7 @@ export function Navigation() {
   }
 
   return (
-    <nav className="flex p-5 gap-5">
+    <nav className="flex gap-5 p-5">
       <Link href="/sandbox/auth/protected">Protected Route</Link>
       <Link href="/sandbox/auth/apiFromServer">Api call from server</Link>
       <Link href="/sandbox/auth/serverAction">Server action</Link>
@@ -21,7 +21,8 @@ export function Navigation() {
           <>
             Signed in as {session?.user?.email}
             <button
-              className="bg-primary p-3 rounded ml-3"
+              type="button"
+              className="bg-primary ml-3 rounded p-3"
               onClick={() => signOut()}
             >
               Sign out
@@ -31,7 +32,8 @@ export function Navigation() {
           <>
             Not signed in
             <button
-              className="bg-primary p-3 rounded ml-3"
+              type="button"
+              className="bg-primary ml-3 rounded p-3"
               onClick={() => signIn()}
             >
               Sign in

@@ -100,18 +100,18 @@ const styles = {
     size,
   }: Pick<ButtonProps, "variation" | "isLoading" | "size">) =>
     clsx(
-      "rounded flex items-center gap-2",
-      "font-display tracking-widest uppercase font-bold",
+      "flex items-center gap-2 rounded",
+      "font-display font-bold uppercase tracking-widest",
       {
         "bg-red-600 text-stone-50": variation === "primary",
-        "shadow-border text-red-600": variation === "outline",
+        "text-red-600 shadow-border": variation === "outline",
       },
       {
-        "cursor-default pointer-events-none": isLoading,
+        "pointer-events-none cursor-default": isLoading,
       },
       {
         "text-md px-5 py-3": size === "sm",
-        "text-lg px-8 py-5": size === "base",
+        "px-8 py-5 text-lg": size === "base",
       },
     ),
 };
@@ -129,7 +129,7 @@ function LoadingSpinner({
     <output>
       <svg
         aria-hidden="true"
-        className={clsx("w-5 h-5 animate-spin ", {
+        className={clsx("h-5 w-5 animate-spin", {
           "fill-text text-primary": variantion === "primary",
           "fill-primary text-text": variantion === "outline",
         })}

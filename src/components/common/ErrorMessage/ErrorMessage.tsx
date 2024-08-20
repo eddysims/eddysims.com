@@ -7,7 +7,7 @@ type ErrorMessageProps = {
 
 export function ErrorMessage({ label }: ErrorMessageProps) {
   return (
-    <div className="text-xs text-red-500 tracking-wider uppercase font-bold">
+    <div className="text-xs font-bold uppercase tracking-wider text-red-500">
       {label}
     </div>
   );

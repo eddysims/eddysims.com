@@ -2,15 +2,16 @@
 
 import clsx from "clsx";
 import { useId } from "react";
-import {
+
+import { ErrorMessage } from "@/components/common/ErrorMessage";
+import { InputLabel } from "@/components/common/InputLabel";
+
+import type {
   FieldValues,
   FormState,
   RegisterOptions,
   UseFormRegister,
 } from "react-hook-form";
-
-import { ErrorMessage } from "@/components/common/ErrorMessage";
-import { InputLabel } from "@/components/common/InputLabel";
 
 export type InputFieldProps = {
   /**
@@ -98,12 +99,12 @@ const styles = {
   container: clsx("space-y-1"),
   input: (hasError: boolean) =>
     clsx(
-      "w-full bg-white border rounded-md py-2 px-3 tracking-wide",
-      "focus:outline-none focus:ring-2 focus:bg-text",
+      "w-full rounded-md border bg-white px-3 py-2 tracking-wide",
+      "focus:bg-text focus:outline-none focus:ring-2",
       "font-base text-surface",
       {
         "border-surface focus:ring-blue-500/50": !hasError,
-        "border-red-500 focus:ring-primary/25": hasError,
+        "focus:ring-primary/25 border-red-500": hasError,
       },
     ),
   textarea: clsx("resize-none"),

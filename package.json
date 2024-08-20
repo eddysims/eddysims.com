@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky",
     "dev": "next dev --turbo -p 1234",
     "build": "next build",
     "start": "next start",
@@ -14,14 +13,17 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "email:dev": "cp .env ./node_modules/react-email/ && email dev --dir ./src/emails",
-    "knip": "knip"
+    "knip": "knip",
+    "build:icons": "npx tsx ./scripts/build-icons.mts --log=verbose"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@next/third-parties": "^14.1.0",
     "@react-email/components": "^0.0.22",
     "@react-email/render": "^0.0.17",
+    "@tailwindcss/container-queries": "^0.1.1",
     "clsx": "^2.1.0",
+    "cva": "1.0.0-beta.1",
     "framer-motion": "^11.0.6",
     "lodash": "^4.17.21",
     "next": "14.2.5",
@@ -35,6 +37,7 @@
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.0",
     "resend": "^3.2.0",
+    "tailwind-merge": "^2.5.2",
     "type-fest": "^4.10.3",
     "uuid": "^10.0.0"
   },
@@ -63,12 +66,13 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-storybook": "^0.8.0",
-    "husky": "^9.0.11",
     "knip": "^5.27.2",
+    "node-html-parser": "^6.1.13",
     "postcss": "^8",
     "prettier": "^3.2.4",
+    "prettier-plugin-tailwindcss": "^0.6.6",
     "storybook": "^8.2.9",
-    "tailwindcss": "^3.3.0",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
   }
 }
