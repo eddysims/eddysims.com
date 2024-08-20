@@ -1,8 +1,10 @@
 "use client";
 
-import clsx from "clsx";
 import NextLink from "next/link";
-import { MergeExclusive } from "type-fest";
+
+import { cn } from "@/utils/cva";
+
+import type { MergeExclusive } from "type-fest";
 
 type ButtonVariations = "primary" | "outline";
 
@@ -99,7 +101,7 @@ const styles = {
     isLoading,
     size,
   }: Pick<ButtonProps, "variation" | "isLoading" | "size">) =>
-    clsx(
+    cn(
       "inline-flex items-center gap-2 rounded",
       "font-display font-bold uppercase tracking-widest",
       {
@@ -110,7 +112,7 @@ const styles = {
         "pointer-events-none cursor-default": isLoading,
       },
       {
-        "text-md px-5 py-3": size === "sm",
+        "px-5 py-3": size === "sm",
         "px-8 py-5 text-lg": size === "base",
       },
     ),
@@ -129,7 +131,7 @@ function LoadingSpinner({
     <output>
       <svg
         aria-hidden="true"
-        className={clsx("h-5 w-5 animate-spin", {
+        className={cn("h-5 w-5 animate-spin", {
           "fill-text text-primary": variantion === "primary",
           "fill-primary text-text": variantion === "outline",
         })}
