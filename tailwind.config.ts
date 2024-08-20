@@ -25,6 +25,7 @@ const config: Config = {
     container: {
       center: true,
       screens: {
+        ...defaultTheme.screens,
         "3xl": defaultTheme.screens["2xl"],
       },
     },
