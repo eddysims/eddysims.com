@@ -1,6 +1,6 @@
 import { useArgs } from "@storybook/preview-api";
 
-import { Button } from "@/components/common/Button";
+import { Button } from "@/components/ui/Button";
 
 import { Drawer } from ".";
 

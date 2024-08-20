@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import { formatDate } from "@/helpers/formatDate";
 import { cn } from "@/utils/cva";
 
-import { Button } from "@/components/common/Button";
+import { Button } from "@/components/ui/Button";
 import { Text } from "@/components/ui/Text";
 
 import { Details } from "./components/Details";
