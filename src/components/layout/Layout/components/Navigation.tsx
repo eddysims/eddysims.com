@@ -96,7 +96,7 @@ const styles = {
     cn(
       "fixed top-0 z-50 flex h-dvh min-h-dvh w-full flex-col justify-center bg-slate-900/90 backdrop-blur transition-transform duration-300",
       "md:max-w-xs md:border-r md:border-slate-800",
-      "lg:sticky lg:-mt-20 lg:w-72 lg:border-0 lg:bg-transparent",
+      "lg:sticky lg:w-72 lg:border-0 lg:bg-transparent",
       "3xl:border-r",
       {
         "-translate-x-full lg:translate-x-0": !open,
@@ -104,7 +104,7 @@ const styles = {
       },
     ),
   icon: {
-    wrapper: cn("mx-5 mb-16"),
+    wrapper: cn("mx-5"),
     button: (open: boolean) =>
       cn("absolute top-12", "lg:hidden", {
         "-right-11": !open,
@@ -112,7 +112,7 @@ const styles = {
       }),
     readonly: cn(
       "hidden rounded text-slate-700 outline-none",
-      "lg:inline-block",
+      "lg:absolute lg:-mt-20 lg:inline-block",
       "focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 focus:ring-offset-slate-900",
     ),
   },
