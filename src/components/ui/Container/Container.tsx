@@ -25,7 +25,7 @@ export function Container({
 }: Readonly<PropsWithChildren<ContainerProps>>) {
   return (
     <div className={cn(styles.container(size), className)}>
-      {process.env.NODE_ENV === "development" && <SizeGuide />}
+      {process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "true" && <SizeGuide />}
       {children}
     </div>
   );
