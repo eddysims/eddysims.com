@@ -17,12 +17,13 @@ export async function generateStaticParams() {
 }
 
 type PageParams = {
-  readonly params: {
+  readonly params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default async function Page({ params }: PageParams) {
+export default async function Page(props: PageParams) {
+  const params = await props.params;
   const { slug } = params;
 
   const posts = await fetchPublishedDevPosts();

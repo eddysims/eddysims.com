@@ -8,7 +8,7 @@ export default async function ApiFromServer() {
     "http://localhost:1234/sandbox/auth/api/whoAmI",
     {
       method: "GET",
-      headers: headers(),
+      headers: await headers(),
     },
   ).then((res) => res.json());
 
