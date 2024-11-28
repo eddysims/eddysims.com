@@ -31,7 +31,6 @@ export function Toast({ toast }: ToastProps) {
           initial={{ opacity: 0, x: 25 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 50 }}
-          className={styles.toast(toast.variation)}
         >
           <div className={styles.content}>{toast.message}</div>
           <button onClick={handleClose} className={styles.close} type="button">
@@ -39,7 +38,6 @@ export function Toast({ toast }: ToastProps) {
           </button>
 
           <motion.div
-            className={styles.timer(toast.variation)}
             initial={{ width: "100%" }}
             animate={{ width: "0%" }}
             transition={{ duration: 5 }}

@@ -40,7 +40,7 @@ export function ParralaxImage() {
       onMouseMove={(e) => handleMouseMove(e)}
     >
       <div className="-mt-72">
-        <motion.div animate={animation} className="">
+        <motion.div animate={animation}>
           <NextImage
             src="/images/not-found.svg"
             alt="Not found"
