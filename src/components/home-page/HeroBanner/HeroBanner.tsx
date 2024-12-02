@@ -1,9 +1,9 @@
 import NextImage from "next/image";
 
-import { ContactDrawerButton } from "@/providers/ContactDrawerProvider/components/ContactDrawerButton";
 import { cn } from "@/utils/cva";
 
 import { SocialLinks } from "@/components/social/SocialLinks";
+import { Button } from "@/components/ui/Button";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 
@@ -28,7 +28,7 @@ export function HeroBanner() {
           </Text>
         </div>
         <div className={styles.button}>
-          <ContactDrawerButton label="Chat with me" />
+          <Button href="/contact" label="Chat with me" />
         </div>
       </div>
 

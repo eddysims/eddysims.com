@@ -2,10 +2,8 @@ import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Head from "next/head";
-import { getServerSession } from "next-auth";
 import { preload } from "react-dom";
 
-import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
@@ -52,9 +50,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       </Head>
       <body className={styles.body}>
         <ToastProvider>
-          <ContactDrawerProvider>
-            <Layout>{children}</Layout>
-          </ContactDrawerProvider>
+          <Layout>{children}</Layout>
         </ToastProvider>
       </body>
       {process.env.GOOGLE_ANALYTICS_ID && (
