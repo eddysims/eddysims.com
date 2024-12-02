@@ -8,7 +8,6 @@ import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
 import { Navigation } from "@/components/layout/Layout/components/Navigation";
-import { Container } from "@/components/ui/Container";
 
 import { display, body } from "@/styles/fonts";
 
@@ -60,7 +59,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           <div className="flex">
             <Navigation />
             <main className="flex min-h-dvh flex-1 flex-col items-center justify-center @container">
-              <Container>{children}</Container>
+              {children}
             </main>
           </div>
         </ToastProvider>

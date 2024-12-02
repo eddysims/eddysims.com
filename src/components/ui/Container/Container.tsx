@@ -1,8 +1,15 @@
+import dynamic from "next/dynamic";
+
 import { cn } from "@/utils/cva";
 
-import { SizeGuide } from "./components/SizeGuide";
+import type { ElementType, PropsWithChildren } from "react";
 
-import type { PropsWithChildren } from "react";
+const SizeGuide =
+  process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "true"
+    ? dynamic(() =>
+        import("./components/SizeGuide").then((mod) => mod.SizeGuide),
+      )
+    : null;
 
 type ContainerProps = {
   /**
@@ -16,26 +23,31 @@ type ContainerProps = {
    * here as the container often needs additional classes to be passed
    */
   className?: string;
+  /**
+   * The element type to render the container as.
+   */
+  as?: ElementType;
 };
 
 export function Container({
   size = "base",
   className,
+  as = "div",
   children,
-}: Readonly<PropsWithChildren<ContainerProps>>) {
+}: PropsWithChildren<ContainerProps>) {
+  const Tag = as;
+
   return (
-    <div className={cn(styles.container(size), className)}>
-      {process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "true" && <SizeGuide />}
+    <Tag className={cn(container(size), className)}>
+      {SizeGuide && <SizeGuide />}
       {children}
-    </div>
+    </Tag>
   );
 }
 
-const styles = {
-  container: (size: ContainerProps["size"]) =>
-    cn("container px-5 @container", "group group-[.container]:-mx-5", {
-      "max-w-2xl": size === "sm",
-      "max-w-xl": size === "xs",
-      relative: process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "development",
-    }),
-};
+const container = (size: ContainerProps["size"]) =>
+  cn("container px-5 @container", "group", {
+    "max-w-2xl": size === "sm",
+    "max-w-xl": size === "xs",
+    relative: process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "development",
+  });
