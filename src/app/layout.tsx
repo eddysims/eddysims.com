@@ -7,7 +7,8 @@ import { preload } from "react-dom";
 import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
-import { Layout } from "@/components/layout/Layout";
+import { Navigation } from "@/components/layout/Layout/components/Navigation";
+import { Container } from "@/components/ui/Container";
 
 import { display, body } from "@/styles/fonts";
 
@@ -48,9 +49,20 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         <meta name="msapplication-TileColor" content="#171820" />
         <meta name="theme-color" content="#171820" />
       </Head>
-      <body className={styles.body}>
+      <body
+        className={cn(
+          display.variable,
+          body.variable,
+          "bg-slate-900 font-body text-stone-50",
+        )}
+      >
         <ToastProvider>
-          <Layout>{children}</Layout>
+          <div className="flex">
+            <Navigation />
+            <main className="flex min-h-dvh flex-1 flex-col items-center justify-center @container">
+              <Container>{children}</Container>
+            </main>
+          </div>
         </ToastProvider>
       </body>
       {process.env.GOOGLE_ANALYTICS_ID && (
@@ -59,11 +71,3 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     </html>
   );
 }
-
-const styles = {
-  body: cn(
-    display.variable,
-    body.variable,
-    "bg-slate-900 font-body text-stone-50",
-  ),
-};
