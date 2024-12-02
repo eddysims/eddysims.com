@@ -46,7 +46,7 @@ export function Container({
 }
 
 const container = (size: ContainerProps["size"]) =>
-  cn("container px-5 @container", "group", {
+  cn("container w-full px-5 @container", "group", {
     "max-w-2xl": size === "sm",
     "max-w-xl": size === "xs",
     relative: process.env.NEXT_PUBLIC_SHOW_DEVTOOLS === "development",

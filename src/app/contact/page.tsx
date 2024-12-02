@@ -1,5 +1,6 @@
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/ui/Container";
+import { Heading } from "@/components/ui/Heading";
 
 import type { Metadata } from "next";
 
@@ -11,8 +12,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <Container size="xs">
-      <ContactForm />
+    <Container size="sm">
+      <Heading as="h1">Contact me</Heading>
+      <div className="mt-8">
+        <ContactForm />
+      </div>
     </Container>
   );
 }

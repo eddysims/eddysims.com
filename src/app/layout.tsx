@@ -11,6 +11,8 @@ import { Navigation } from "@/components/layout/Layout/components/Navigation";
 
 import { display, body } from "@/styles/fonts";
 
+import { Providers } from "./providers";
+
 import type { Metadata } from "next";
 import type { PropsWithChildren } from "react";
 
@@ -55,14 +57,16 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           "bg-slate-900 font-body text-stone-50",
         )}
       >
-        <ToastProvider>
-          <div className="flex">
-            <Navigation />
-            <main className="flex min-h-dvh flex-1 flex-col items-center justify-center @container">
-              {children}
-            </main>
-          </div>
-        </ToastProvider>
+        <Providers>
+          <ToastProvider>
+            <div className="flex">
+              <Navigation />
+              <main className="flex min-h-dvh flex-1 flex-col items-center justify-center @container">
+                {children}
+              </main>
+            </div>
+          </ToastProvider>
+        </Providers>
       </body>
       {process.env.GOOGLE_ANALYTICS_ID && (
         <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID} />

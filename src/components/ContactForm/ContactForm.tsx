@@ -1,74 +1,49 @@
 "use client";
 
-import { sendGAEvent } from "@next/third-parties/google";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { FormProvider, useForm } from "react-hook-form";
 
-import { sendContactForm } from "@/actions/forms/sendContactForm";
-import { useToast } from "@/providers/ToastProvider/hooks/useToast";
-
-import { Form } from "@/components/common/Form";
-import { InputEmail } from "@/components/common/InputEmail";
-import { InputText } from "@/components/common/InputText";
-import { InputTextArea } from "@/components/common/InputTextArea";
 import { Button } from "@/components/ui/Button";
-import { Heading } from "@/components/ui/Heading";
-import { Text } from "@/components/ui/Text";
+import { Input } from "@/components/ui/Input";
+import { Textarea } from "@/components/ui/Textarea";
 
-import { useForm } from "@/hooks/useForm";
-
-import type { ContactFormData } from "@/actions/forms/sendContactForm";
+import { useContactForm } from "./hooks/useContactForm";
+import {
+  contactFormSchema,
+  type ContactFormSchema,
+} from "./schema/contactFormSchema";
 
 export function ContactForm() {
-  const toast = useToast();
-  const methods = useForm();
-  const {
-    formState: { isSubmitting },
-  } = methods;
-
-  // @ts-expect-error TODO: fix the form types
-  const handleSubmit = methods.handleSubmit(async (data: ContactFormData) => {
-    try {
-      const { success, error } = await sendContactForm(data);
-
-      if (typeof error === "string") {
-        toast({ message: error, variation: "error" });
-      }
-
-      if (success === true) {
-        toast("Your message has been sent!");
-        sendGAEvent({ event: "Contact form submitted" });
-      }
-    } catch {
-      toast({
-        message: "Error sending message. Please try again.",
-        variation: "error",
-      });
-    }
+  const form = useForm<ContactFormSchema>({
+    resolver: zodResolver(contactFormSchema),
   });
 
+  const { isPending, mutateAsync } = useContactForm();
+
+  const handleSubmit = async (values: ContactFormSchema) => {
+    const { error, message } = await mutateAsync(values);
+
+    if (error) {
+      alert(`Error: ${message}`);
+
+      return;
+    }
+
+    alert(`Success: ${message}`);
+  };
+
   return (
-    <div className="space-y-5">
-      <Heading as="h2" style="h1">
-        Contact
-      </Heading>
-      <Form onSubmit={handleSubmit}>
-        <div className="space-y-5">
-          <InputText name="name" label="Name" required {...methods} />
-          <InputEmail name="email" label="Email" required {...methods} />
-          <InputText name="findme" label="How did you find me?" {...methods} />
-          <InputTextArea name="message" label="Message" {...methods} />
+    <FormProvider {...form}>
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="grid gap-5">
+        <Input label="Name" name="name" />
+        <Input label="Email Address" name="emailAddress" type="email" />
+        <Textarea label="Message" name="message" />
+        <Input name="email" type="email" isHoneyPot />
+        <div className="mt-8">
+          <Button label="Send message" isSubmit />
+          {isPending && <p>Sending...</p>}
         </div>
-        <div className="mt-8 space-y-5">
-          <Button
-            isSubmit
-            label="Send Message"
-            variation="outline"
-            isLoading={isSubmitting}
-          />
-          <Text size="sm">
-            Never share sensitive information through this form.
-          </Text>
-        </div>
-      </Form>
-    </div>
+      </form>
+    </FormProvider>
   );
 }
