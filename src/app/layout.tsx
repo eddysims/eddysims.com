@@ -9,7 +9,6 @@ import { ContactDrawerProvider } from "@/providers/ContactDrawerProvider";
 import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
-import { SessionProvider } from "@/components/SessionProvider";
 import { Layout } from "@/components/layout/Layout";
 
 import { display, body } from "@/styles/fonts";
@@ -24,8 +23,6 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({ children }: PropsWithChildren) {
-  const session = await getServerSession();
-
   preload("/icons/sprite.svg", { as: "image" });
 
   return (
@@ -55,11 +52,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       </Head>
       <body className={styles.body}>
         <ToastProvider>
-          <SessionProvider session={session}>
-            <ContactDrawerProvider>
-              <Layout>{children}</Layout>
-            </ContactDrawerProvider>
-          </SessionProvider>
+          <ContactDrawerProvider>
+            <Layout>{children}</Layout>
+          </ContactDrawerProvider>
         </ToastProvider>
       </body>
       {process.env.GOOGLE_ANALYTICS_ID && (
