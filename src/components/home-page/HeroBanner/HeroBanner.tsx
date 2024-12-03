@@ -4,12 +4,13 @@ import { cn } from "@/utils/cva";
 
 import { SocialLinks } from "@/components/social/SocialLinks";
 import { Button } from "@/components/ui/Button";
+import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Text } from "@/components/ui/Text";
 
 export function HeroBanner() {
   return (
-    <div className={styles.wrapper}>
+    <Container className={styles.wrapper}>
       <div className={styles.content}>
         <div className={styles.name.wrapper}>
           <div className={styles.name.title}>
@@ -35,7 +36,7 @@ export function HeroBanner() {
       <div className={styles.image}>
         <NextImage src="./images/eddy.svg" alt="Eddy Sims" fill />
       </div>
-    </div>
+    </Container>
   );
 }
 

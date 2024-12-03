@@ -7,7 +7,7 @@ import { preload } from "react-dom";
 import { ToastProvider } from "@/providers/ToastProvider";
 import { cn } from "@/utils/cva";
 
-import { Navigation } from "@/components/layout/Layout/components/Navigation";
+import { Navigation } from "@/components/layout/Navigation";
 
 import { display, body } from "@/styles/fonts";
 
