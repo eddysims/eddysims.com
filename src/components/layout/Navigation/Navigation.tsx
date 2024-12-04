@@ -76,8 +76,10 @@ export function Navigation() {
 
           {pathname !== "/" && (
             <>
-              <hr />
-              <SocialLinks />
+              <hr className="my-8 border-slate-800" />
+              <div className="px-5">
+                <SocialLinks />
+              </div>
             </>
           )}
         </nav>
