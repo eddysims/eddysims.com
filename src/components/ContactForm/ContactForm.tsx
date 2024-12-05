@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 
+import { useToast } from "@/hooks/useToast/useToast";
+
 import { useContactForm } from "./hooks/useContactForm";
 import {
   contactFormSchema,
@@ -14,6 +16,8 @@ import {
 } from "./schema/contactFormSchema";
 
 export function ContactForm() {
+  const toast = useToast();
+
   const form = useForm<ContactFormSchema>({
     resolver: zodResolver(contactFormSchema),
   });
@@ -24,12 +28,12 @@ export function ContactForm() {
     const { error, message } = await mutateAsync(values);
 
     if (error) {
-      alert(`Error: ${message}`);
+      toast(message, { variant: "error" });
 
       return;
     }
 
-    alert(`Success: ${message}`);
+    toast("Your message has been sent!", { variant: "success" });
   };
 
   return (

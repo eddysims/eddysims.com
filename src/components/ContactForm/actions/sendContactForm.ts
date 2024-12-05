@@ -2,6 +2,8 @@
 
 import { Resend } from "resend";
 
+import { env } from "@/env/server";
+
 import { ContactFormEmailTemplate } from "../email/ContactFormEmailTemplate";
 import {
   contactFormSchema,
@@ -33,8 +35,8 @@ export async function sendContactForm(
 
   try {
     const { error } = await resend.emails.send({
-      from: `Contact Form <${parsed.data.emailAddress}>`,
-      to: [process.env.RESEND_PERONSAL_EMAIL!],
+      from: `Contact Form <${env.RESEND_SENDER_EMAIL}>`,
+      to: [env.RESEND_PERSONAL_EMAIL],
       subject: "Contact Form Submission",
       react: ContactFormEmailTemplate(parsed.data),
     });

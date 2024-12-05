@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
+import { ToastContainer } from "react-toastify";
 
 import { env } from "@/env/client";
 import { getQueryClient } from "@/lib/react-query";
@@ -26,6 +27,7 @@ export function Providers({ children }: PropsWithChildren) {
       <QueryClientProvider client={queryClient}>
         {children}
         <ReactQueryDevtools initialIsOpen={false} />
+        <ToastContainer />
       </QueryClientProvider>
     </PostHogProvider>
   );
