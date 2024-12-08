@@ -27,11 +27,6 @@ export function Navigation() {
       caption: "Software Engineer",
     },
     {
-      label: "Blog",
-      href: "/blog",
-      caption: "Explore my writings",
-    },
-    {
       label: "Contact Me",
       href: "/contact",
       caption: "Come say hi!",
