@@ -55,7 +55,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         className={cn(
           display.variable,
           body.variable,
-          "bg-slate-900 font-body text-stone-50",
+          "bg-gradient-radial from-slate-800 to-slate-950 text-slate-50",
         )}
       >
         <Providers>

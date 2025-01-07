@@ -22,6 +22,9 @@ const config: Config = {
       screens: {
         "3xl": "2110px",
       },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [
