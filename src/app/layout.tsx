@@ -1,3 +1,5 @@
+import { objectSans, goshaSans } from "@/styles/fonts";
+
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -13,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className={`${objectSans.variable} ${goshaSans.variable}`}>
+      <body className="font-object antialiased">{children}</body>
     </html>
   );
 }

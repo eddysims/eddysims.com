@@ -1,0 +1,4 @@
+@theme inline {
+  --font-object: var(--font-object-sans);
+  --font-gosha: var(--font-gosha-sans);
+}
