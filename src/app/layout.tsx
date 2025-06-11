@@ -1,6 +1,10 @@
+import { Navigation } from "@/components/navigation";
 import { objectSans, goshaSans } from "@/styles/fonts";
 
+import { Providers } from "./providers";
+
 import type { Metadata } from "next";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,8 +19,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${objectSans.variable} ${goshaSans.variable}`}>
-      <body className="font-object antialiased">{children}</body>
+    <html suppressHydrationWarning lang="en">
+      <body
+        className={`${objectSans.variable} ${goshaSans.variable} font-object antialiased`}
+      >
+        <Providers>
+          <div className="flex min-h-dvh flex-col">
+            <Navigation />
+            <main className="flex flex-1 flex-col">{children}</main>
+          </div>
+          <footer className="h-96">footer</footer>
+        </Providers>
+      </body>
     </html>
   );
 }
