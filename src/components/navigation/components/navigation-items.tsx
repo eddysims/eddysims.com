@@ -42,11 +42,11 @@ export function NavigationItems() {
 const menuItem = (special?: boolean, active?: boolean) =>
   cn(
     "hover:text-primary relative inline-flex py-3 tracking-wide lowercase",
-    "before:bg-primary after:bg-primary before:absolute before:-bottom-1.5 before:left-1/2 before:h-0.5 before:w-0 before:origin-center before:transition-[width] before:duration-300 before:ease-in-out after:absolute after:right-1/2 after:-bottom-1.5 after:h-0.5 after:w-0 after:origin-center after:transition-[width] after:duration-300 after:ease-in-out hover:before:w-1/3 hover:after:w-1/3",
+    "before:bg-primary after:bg-primary before:absolute before:-bottom-0 before:left-1/2 before:h-0.5 before:w-0 before:origin-center before:transition-[width] before:duration-300 before:ease-in-out after:absolute after:right-1/2 after:-bottom-0 after:h-0.5 after:w-0 after:origin-center after:transition-[width] after:duration-300 after:ease-in-out hover:before:w-1/3 hover:after:w-1/3",
     {
-      "text-primary font-bold": special,
+      "font-bold": special,
     },
     {
-      "text-primary before:w-1/3 after:w-1/3": active,
+      "pointer-events-none before:w-1/3 after:w-1/3": active,
     },
   );

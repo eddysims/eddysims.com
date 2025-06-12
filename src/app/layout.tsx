@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import { Navigation } from "@/components/navigation";
 import { objectSans, goshaSans } from "@/styles/fonts";
 
@@ -28,7 +29,7 @@ export default function RootLayout({
             <Navigation />
             <main className="flex flex-1 flex-col">{children}</main>
           </div>
-          <footer className="h-96">footer</footer>
+          <Footer />
         </Providers>
       </body>
     </html>
