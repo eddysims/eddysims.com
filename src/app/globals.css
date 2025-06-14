@@ -124,7 +124,7 @@
 
 @layer utilities {
   .bg-dots {
-    background-image: radial-gradient(var(--color-gray-100) 1px, transparent 0);
+    background-image: radial-gradient(var(--color-gray-200) 1px, transparent 0);
     background-size: 0.75rem 0.75rem;
     background-position: 0 0;
     background-repeat: repeat;
