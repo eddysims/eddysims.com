@@ -14,5 +14,9 @@ export function Wrapper({
 }: PropsWithChildren<WrapperProps>) {
   const Tag = as;
 
-  return <Tag className={cn(className, "border-y")}>{children}</Tag>;
+  return (
+    <Tag className={cn(className, "wrapper border-y [&+.wrapper]:-mt-px")}>
+      {children}
+    </Tag>
+  );
 }

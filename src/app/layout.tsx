@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <body
-        className={`${objectSans.variable} ${goshaSans.variable} font-object antialiased`}
+        className={`${objectSans.variable} ${goshaSans.variable} font-object selection:bg-primary selection:text-primary-foreground antialiased`}
       >
         <Providers>
           <div className="flex min-h-dvh flex-col">
