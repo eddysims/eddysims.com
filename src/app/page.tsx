@@ -34,15 +34,13 @@ export default function Home() {
 
         <div className="bg-background">
           <Container borderless className="py-8 text-center">
-            <h2 className="text-lg text-gray-600 lowercase">
-              Companies I have helped
-            </h2>
+            <h2 className="text-lg text-gray-600">Companies I have helped</h2>
             <p className="mt-2 text-sm text-gray-500">
               I&apos;ve helped startups, agencies, and established companies
               turn complex ideas into reliable software.
             </p>
 
-            <ul className="my-4 flex flex-wrap items-center justify-center">
+            <ul className="mt-4 mb-6 flex flex-wrap items-center justify-center">
               <li className={logo}>
                 <Image
                   src="/images/marit.svg"

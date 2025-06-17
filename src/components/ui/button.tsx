@@ -3,25 +3,31 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
+import type { NoNullable } from "@/types";
+
 const buttonVariants = cva(
-  "focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  cn(
+    "transion-all relative z-10 inline-flex cursor-pointer appearance-none items-center justify-center border tracking-wide transition-all",
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+    "before:absolute before:-top-1 before:-right-2 before:-z-10 before:size-full before:transition-all",
+  ),
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-primary/90 shadow-xs",
+          "border-primary before:bg-primary/25 hover:before:bg-primary hover:border-primary hover:text-primary-foreground hover:before:top-0 hover:before:right-0",
         destructive:
           "bg-destructive hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 text-white shadow-xs",
         outline:
           "bg-background hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 border shadow-xs",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 shadow-xs",
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        default: "h-12 px-5 py-2 has-[>svg]:px-3",
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
@@ -34,16 +40,18 @@ const buttonVariants = cva(
   },
 );
 
+type ButonProps = React.ComponentProps<"button"> &
+  NoNullable<VariantProps<typeof buttonVariants>> & {
+    asChild?: boolean;
+  };
+
 function Button({
   className,
-  variant,
+  variant = "default",
   size,
   asChild = false,
   ...props
-}: React.ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants> & {
-    asChild?: boolean;
-  }) {
+}: ButonProps) {
   const Comp = asChild ? Slot : "button";
 
   return (

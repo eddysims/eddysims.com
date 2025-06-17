@@ -8,7 +8,7 @@ import { NavigationItems } from "./components/navigation-items";
 export function Navigation() {
   return (
     <>
-      <Wrapper className="sticky top-0 mt-2 flex xl:mt-4">
+      <Wrapper className="bg-background sticky top-0 mt-2 flex xl:mt-4">
         <div className={spacer} />
         <Container className="flex items-center">
           <NavigationItems />

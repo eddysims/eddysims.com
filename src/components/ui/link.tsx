@@ -1,11 +1,12 @@
 import NextLink, { type LinkProps as NextLinkProps } from "next/link";
 
-import { buttonVariants, Button } from "@/components/ui/button";
+import { type buttonVariants, Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import type { NoNullable } from "@/types";
 import type { VariantProps } from "class-variance-authority";
 
-type LinkProps = VariantProps<typeof buttonVariants> &
+type LinkProps = NoNullable<VariantProps<typeof buttonVariants>> &
   NextLinkProps & {
     className?: string;
   };
