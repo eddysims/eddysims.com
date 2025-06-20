@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-full flex-1">
       <Wrapper className="bg-dots -mt-px border-b-0">
         <Container borderless className="py-30 text-center">
           <h1 className="inline-flex text-6xl font-bold lowercase">
@@ -33,7 +33,7 @@ export default function Home() {
         </Container>
 
         <div className="bg-background">
-          <Container borderless className="py-8 text-center">
+          <Container borderless className="py-12 text-center">
             <h2 className="text-lg text-gray-600">Companies I have helped</h2>
             <p className="mt-2 text-sm text-gray-500">
               I&apos;ve helped startups, agencies, and established companies
@@ -90,6 +90,23 @@ export default function Home() {
           </Container>
         </div>
       </Wrapper>
+
+      <Container className="bg-dots border-b py-8 text-center">
+        <h2 className="text-2xl">About Me</h2>
+      </Container>
+      <Container className="border-b py-8">
+        <p className="mb-4">
+          Hello, World! I am Eddy Sims — a Software Developer passionate about
+          creating high-performance, user-centric software solutions.
+        </p>
+
+        <p className="mb-4">
+          With nearly 20 years of experience, I specialize in building
+          high-quality web applications using modern technologies.
+        </p>
+
+        <p>Let&apos;s connect and collaborate!</p>
+      </Container>
     </div>
   );
 }

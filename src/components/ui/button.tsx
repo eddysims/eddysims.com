@@ -7,15 +7,15 @@ import type { NoNullable } from "@/types";
 
 const buttonVariants = cva(
   cn(
-    "transion-all relative z-10 inline-flex cursor-pointer appearance-none items-center justify-center border tracking-wide transition-all",
+    "relative z-10 inline-flex cursor-pointer appearance-none items-center justify-center tracking-wide transition-all",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-    "before:absolute before:-top-1 before:-right-2 before:-z-10 before:size-full before:transition-all",
+    "font-gosha rounded border border-2 uppercase underline decoration-wavy",
   ),
   {
     variants: {
       variant: {
         default:
-          "border-primary before:bg-primary/25 hover:before:bg-primary hover:border-primary hover:text-primary-foreground hover:before:top-0 hover:before:right-0",
+          "border-primary text-primary hover:bg-primary hover:text-primary-foreground",
         destructive:
           "bg-destructive hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60 text-white shadow-xs",
         outline:
@@ -27,7 +27,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-12 px-5 py-2 has-[>svg]:px-3",
+        default: "h-12 px-8 has-[>svg]:px-3",
         sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
