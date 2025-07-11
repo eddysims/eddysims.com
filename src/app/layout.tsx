@@ -1,5 +1,5 @@
 import { Footer } from "@/components/footer";
-import { Navigation } from "@/components/navigation";
+import { Navigation } from "@/components/layout/navigation";
 import { objectSans, goshaSans } from "@/styles/fonts";
 
 import { Providers } from "./providers";
