@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { Link } from "@/components/ui/link";
 import { routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +30,11 @@ export function NavigationItems() {
       <ul className="flex w-full justify-end gap-6">
         {MENU_ITEMS.map(({ label, href, special }) => (
           <li key={href}>
-            <Link href={href} className={menuItem(special, pathname === href)}>
+            <Link
+              href={href}
+              unstyled
+              className={menuItem(special, pathname === href)}
+            >
               {label}
             </Link>
           </li>
