@@ -8,14 +8,15 @@ import {
 } from "@/components/ui/hover-card";
 import { Link } from "@/components/ui/link";
 import { Wrapper } from "@/components/ui/wrapper";
+import { routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
-    <div className="h-full flex-1">
-      <Wrapper className="bg-dots -mt-px border-b-0">
-        <Container borderless className="py-30 text-center">
-          <h1 className="inline-flex text-6xl font-bold lowercase">
+    <div className="flex h-full flex-1 flex-col">
+      <Wrapper className="bg-dots -mt-px flex flex-1 flex-col justify-center border-b">
+        <Container borderless className="mb-16 text-center">
+          <h1 className="inline-flex text-8xl font-bold lowercase">
             Eddy <span className="font-normal">Sims</span>
           </h1>
           <p className="font-gosha mt-2 text-lg text-gray-500">
@@ -32,81 +33,59 @@ export default function Home() {
           </p>
         </Container>
 
-        <div className="bg-background">
-          <Container borderless className="py-12 text-center">
-            <h2 className="text-lg text-gray-600">Companies I have helped</h2>
-            <p className="mt-2 text-sm text-gray-500">
-              I&apos;ve helped startups, agencies, and established companies
-              turn complex ideas into reliable software.
-            </p>
+        <Container borderless className="py-12 text-center">
+          <h2 className="text-lg text-gray-600">Companies I have helped</h2>
+          <p className="mt-2 text-sm text-gray-500">
+            I&apos;ve helped startups, agencies, and established companies turn
+            complex ideas into reliable software.{" "}
+            <Link href={routes.hire}>You could be next</Link>.
+          </p>
 
-            <ul className="mt-4 mb-6 flex flex-wrap items-center justify-center">
-              <li className={logo}>
-                <Image
-                  src="/images/marit.svg"
-                  alt="Marit Health"
-                  width={100}
-                  height={50}
-                />
-              </li>
-              <li className={logo}>
-                <Image
-                  src="/images/arrive.svg"
-                  alt="Arrive Recommerce"
-                  width={100}
-                  height={50}
-                />
-              </li>
-              <li className={logo}>
-                <Image
-                  src="/images/parachute.svg"
-                  alt="Parachute Home"
-                  width={100}
-                  height={50}
-                />
-              </li>
+          <ul className="mt-4 mb-6 flex flex-wrap items-center justify-center">
+            <li className={logo}>
+              <Image
+                src="/images/marit.svg"
+                alt="Marit Health"
+                width={100}
+                height={50}
+              />
+            </li>
+            <li className={logo}>
+              <Image
+                src="/images/arrive.svg"
+                alt="Arrive Recommerce"
+                width={100}
+                height={50}
+              />
+            </li>
+            <li className={logo}>
+              <Image
+                src="/images/parachute.svg"
+                alt="Parachute Home"
+                width={100}
+                height={50}
+              />
+            </li>
 
-              <li className={logo}>
-                <Image
-                  src="/images/dan-davis.svg"
-                  alt="Dan Davis Music"
-                  width={100}
-                  height={50}
-                />
-              </li>
-              <li className={logo}>
-                <Image
-                  src="/images/flyfree.svg"
-                  alt="Flyfree Movement"
-                  width={100}
-                  height={50}
-                />
-              </li>
-            </ul>
-
-            <Link href="/hire-me" variant="default">
-              You could be next
-            </Link>
-          </Container>
-        </div>
+            <li className={logo}>
+              <Image
+                src="/images/dan-davis.svg"
+                alt="Dan Davis Music"
+                width={100}
+                height={50}
+              />
+            </li>
+            <li className={logo}>
+              <Image
+                src="/images/flyfree.svg"
+                alt="Flyfree Movement"
+                width={100}
+                height={50}
+              />
+            </li>
+          </ul>
+        </Container>
       </Wrapper>
-
-      <Container className="bg-dots border-b py-8 text-center">
-        <h2 className="text-2xl">About Me</h2>
-      </Container>
-      <Container className="border-b py-8">
-        <p className="mb-4">
-          Hello, World! I am Eddy Sims — a Software Developer passionate about
-          creating high-performance, user-centric software solutions.
-        </p>
-
-        <p className="mb-4">
-          With nearly 20 years of experience, I specialize in building
-          high-quality web applications using modern technologies.
-        </p>
-
-        <p>Let&apos;s connect and collaborate!</p>
-      </Container>
     </div>
   );
 }

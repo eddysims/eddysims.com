@@ -1,19 +1,21 @@
 import Link from "next/link";
 
+import { routes } from "@/constants/routes";
+
 import { Wrapper } from "./ui/wrapper";
 
 const FOOTER_LINKS = [
   {
     label: "Contact",
-    href: "/contact",
+    href: routes.contact,
   },
   {
     label: "Privacy Policy",
-    href: "/privacy-policy",
+    href: routes.privacy,
   },
   {
     label: "Terms of service",
-    href: "/terms-of-service",
+    href: routes.terms,
   },
 ];
 

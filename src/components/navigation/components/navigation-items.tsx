@@ -3,20 +3,21 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 
 const MENU_ITEMS = [
   {
     label: "About me",
-    href: "/about",
+    href: routes.about,
   },
   {
     label: "Contact",
-    href: "/contact",
+    href: routes.contact,
   },
   {
     label: "Hire me",
-    href: "/hire-me",
+    href: routes.hire,
     special: true,
   },
 ];
@@ -26,7 +27,7 @@ export function NavigationItems() {
 
   return (
     <nav className="w-full">
-      <ul className="flex w-full justify-center gap-6">
+      <ul className="flex w-full justify-end gap-6">
         {MENU_ITEMS.map(({ label, href, special }) => (
           <li key={href}>
             <Link href={href} className={menuItem(special, pathname === href)}>

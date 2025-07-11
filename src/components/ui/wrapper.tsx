@@ -15,7 +15,10 @@ export function Wrapper({
   const Tag = as;
 
   return (
-    <Tag className={cn(className, "wrapper border-y [&+.wrapper]:-mt-px")}>
+    <Tag
+      data-slot="wrapper"
+      className={cn(className, "[&+[data-slot=wrapper]:-mt-px")}
+    >
       {children}
     </Tag>
   );
