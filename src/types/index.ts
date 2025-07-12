@@ -6,3 +6,9 @@
 export type NoNullable<T> = {
   [K in keyof T]: Exclude<T[K], null | undefined>;
 };
+
+export type ActionResult<T> = Promise<{
+  error?: boolean;
+  data?: T;
+  message?: string;
+}>;

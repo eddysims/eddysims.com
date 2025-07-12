@@ -5,9 +5,10 @@ import { cn } from "@/lib/utils";
 const headingVariants = cva("font-bold", {
   variants: {
     variant: {
-      h1: "text-[clamp(3rem,10vw,6rem)]",
+      h1: "text-5xl",
       h2: "text-[clamp(1.5rem,5vw,2rem)]",
       h3: "text-[clamp(1.25rem,3vw,1.5rem)]",
+      jumbo: "text-[clamp(3rem,10vw,6rem)]",
       accent: "text-xl font-normal",
     },
   },

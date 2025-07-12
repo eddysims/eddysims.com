@@ -51,7 +51,7 @@ export function HomeHero() {
     <Wrapper className="bg-dots -mt-px flex flex-1 flex-col justify-center border-b">
       <Container borderless className="text-center">
         <div>
-          <Heading as="h1" className="inline-flex lowercase">
+          <Heading as="h1" variant="jumbo" className="inline-flex lowercase">
             Eddy <span className="font-normal">Sims</span>
           </Heading>
           <Text>

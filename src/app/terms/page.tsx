@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/container";
+import { Heading } from "@/components/ui/heading";
 import { Link } from "@/components/ui/link";
 import { Text } from "@/components/ui/text";
 import { routes } from "@/constants/routes";
@@ -7,7 +8,7 @@ export default function TermsPage() {
   return (
     <Container borderless className="my-16">
       <div className="mb-6">
-        <h2 className="text-5xl font-bold">Terms &amp; Conditions</h2>
+        <Heading as="h1">Terms &amp; Conditions</Heading>
       </div>
       <Text>Last updated: July 11, 2025.</Text>
 
