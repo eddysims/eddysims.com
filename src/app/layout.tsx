@@ -10,7 +10,7 @@ export default function Layout({ children }: { children: ReactNode }) {
       lang="en"
       suppressHydrationWarning
     >
-      <body className={`${objectSans.variable} ${kyotoSans.variable} flex flex-col min-h-screen bg-background font-object`}>
+      <body className={`${objectSans.variable} ${kyotoSans.variable} flex flex-col min-h-screen bg-background antialiased font-object`}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>

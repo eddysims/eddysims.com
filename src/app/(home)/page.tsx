@@ -1,19 +1,29 @@
-import Link from 'next/link';
+import { Container } from "@/components/ui/container";
+import { Heading } from "@/components/ui/heading";
+import { HoverText } from "@/components/ui/hover-text";
+import { Text } from "@/components/ui/text";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 flex-col justify-center text-center">
-      <h1 className="mb-4 text-2xl font-bold">Hello World</h1>
-      <p className="text-fd-muted-foreground">
-        You can open{' '}
-        <Link
-          href="/docs"
-          className="text-fd-foreground font-semibold underline"
-        >
-          /docs
-        </Link>{' '}
-        and see the documentation.
-      </p>
+    <main className="flex flex-1 flex-col justify-center">
+      <Container>
+        <div className="lg:*:animate-in lg:*:fade-in max-w-4xl *:inline *:not-first:ml-4 sm:not-first:ml-6">
+          <Heading as="h1" className="lowercase lg:duration-1500 font-kyoto">
+            <HoverText content="Hello! I'm Eddy" />
+            <HoverText content="Sims" />
+          </Heading>
+          <Text variant="xl" className="lg:duration-3000">
+            I help businesses turn ideas into working websites and apps.
+          </Text>
+          <Text variant="lg" className="text-muted-foreground lg:duration-4500">
+            I&apos;m a software engineer with nearly 20 years of experience. I
+            have worked with startups, small businesses, and large enterprises
+            to help them build, test, and validate their web app ideas quickly
+            and efficiently!
+          </Text>
+        </div>
+      </Container>
     </main>
   );
 }
