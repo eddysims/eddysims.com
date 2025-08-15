@@ -25,6 +25,9 @@
       ],
       "@/*": [
         "./src/*"
+      ],
+      "@/registry/*": [
+        "./registry/*"
       ]
     },
     "plugins": [
