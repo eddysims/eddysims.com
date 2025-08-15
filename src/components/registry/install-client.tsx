@@ -17,7 +17,7 @@ export function InstallClient({code}: {code: string}) {
         </div>
       </TabsContent>
       <TabsContent value="manual">
-        <CodeBlock code={code} expandable />
+        <CodeBlock code={code} lang="tsx" />
       </TabsContent>
     </Tabs>
   );
