@@ -1,0 +1,4 @@
+@theme inline {
+  --font-object: var(--font-object-sans);
+  --font-kyoto: var(--font-kyoto-sans);
+}
