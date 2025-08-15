@@ -1,4 +1,5 @@
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { Link } from '@/components/ui/link';
 
 /**
  * Shared layout configurations
@@ -17,19 +18,20 @@ export const baseOptions: BaseLayoutProps = {
           xmlns="http://www.w3.org/2000/svg"
           aria-label="Logo"
         >
-          <title>Eddy</title>
+          <title>Eddy Sims</title>
           <circle cx={12} cy={12} r={12} fill="currentColor" />
         </svg>
-       Eddy
+       Eddy Sims
       </>
     ),
     
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
+  githubUrl: 'https://github.com/eddysims',
   links: [
     {
-      text: 'Home',
-      url: '/',
+      type: 'custom',
+      children: <Link href="/">Home</Link>
     },
     {
       text: 'Docs',
@@ -37,9 +39,8 @@ export const baseOptions: BaseLayoutProps = {
       active: "nested-url"
     },
     {
-      text: 'Blog',
-      url: '/blog',
-      active: "nested-url"
+      type: 'custom',
+      children: <Link href="/blog">Blog</Link>,
     },
   ],
 };

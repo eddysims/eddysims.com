@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { blog } from '@/lib/source';
 export default function Home() {
   const posts = blog.getPages();
+  posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
   return (
     <main className="grow container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-8">Latest Blog Posts</h1>
