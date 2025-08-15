@@ -1,5 +1,7 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { Link } from '@/components/ui/link';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import { Link } from "@/components/ui/link";
+import { Signature } from "@/components/ui/signature";
+import { HoverText } from "@/components/ui/hover-text";
 
 /**
  * Shared layout configurations
@@ -7,40 +9,29 @@ import { Link } from '@/components/ui/link';
  * you can customise layouts individually from:
  * Home Layout: app/(home)/layout.tsx
  * Docs Layout: app/docs/layout.tsx
+ * Blog Layout: app/blog/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
-      <>
-        <svg
-          width="24"
-          height="24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-label="Logo"
-        >
-          <title>Eddy Sims</title>
-          <circle cx={12} cy={12} r={12} fill="currentColor" />
-        </svg>
-       Eddy Sims
-      </>
+      <span className="flex items-center gap-2 mr-8">
+        <Signature className="size-10" />
+        <span className="lowercase">
+          <HoverText content="Eddy Sims" />
+        </span>
+      </span>
     ),
-    
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
-  githubUrl: 'https://github.com/eddysims',
+  githubUrl: "https://github.com/eddysims",
   links: [
     {
-      type: 'custom',
-      children: <Link href="/">Home</Link>
+      type: "custom",
+      children: <span className="mx-2"><Link href="/registry">Registry</Link></span>,
     },
     {
-      text: 'Docs',
-      url: '/docs',
-      active: "nested-url"
-    },
-    {
-      type: 'custom',
-      children: <Link href="/blog">Blog</Link>,
+      type: "custom",
+      children: <span className="mx-2"><Link href="/blog">Blog</Link></span>,
     },
   ],
 };
