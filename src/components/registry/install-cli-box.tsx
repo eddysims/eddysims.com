@@ -1,12 +1,7 @@
 import React from "react";
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { CodeBlock } from "@/components/registry/code-block";
+import { CodeBlock } from "./code-block";
 import { getClientSideUrl } from "@/utils/get-urls";
-import {
-  CodeBlockTabs,
-  CodeBlockTabsList,
-  CodeBlockTabsTrigger,
-} from "fumadocs-ui/components/codeblock";
 
 type InstallCliBoxProps = {
   component: string;
@@ -26,17 +21,47 @@ export function InstallCliBox({ component }: InstallCliBoxProps) {
     bun: `bunx --bun shadcn@latest add ${componentUrl}`,
   };
 
+  const buttonProps: ButtonProps = {
+    size: "sm",
+    variant: "ghost",
+  };
 
   return (
-    <CodeBlockTabs defaultValue="pnpm">
-      <CodeBlockTabsList>
-        <CodeBlockTabsTrigger value="pnpm" onClick={() => setTab("pnpm")}>pnpm</CodeBlockTabsTrigger>
-        <CodeBlockTabsTrigger value="npm" onClick={() => setTab("npm")}>npm</CodeBlockTabsTrigger>
-        <CodeBlockTabsTrigger value="yarn" onClick={() => setTab("yarn")}>yarn</CodeBlockTabsTrigger>
-        <CodeBlockTabsTrigger value="bun" onClick={() => setTab("bun")}>bun</CodeBlockTabsTrigger>
-      </CodeBlockTabsList>
+    <div>
+      <div className="border rounded-lg overflow-hidden">
+        <div className="px-2 pt-1 rounded-lg flex gap-1 items-center">
+          <Button
+            {...buttonProps}
+            onClick={() => setTab("pnpm")}
+            disabled={tab === "pnpm"}
+          >
+            pnpm
+          </Button>
+          <Button
+            {...buttonProps}
+            onClick={() => setTab("npm")}
+            disabled={tab === "npm"}
+          >
+            npm
+          </Button>
+          <Button
+            {...buttonProps}
+            onClick={() => setTab("yarn")}
+            disabled={tab === "yarn"}
+          >
+            yarn
+          </Button>
+          <Button
+            {...buttonProps}
+            onClick={() => setTab("bun")}
+            disabled={tab === "bun"}
+          >
+            bun
+          </Button>
+        </div>
 
-      <CodeBlock showLineNumbers={false} code={commandMap[tab]} lang="sh" />
-    </CodeBlockTabs>
+        <CodeBlock code={commandMap[tab]} hideLineNumbers language="sh" />
+      </div>
+    </div>
   );
 }

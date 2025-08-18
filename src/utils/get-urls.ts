@@ -17,3 +17,14 @@ export const getClientSideUrl = () => {
 
   return process.env.NEXT_PUBLIC_SERVER_URL ?? "";
 };
+
+export const getServerSideUrl = () => {
+  const url = process.env.NEXT_PUBLIC_SERVER_URL;
+
+  if (!url && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  }
+
+  return url;
+};
+

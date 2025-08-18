@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "eddy-sims-registry",
+  "homepage": "https://registry.eddysims.com",
+  "items": [
+    {
+      "name": "rating",
+      "type": "registry:component",
+      "title": "Rating",
+      "description": "A customizable rating component",
+      "files": [
+        {
+          "path": "registry/new-york/rating/components/rating.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+} 

@@ -30,7 +30,7 @@ export function Install({ component }: InstallProps) {
     );
   }
 
-  return <InstallClient code={src} />
+  return <InstallClient code={src} component={component} />
 }
 
 function getExampleSource(component: string) {

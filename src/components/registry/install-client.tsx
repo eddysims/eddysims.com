@@ -4,7 +4,7 @@ import { CodeBlock } from "@/components/registry/code-block";
 import { InstallCliBox } from "@/components/registry/install-cli-box";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export function InstallClient({code}: {code: string}) {
+export function InstallClient({code, component}: {code: string, component: string}) {
   return (
     <Tabs defaultValue="cli">
       <TabsList>
@@ -13,11 +13,11 @@ export function InstallClient({code}: {code: string}) {
       </TabsList>
       <TabsContent value="cli">
         <div className="mt-2">
-          <InstallCliBox component="star-rating" />
+          <InstallCliBox component={component} />
         </div>
       </TabsContent>
       <TabsContent value="manual">
-        <CodeBlock code={code} lang="tsx" />
+        <CodeBlock code={code} language="tsx" expandable />
       </TabsContent>
     </Tabs>
   );

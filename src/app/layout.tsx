@@ -3,6 +3,7 @@ import { objectSans, kyotoSans } from "@/styles/fonts";
 import type { ReactNode } from "react";
 
 import "@/app/global.css";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     >
       <body className={`${objectSans.variable} ${kyotoSans.variable} flex flex-col min-h-screen bg-background antialiased font-object`}>
         <RootProvider>{children}</RootProvider>
+        <Toaster richColors />
       </body>
     </html>
   );

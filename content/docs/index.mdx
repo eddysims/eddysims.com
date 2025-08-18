@@ -1,17 +1,55 @@
 ---
-title: Hello World
-description: Your first document
+title: Eddy Sims Registry
+description: A collection of reusable React components and utilities
 ---
 
-import { Install } from "@/components/registry/install"
+Welcome to Eddy Sims Registry! This is a component registry built with the shadcn/ui registry system, allowing you to easily install and use components across your projects.
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+## Quick Start
 
-<Install component="rating" />
+Install components directly from this registry using the shadcn CLI:
 
-## What is Next?
+```bash
+npx shadcn@latest add https://eddysims.com/r/rating
+```
+
+## Available Components
+
+Browse our collection of components:
 
 <Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
+  <Card title="Star Rating" href="/docs/components/star-rating" />
+  <Card title="More components coming soon..." href="#" />
 </Cards>
+
+## How It Works
+
+This registry uses the shadcn/ui registry system to distribute components. When you install a component:
+
+1. The component files are copied to your project
+2. Dependencies are automatically installed
+3. You get full control over the code
+
+## Features
+
+- 🚀 **Easy Installation**: One command to install any component
+- 🎨 **Customizable**: Full control over styling and behavior
+- 📚 **Well Documented**: Each component comes with examples and API docs
+- 🔧 **TypeScript**: Built with TypeScript for better DX
+- ♿ **Accessible**: Components follow accessibility best practices
+
+## Registry Structure
+
+Components are organized in the following structure:
+
+```
+registry/
+├── new-york/
+│   ├── rating/
+│   │   └── components/
+│   │       └── rating.tsx
+│   └── ...
+└── public/r/
+    ├── rating.json
+    └── ...
+```
