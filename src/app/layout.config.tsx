@@ -25,13 +25,16 @@ export const baseOptions: BaseLayoutProps = {
   // see https://fumadocs.dev/docs/ui/navigation/links
   githubUrl: "https://github.com/eddysims",
   links: [
-    {
-      type: "custom",
-      children: <span className="mx-2"><Link href="/registry">Registry</Link></span>,
-    },
-    {
-      type: "custom",
-      children: <span className="mx-2"><Link href="/blog">Blog</Link></span>,
-    },
+    // {
+    //   type: "custom",
+    //   children: <span className="mx-2"><Link href="/registry">Registry</Link></span>,
+    // },
+    // {
+    //   type: "custom",
+    //   children: <span className="mx-2"><Link href="/blog">Blog</Link></span>,
+    // },
   ],
+  searchToggle: {
+    enabled: false,
+  },
 };

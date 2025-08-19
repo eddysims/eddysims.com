@@ -2,7 +2,6 @@ import { Container } from "@/components/ui/container";
 import { Heading } from "@/components/ui/heading";
 import { HoverText } from "@/components/ui/hover-text";
 import { Text } from "@/components/ui/text";
-import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -26,4 +25,9 @@ export default function HomePage() {
       </Container>
     </main>
   );
+}
+
+export const metadata = {
+  title: "Eddy Sims",
+  description: "Software Engineer",
 }
