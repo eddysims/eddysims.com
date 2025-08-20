@@ -4,11 +4,12 @@ import { cn } from "@/lib/utils";
 
 import type { ComponentPropsWithoutRef } from "react";
 
-const headingVariants = cva("font-bold", {
+export const headingVariants = cva("font-bold font-kyoto not-prose", {
   variants: {
     variant: {
       xl: "text-5xl md:text-7xl lg:text-8xl",
-      lg: "text-2xl leading-normal sm:text-3xl md:text-4xl",
+      lg: "text-xl leading-normal sm:text-3xl md:text-5xl",
+      md: "text-xl leading-normal sm:text-2xl md:text-4xl",
     },
   },
 });
