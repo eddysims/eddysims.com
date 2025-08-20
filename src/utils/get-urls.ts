@@ -1,3 +1,5 @@
+import { env } from "@/lib/env/client";
+
 const canUseDOM = Boolean(
   typeof window !== "undefined" &&
     window.document &&
@@ -15,11 +17,11 @@ export const getClientSideUrl = () => {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
 
-  return process.env.NEXT_PUBLIC_SERVER_URL ?? "";
+  return env.NEXT_PUBLIC_SERVER_URL;
 };
 
 export const getServerSideUrl = () => {
-  const url = process.env.NEXT_PUBLIC_SERVER_URL;
+  const url = env.NEXT_PUBLIC_SERVER_URL;
 
   if (!url && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return process.env.VERCEL_PROJECT_PRODUCTION_URL;
