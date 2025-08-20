@@ -1,9 +1,10 @@
 "use client";
-import { usePathname } from "next/navigation";
 import { useBreadcrumb } from "fumadocs-core/breadcrumb";
-import type { PageTree } from "fumadocs-core/server";
-import { Fragment } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Fragment } from "react";
+
+import type { PageTree } from "fumadocs-core/server";
 
 type BreadcrumbProps = {
   tree: PageTree.Root;
@@ -16,14 +17,16 @@ type BreadcrumbProps = {
 export function Breadcrumb({ tree, prefix }: BreadcrumbProps) {
   const pathname = usePathname();
   const items = useBreadcrumb(pathname, tree);
+
   if (items.length === 0) return null;
+
   return (
-    <div className="-mb-3 flex flex-row items-center gap-1 text-sm font-medium text-fd-muted-foreground">
+    <div className="text-fd-muted-foreground -mb-3 flex flex-row items-center gap-1 text-sm font-medium">
       {prefix && (
         <>
           <Link
             href={prefix.href}
-            className="truncate hover:text-fd-accent-foreground"
+            className="hover:text-fd-accent-foreground truncate"
           >
             {prefix.label}
           </Link>{" "}
@@ -36,7 +39,7 @@ export function Breadcrumb({ tree, prefix }: BreadcrumbProps) {
           {item.url ? (
             <Link
               href={item.url}
-              className="truncate hover:text-fd-accent-foreground"
+              className="hover:text-fd-accent-foreground truncate"
             >
               {item.name}
             </Link>

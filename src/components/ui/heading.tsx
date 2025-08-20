@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 import type { ComponentPropsWithoutRef } from "react";
 
-export const headingVariants = cva("font-bold font-kyoto not-prose", {
+export const headingVariants = cva("font-kyoto not-prose font-bold", {
   variants: {
     variant: {
       xl: "text-5xl md:text-7xl lg:text-8xl",

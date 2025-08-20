@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { CodeBlock } from "./code-block";
 import { getClientSideUrl } from "@/utils/get-urls";
+
+import { CodeBlock } from "./code-block";
 
 type InstallCliBoxProps = {
   component: string;
@@ -28,8 +30,8 @@ export function InstallCliBox({ component }: InstallCliBoxProps) {
 
   return (
     <div>
-      <div className="border rounded-lg overflow-hidden">
-        <div className="px-2 pt-1 rounded-lg flex gap-1 items-center">
+      <div className="overflow-hidden rounded-lg border">
+        <div className="flex items-center gap-1 rounded-lg px-2 pt-1">
           <Button
             {...buttonProps}
             onClick={() => setTab("pnpm")}
