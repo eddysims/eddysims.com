@@ -28,6 +28,9 @@
       ],
       "@/registry/*": [
         "./registry/*"
+      ],
+      "@/root/*": [
+        "./"
       ]
     },
     "plugins": [
