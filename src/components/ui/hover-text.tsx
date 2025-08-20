@@ -85,7 +85,7 @@ function HoverTextItem({
           "text-fuchsia-700 dark:text-fuchsia-300": color === "fuchsia",
           "text-pink-700 dark:text-pink-300": color === "pink",
           "text-rose-700 dark:text-rose-300": color === "rose",
-        }
+        },
       )}
     >
       {children}

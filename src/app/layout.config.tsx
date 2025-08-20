@@ -1,7 +1,7 @@
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
-import { Link } from "@/components/ui/link";
-import { Signature } from "@/components/ui/signature";
 import { HoverText } from "@/components/ui/hover-text";
+import { Signature } from "@/components/ui/signature";
+
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 /**
  * Shared layout configurations
@@ -14,7 +14,7 @@ import { HoverText } from "@/components/ui/hover-text";
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
-      <span className="flex items-center gap-2 mr-8">
+      <span className="mr-8 flex items-center gap-2">
         <Signature className="size-10" />
         <span className="lowercase">
           <HoverText content="Eddy Sims" />

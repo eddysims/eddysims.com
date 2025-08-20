@@ -8,7 +8,7 @@ export default function HomePage() {
     <main className="flex flex-1 flex-col justify-center">
       <Container>
         <div className="lg:*:animate-in lg:*:fade-in max-w-4xl *:inline *:not-first:ml-4 sm:not-first:ml-6">
-          <Heading as="h1" className="lowercase lg:duration-1500 font-kyoto">
+          <Heading as="h1" className="font-kyoto lowercase lg:duration-1500">
             <HoverText content="Hello! I'm Eddy" />
             <HoverText content="Sims" />
           </Heading>
@@ -30,4 +30,4 @@ export default function HomePage() {
 export const metadata = {
   title: "Eddy Sims",
   description: "Software Engineer",
-}
+};

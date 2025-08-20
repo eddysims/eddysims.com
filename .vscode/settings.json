@@ -1,0 +1,12 @@
+{
+  "npm.packageManager": "pnpm",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#c03221",
+    "statusBarItem.hoverBackground": "#9D1405",
+    "statusBar.foreground": "#fff"
+  }
+}

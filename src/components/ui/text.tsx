@@ -7,8 +7,8 @@ import type { ComponentPropsWithoutRef } from "react";
 const textVariants = cva("font-normal", {
   variants: {
     variant: {
-      xl: "text-2xl leading-normal sm:text-3xl ",
-      lg: "text-xl leading-relaxed sm:text-xl ",
+      xl: "text-2xl leading-normal sm:text-3xl",
+      lg: "text-xl leading-relaxed sm:text-xl",
       xs: "text-sm",
       default: "text-base lg:text-lg",
     },
