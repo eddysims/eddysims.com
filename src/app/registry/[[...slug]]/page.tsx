@@ -25,7 +25,10 @@ export default async function Page(props: {
 
   return (
     <DocsPage
-      toc={[{ title: "Overview", url: "", depth: 1 }, ...page.data.toc]}
+      toc={[
+        { title: "Overview", url: "#overview", depth: 1 },
+        ...page.data.toc,
+      ]}
       full={page.data.full}
       breadcrumb={{
         component: (
@@ -36,7 +39,7 @@ export default async function Page(props: {
         ),
       }}
     >
-      <DocsTitle className={headingVariants({ variant: "lg" })}>
+      <DocsTitle className={headingVariants({ variant: "lg" })} id="overview">
         <HoverText content={page.data.title} />
       </DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
