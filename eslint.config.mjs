@@ -71,7 +71,7 @@ const eslintConfig = [
     },
   },
   {
-    ignores: [".next/", ".source/"],
+    ignores: [".next/", ".source/", "**/*.d.ts"],
   },
 ];
 

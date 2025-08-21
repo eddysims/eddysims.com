@@ -24,7 +24,7 @@ export async function Demo({
         {src && <TabsTrigger value="code">Code</TabsTrigger>}
       </TabsList>
       <TabsContent value="preview">
-        <div className="flex  items-center justify-center h-100 border">
+        <div className="flex h-100 items-center justify-center border">
           <Component.default />
         </div>
       </TabsContent>

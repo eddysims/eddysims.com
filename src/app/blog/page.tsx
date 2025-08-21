@@ -15,7 +15,7 @@ export default function Home() {
         {posts.map((post) => (
           <Link
             key={post.url}
-            href={post.url}
+            href={{ pathname: post.url }}
             className="bg-fd-secondary block overflow-hidden rounded-lg p-6 shadow-md"
           >
             <h2 className="mb-2 text-xl font-semibold">{post.data.title}</h2>
