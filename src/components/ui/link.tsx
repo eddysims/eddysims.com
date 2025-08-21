@@ -3,7 +3,7 @@ import NextLink, { type LinkProps } from "next/link";
 export function Link({
   children,
   ...props
-}: React.PropsWithChildren<LinkProps>) {
+}: React.PropsWithChildren<LinkProps<string>>) {
   return (
     <NextLink
       {...props}

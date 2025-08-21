@@ -25,7 +25,7 @@ export function Breadcrumb({ tree, prefix }: BreadcrumbProps) {
       {prefix && (
         <>
           <Link
-            href={prefix.href}
+            href={{ pathname: prefix.href }}
             className="hover:text-fd-accent-foreground truncate"
           >
             {prefix.label}
