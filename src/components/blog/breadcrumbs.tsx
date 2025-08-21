@@ -38,7 +38,7 @@ export function Breadcrumb({ tree, prefix }: BreadcrumbProps) {
           {i !== 0 && <span className="text-fd-muted-foreground">/</span>}
           {item.url ? (
             <Link
-              href={item.url}
+              href={{ pathname: item.url }}
               className="hover:text-fd-accent-foreground truncate"
             >
               {item.name}
