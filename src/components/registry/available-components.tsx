@@ -1,14 +1,19 @@
 import { Card, Cards } from "fumadocs-ui/components/card";
 
-import { items } from "../../../registry.json";
+const COMPONENTS = [
+  {
+    name: "rating",
+    title: "Rating",
+    description:
+      "A customizable rating component with interactive hover states",
+  },
+];
 
 export function AvailableComponents() {
-  const components = items.filter((item) => item.type === "registry:component");
-
   return (
     <div>
       <Cards className="grid-cols-3">
-        {components.map((item) => (
+        {COMPONENTS.map((item) => (
           <Card
             key={item.name}
             title={item.title}
