@@ -14,8 +14,8 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
-      <span className="mr-8 flex items-center gap-2">
-        <Signature className="size-10" />
+      <span className="mr-8 flex items-center gap-3">
+        <Signature className="size-8" />
         <span className="lowercase">
           <HoverText content="Eddy Sims" />
         </span>
