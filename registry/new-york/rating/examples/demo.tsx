@@ -1,9 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
 import { Rating } from "@/components/ui/rating";
 
 export default function Demo() {
+  const [value, setValue] = useState(0);
+
   return (
-    <div className="flex h-full items-center justify-center">
-      <Rating value={3} readonly />
+    <div className="flex h-full flex-col items-center justify-center">
+      <Rating value={value} hasHalves onChange={setValue} />
+
+      <div>Value: {value}</div>
     </div>
   );
 }
