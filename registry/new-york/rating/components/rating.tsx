@@ -1,4 +1,5 @@
 "use client";
+
 import { Star } from "lucide-react";
 import { useState } from "react";
 
@@ -13,6 +14,7 @@ export type RatingProps = {
    */
   max?: number;
   hasHalves?: boolean;
+  readOnly?: boolean;
   className?: string;
   onChange?: (value: number) => void;
 };
@@ -21,22 +23,44 @@ export function Rating({
   max = 5,
   hasHalves,
   value,
+  readOnly,
   className,
   onChange,
 }: RatingProps) {
   const [hoverValue, setHoverValue] = useState<number>(value ?? 0);
+
   const roundedStars = Math.ceil(max);
+  const Comp = readOnly ? "div" : "button";
 
   const handleClick = (value: number) => {
+    if (readOnly) {
+      return;
+    }
+
     onChange?.(value);
+  };
+
+  const handleMouseEnter = (value: number) => {
+    if (readOnly) {
+      return;
+    }
+    setHoverValue(value);
+  };
+
+  const handleMouseLeave = () => {
+    if (readOnly) {
+      return;
+    }
+    setHoverValue(value ?? 0);
   };
 
   return (
     <div
       className={cn(
         "flex flex-nowrap",
-        "[&_[data-slot='star']]:text-primary [&_[data-slot='star']]:cursor-pointer [&_[data-slot='star']]:px-0.5",
+        "[&_[data-slot='star']]:text-primary [&_[data-slot='star']]:px-0.5",
         "[&_svg]:size-6",
+        !readOnly && "[&_[data-slot='star']]:cursor-pointer",
         className,
       )}
     >
@@ -46,35 +70,40 @@ export function Rating({
         return (
           <div key={starValue} className="relative">
             {hasHalves && (
-              <button
+              <Comp
                 data-slot="star"
                 type="button"
                 className="absolute z-10"
                 style={{ clipPath: "inset(0 50% 0 0)" }}
-                onClick={() => handleClick(starValue - 0.5)}
-                onMouseEnter={() => setHoverValue(starValue - 0.5)}
-                onMouseLeave={() => setHoverValue(value ?? 0)}
+                onClick={() => {
+                  if (readOnly) {
+                    return;
+                  }
+                  handleClick(starValue - 0.5);
+                }}
+                onMouseEnter={() => handleMouseEnter(starValue - 0.5)}
+                onMouseLeave={() => handleMouseLeave()}
               >
                 <Star
                   className={cn("stroke-current transition-colors", {
                     "fill-current": hoverValue >= starValue - 0.5,
                   })}
                 />
-              </button>
+              </Comp>
             )}
-            <button
+            <Comp
               data-slot="star"
               type="button"
               onClick={() => handleClick(starValue)}
-              onMouseEnter={() => setHoverValue(starValue)}
-              onMouseLeave={() => setHoverValue(value ?? 0)}
+              onMouseEnter={() => handleMouseEnter(starValue)}
+              onMouseLeave={() => handleMouseLeave()}
             >
               <Star
                 className={cn("stroke-current transition-colors", {
                   "fill-current": hoverValue >= starValue,
                 })}
               />
-            </button>
+            </Comp>
           </div>
         );
       })}
