@@ -57,9 +57,10 @@ export function Rating({
   return (
     <div
       className={cn(
-        "flex flex-nowrap",
-        "[&_[data-slot='star']]:text-primary [&_[data-slot='star']]:px-0.5",
+        "text-primary flex flex-nowrap",
+        "[&_[data-slot='star']]:px-0.5",
         "[&_svg]:size-6",
+        "[&_[data-active='true']]:fill-current",
         !readOnly && "[&_[data-slot='star']]:cursor-pointer",
         className,
       )}
@@ -85,9 +86,10 @@ export function Rating({
                 onMouseLeave={() => handleMouseLeave()}
               >
                 <Star
-                  className={cn("stroke-current transition-colors", {
-                    "fill-current": hoverValue >= starValue - 0.5,
-                  })}
+                  data-active={hoverValue >= starValue - 0.5}
+                  className={cn(
+                    "fill-background stroke-current transition-colors",
+                  )}
                 />
               </Comp>
             )}
@@ -99,9 +101,10 @@ export function Rating({
               onMouseLeave={() => handleMouseLeave()}
             >
               <Star
-                className={cn("stroke-current transition-colors", {
-                  "fill-current": hoverValue >= starValue,
-                })}
+                data-active={hoverValue >= starValue}
+                className={cn(
+                  "fill-background stroke-current transition-colors",
+                )}
               />
             </Comp>
           </div>

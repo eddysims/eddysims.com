@@ -3,8 +3,8 @@ title: Rating
 description: A rating component with customizable max value and half-value support
 ---
 
-import { Install } from "@/components/registry/install"
-import { Demo } from "@/components/registry/demo"
+import { Install } from "@/components/registry/install";
+import { Demo } from "@/components/registry/demo";
 
 <Demo component="rating" name="basic" />
 
@@ -14,7 +14,10 @@ import { Demo } from "@/components/registry/demo"
 
 ## Props
 
-<AutoTypeTable path="./registry/new-york/rating/components/rating.tsx" name="RatingProps" />
+<AutoTypeTable
+  path="./registry/new-york/rating/components/rating.tsx"
+  name="RatingProps"
+/>
 
 ## Examples
 
@@ -32,15 +35,9 @@ Use the `Rating` component in a read-only state to display the rating.
 
 ## Styling
 
-- Add spacing via the button. add example
+- To adjust the spacing between the stars, you will want to adjust the padding on the star, rather then the gap of the flex container. The reason for this is to avoid jittering the stars when hovering.
+- To adjust the size or color of the stars, you will want to adjust the size of the star icon.
 
+### Examples
 
-
-
-
-
-
-
-
-
-
+<Demo component="rating" name="styling" />
