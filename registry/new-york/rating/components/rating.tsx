@@ -1,107 +1,115 @@
 "use client";
 
-import * as React from "react";
+import { Star } from "lucide-react";
+import { useState } from "react";
 
 import { cn } from "@/lib/utils";
 
-interface RatingProps {
+export type RatingProps = {
   value?: number;
-  onChange?: (value: number) => void;
+  /**
+   * The maximum value of the rating
+   *
+   * @default 5
+   */
   max?: number;
-  size?: "sm" | "md" | "lg";
-  readonly?: boolean;
+  hasHalves?: boolean;
+  readOnly?: boolean;
   className?: string;
-}
+  onChange?: (value: number) => void;
+};
 
-const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
-  (
-    {
-      value = 0,
-      onChange,
-      max = 5,
-      size = "md",
-      readonly = false,
-      className,
-      ...props
-    },
-    ref,
-  ) => {
-    const [hoverValue, setHoverValue] = React.useState<number | null>(null);
+export function Rating({
+  max = 5,
+  hasHalves,
+  value,
+  readOnly,
+  className,
+  onChange,
+}: RatingProps) {
+  const [hoverValue, setHoverValue] = useState<number>(value ?? 0);
 
-    const sizeClasses = {
-      sm: "h-4 w-4",
-      md: "h-5 w-5",
-      lg: "h-6 w-6",
-    };
+  const roundedStars = Math.ceil(max);
+  const Comp = readOnly ? "div" : "button";
 
-    const handleClick = (rating: number) => {
-      if (!readonly && onChange) {
-        onChange(rating);
-      }
-    };
+  const handleClick = (value: number) => {
+    if (readOnly) {
+      return;
+    }
 
-    const handleMouseEnter = (rating: number) => {
-      if (!readonly) {
-        setHoverValue(rating);
-      }
-    };
+    onChange?.(value);
+  };
 
-    const handleMouseLeave = () => {
-      if (!readonly) {
-        setHoverValue(null);
-      }
-    };
+  const handleMouseEnter = (value: number) => {
+    if (readOnly) {
+      return;
+    }
+    setHoverValue(value);
+  };
 
-    return (
-      <div
-        ref={ref}
-        className={cn(
-          "flex items-center gap-1",
-          !readonly && "cursor-pointer",
-          className,
-        )}
-        {...props}
-      >
-        {Array.from({ length: max }, (_, index) => {
-          const rating = index + 1;
-          const isFilled = (hoverValue ?? value) >= rating;
+  const handleMouseLeave = () => {
+    if (readOnly) {
+      return;
+    }
+    setHoverValue(value ?? 0);
+  };
 
-          return (
-            <button
-              key={`star-${rating}`}
-              type="button"
-              className={cn(
-                "focus:ring-ring transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:cursor-default",
-                sizeClasses[size],
-                !readonly && "transition-transform hover:scale-110",
-              )}
-              onClick={() => handleClick(rating)}
-              onMouseEnter={() => handleMouseEnter(rating)}
-              onMouseLeave={handleMouseLeave}
-              disabled={readonly}
-              aria-label={`Rate ${rating} out of ${max} stars`}
-            >
-              <svg
-                className={cn(
-                  "h-full w-full transition-colors",
-                  isFilled
-                    ? "fill-yellow-400 text-yellow-400"
-                    : "fill-muted stroke-muted-foreground",
-                )}
-                viewBox="0 0 24 24"
-                strokeWidth={1}
-                aria-hidden="true"
+  return (
+    <div
+      className={cn(
+        "text-primary flex flex-nowrap",
+        "[&_[data-slot='star']]:px-0.5",
+        "[&_svg]:size-6",
+        "[&_[data-active='true']]:fill-current",
+        !readOnly && "[&_[data-slot='star']]:cursor-pointer",
+        className,
+      )}
+    >
+      {Array.from({ length: roundedStars }).map((_, index) => {
+        const starValue = index + 1;
+
+        return (
+          <div key={starValue} className="relative">
+            {hasHalves && (
+              <Comp
+                data-slot="star"
+                type="button"
+                className="absolute z-10"
+                style={{ clipPath: "inset(0 50% 0 0)" }}
+                onClick={() => {
+                  if (readOnly) {
+                    return;
+                  }
+                  handleClick(starValue - 0.5);
+                }}
+                onMouseEnter={() => handleMouseEnter(starValue - 0.5)}
+                onMouseLeave={() => handleMouseLeave()}
               >
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-            </button>
-          );
-        })}
-      </div>
-    );
-  },
-);
-
-Rating.displayName = "Rating";
-
-export { Rating };
+                <Star
+                  data-active={hoverValue >= starValue - 0.5}
+                  className={cn(
+                    "fill-background stroke-current transition-colors",
+                  )}
+                />
+              </Comp>
+            )}
+            <Comp
+              data-slot="star"
+              type="button"
+              onClick={() => handleClick(starValue)}
+              onMouseEnter={() => handleMouseEnter(starValue)}
+              onMouseLeave={() => handleMouseLeave()}
+            >
+              <Star
+                data-active={hoverValue >= starValue}
+                className={cn(
+                  "fill-background stroke-current transition-colors",
+                )}
+              />
+            </Comp>
+          </div>
+        );
+      })}
+    </div>
+  );
+}

@@ -1,4 +1,5 @@
 import { HoverText } from "@/components/ui/hover-text";
+import { Link } from "@/components/ui/link";
 import { Signature } from "@/components/ui/signature";
 
 import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
@@ -14,8 +15,8 @@ import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
-      <span className="mr-8 flex items-center gap-2">
-        <Signature className="size-10" />
+      <span className="mr-8 flex items-center gap-3">
+        <Signature className="size-8" />
         <span className="lowercase">
           <HoverText content="Eddy Sims" />
         </span>
@@ -25,10 +26,14 @@ export const baseOptions: BaseLayoutProps = {
   // see https://fumadocs.dev/docs/ui/navigation/links
   githubUrl: "https://github.com/eddysims",
   links: [
-    // {
-    //   type: "custom",
-    //   children: <span className="mx-2"><Link href="/registry">Registry</Link></span>,
-    // },
+    {
+      type: "custom",
+      children: (
+        <span className="mx-2">
+          <Link href={{ pathname: "/registry" }}>Code Registry</Link>
+        </span>
+      ),
+    },
     // {
     //   type: "custom",
     //   children: <span className="mx-2"><Link href="/blog">Blog</Link></span>,

@@ -1,29 +1,43 @@
 ---
 title: Rating
-description: A customizable rating component with interactive hover states
+description: A rating component with customizable max value and half-value support
 ---
 
-import { Install } from "@/components/registry/install"
-import { Demo } from "@/components/registry/demo"
+import { Install } from "@/components/registry/install";
+import { Demo } from "@/components/registry/demo";
 
-<Demo component="rating" name="demo" />
+<Demo component="rating" name="basic" />
 
 ## Installation
 
 <Install component="rating" />
 
+## Props
+
+<AutoTypeTable
+  path="./registry/new-york/rating/components/rating.tsx"
+  name="RatingProps"
+/>
+
 ## Examples
 
-### Some basic example
+### Form
 
-<Demo component="rating" name="demo" />
+Use the `Rating` component in a form to get the value of the rating.
 
-### Some basic example with hover states
+<Demo component="rating" name="form" />
 
-<Demo component="rating" name="demo" />
+### Read-only
 
+Use the `Rating` component in a read-only state to display the rating.
 
+<Demo component="rating" name="readonly" />
 
+## Styling
 
+- To adjust the spacing between the stars, you will want to adjust the padding on the star, rather then the gap of the flex container. The reason for this is to avoid jittering the stars when hovering.
+- To adjust the size or color of the stars, you will want to adjust the size of the star icon.
 
+### Examples
 
+<Demo component="rating" name="styling" />
